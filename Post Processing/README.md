@@ -1,1 +1,41 @@
-Test
+# Studio Creative Tutorials - Post Processing
+ 
+**Date**: October 11, 2021<br>
+**Location**: Online (On Discord)
+**Instructor(s)**: Athena Dai
+ 
+## Resources
+[Slides]()<br>
+[Video]()<br>
+ 
+## Topics Covered
+* Different Render Pipelines
+* Package Importing and Updating
+* Asset Importing and Updating
+* Post Processing/Render Pipeline Effects
+ 
+## What you'll need
+* [Unity Hub](https://unity.com/download)
+* [Unity 2020.3.19f2](https://unity3d.com/unity/qa/lts-releases)
+* [This Package](https://drive.google.com/file/d/1c-HtCTB4gnkF9j676lfUNTWDpNo5VmZx/view?usp=sharing)
+---
+## Setting up a scene:
+Start Unity Hub and click on **Projects** on the sidebar. Click on New Project and name the project PostProcessing. Make sure the project type is 3D Core, and the Unity version is 2020.3.19f2.
+![ScreenShot](Screenshots/PostProcessCreation.png)<br>
+
+Install HDRP, BEFORE you import the post processing package linked above.
+ 
+## Navigating your workspace
+
+---
+
+## Essential Links
+- [Studio Discord](https://discord.com/invite/bBk2Mcw)
+- [Linktree](https://linktr.ee/acmstudio)
+- [ACM Membership Portal](https://members.uclaacm.com/)
+## Additional Resources
+- [Unity Documentation](https://docs.unity3d.com/Manual/index.html)
+- [ACM Website](https://www.uclaacm.com/)
+- [ACM Discord](https://discord.com/invite/eWmzKsY)
+ 
+ 
