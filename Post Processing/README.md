@@ -1,7 +1,7 @@
 # Studio Creative Tutorials - Post Processing
  
 **Date**: October 11, 2021<br>
-**Location**: Online (On Discord)
+**Location**: Online (On Discord)<br>
 **Instructor(s)**: Athena Dai
  
 ## Resources
