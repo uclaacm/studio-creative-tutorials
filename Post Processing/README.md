@@ -13,6 +13,7 @@
 * Different Render Pipelines
 * Package Importing and Updating
 * Asset Importing and Updating
+* Basics of Materials and Shaders
 * Post Processing/Render Pipeline Effects
  
 ## What you'll need
