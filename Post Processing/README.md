@@ -7,6 +7,7 @@
 ## Resources
 [Slides]()<br>
 [Video]()<br>
+[Zoom Link](https://ucla.zoom.us/j/99684783298?pwd=Ykh2NlJCTDdoRGYxZzg2Z2xVWU1RZz09)<br>
  
 ## Topics Covered
 * Different Render Pipelines
