@@ -38,7 +38,7 @@ Then go to Window > Package Manager. In the tab that pops up, switch the package
  
  **Note 2:** If you want to check to make sure this worked, go to Edit > Project Settings > Graphics again and make sure Scriptable Render Pipeline Settings has been set.
 <details>
-  <summary>Why are there so many errors?</summary>
+  <summary>**Why are there so many errors?**</summary>
   As mentioned in the "What is a Render Pipeline" file, none of the render pipelines are compatible with each other. This means that if you upload some texture to the core render pipeline, it might be missing parameters (or have extra parameters) compared to those in HDRP. You'll notice a lot of the errors talk about things not being supported or things missing for this very reason.
 </details>
 
