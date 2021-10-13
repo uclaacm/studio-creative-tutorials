@@ -29,7 +29,8 @@ Go to Edit > Project Settings > Graphics and make sure that the object under Scr
 [What is a Render Pipeline? -->](Dictionary/Render%20Pipelines.md)
 ![ScreenShot](Screenshots/InitProjSettings.png)<br>
 
-Install HDRP, BEFORE you import the post processing package linked above.
+Then go to Window > Package Manager. In the tab that pops up, switch the packages from "In Project" to "Unity Registry". Then search up "High Definition RP" in the search bar.
+![ScreenShot](Screenshots/PackageManager.png)<br>
  
 ## Navigating your workspace
 
