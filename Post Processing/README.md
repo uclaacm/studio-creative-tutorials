@@ -35,7 +35,7 @@ Then go to Window > Package Manager. In the tab that pops up, switch the package
  After High Definition Render Pipeline (here on out referred to as HDRP) is finished installing, something called the Render Pipeline Wizard will pop up. Click "Fix All" to fix the errors.
 <details>
   <summary>Why are there so many errors?</summary>
-  test
+  As mentioned in the "What is a Render Pipeline" file, none of the render pipelines are compatible with each other. This means that if you upload some texture to the core render pipeline, it might be missing parameters (or have extra parameters) compared to those in HDRP. You'll notice a lot of the errors talk about things not being supported or things missing for this very reason.
 </details>
 
 ![Screenshot](Screenshots/RPWizard.png)<br>
