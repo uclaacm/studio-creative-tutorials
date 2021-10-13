@@ -26,7 +26,7 @@ Start Unity Hub and click on **Projects** on the sidebar. Click on New Project a
 ![ScreenShot](Screenshots/PostProcessCreation.png)<br>
 
 Go to Edit > Project Settings > Graphics and make sure that the object under Scriptable Render Pipeline Settings is currently set to None.
-[(What is a Render Pipeline? -->)] (Dictionary/Render Pipelines)
+[(What is a Render Pipeline? -->)] (Dictionary/Render%20Pipelines.md)
 ![ScreenShot](Screenshots/InitProjSettings.png)<br>
 
 Install HDRP, BEFORE you import the post processing package linked above.
