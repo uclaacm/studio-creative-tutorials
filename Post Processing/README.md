@@ -25,7 +25,7 @@
 Start Unity Hub and click on **Projects** on the sidebar. Click on New Project and name the project PostProcessing. Make sure the project type is 3D Core, and the Unity version is 2020.3.19f2 (or some variation of 2020.3 LTS)
 ![ScreenShot](Screenshots/PostProcessCreation.png)<br>
 
-Go to Edit > Project Settings > Graphics and make sure that the object under Scriptable Render Pipeline Settings is currently set to None.
+Go to Edit > Project Settings > Graphics and make sure that the object under Scriptable Render Pipeline Settings is currently set to None.<br>
 [What is a Render Pipeline? -->](Dictionary/Render%20Pipelines.md)
 ![ScreenShot](Screenshots/InitProjSettings.png)<br>
 
