@@ -51,23 +51,23 @@ Now find wherever you downloaded PostProcessTPKG and double click on it. An "Imp
 Navigate to "First Person Camera" in your hierarchy (under "First Person Controller Minimal"). Upon clicking on it, navigate to your inspector and click "Add Component" at the very bottom of the inspector. Search up "Volume" and add that component.
 ![Screenshot](Screenshots/VolumeComponent.png)<br>
 
-In the volume component, create a new volume profile.
+In the volume component, create a new volume profile.<br>
 ![Screenshot](Screenshots/VolumeProfile.png)<br>
 
-Set your Camera's anti-aliasing (under the general component) to FXAA (Fast Approximate Anti-Aliasing).
+Set your Camera's anti-aliasing (under the general component) to FXAA (Fast Approximate Anti-Aliasing).<br>
 [What is Anti-Aliasing? -->](Dictionary/Anti%20Aliasing.md)
 ![Screenshot](Screenshots/FXAA.png)<br>
 
 ## Creating Skyboxes
-Set an override, by going to Add Override > Sky > HDRI Sky.
+Set an override, by going to Add Override > Sky > HDRI Sky.<br>
 [What is a Skybox? -->](Dictionary/Skybox.md)
 ![Screenshot](Screenshots/SkyOverride.png)<br>
 
-Check the HDRI Sky (cubemap) variable. In your project folders, search "ReflectionProbe" And drag and drop one into the cubemap variable. Your scene should suddenly look like this:
+Check the HDRI Sky (cubemap) variable. In your project folders, search "ReflectionProbe" And drag and drop one into the cubemap variable. Your scene should suddenly look like this:<br>
 [What is a Cubemap? -->](Dictionary/Textures.md)
 ![Screenshot](Screenshots/Cubemap.png)<br>
 
-If you don't want to use a traditional cubemap skybox, you still have options. The first is simply to play around with the general background settings under the General Camera component.
+If you don't want to use a traditional cubemap skybox, you still have options. The first is simply to play around with the general background settings under the General Camera component.<br>
 ![Screenshot](Screenshots/GeneralSky.png)<br>
 
 If you want to use the other Sky Overrides like Gradient, or Physically Based, you have to override the Visual Environment first, before adding the other overrides.
@@ -75,6 +75,7 @@ If you want to use the other Sky Overrides like Gradient, or Physically Based, y
   <summary>Why the visual environment override?</summary>
   This is because by default, the camera (and the scene) will only be able to accept skyboxes, flat colors, or nothing (i.e. the general background settings). It doesn't matter if you add a gradient component because the ability to make gradients isn't accepted by the camera yet, unlike the ability to make skyboxes. You need to essentially override the default camera settings with new parameters to get the other types of functionality.
 </details>
+
 ![Screenshot](Screenshots/VisualEnvironment.png)<br>
 
 ## Creating Screen Space Reflections
