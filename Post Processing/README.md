@@ -35,12 +35,7 @@ Then go to Window > Package Manager. In the tab that pops up, switch the package
  After High Definition Render Pipeline (here on out referred to as HDRP) is finished installing, something called the Render Pipeline Wizard will pop up. Click "Fix All" to fix the errors.
 <details>
   <summary>Why are there so many errors?</summary>
-  
-  ## Heading
-  1. A numbered
-  2. list
-     * With some
-     * Sub bullets
+  test
 </details>
 
 ![Screenshot](Screenshots/RPWizard.png)<br>
