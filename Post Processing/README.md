@@ -42,7 +42,7 @@ Then go to Window > Package Manager. In the tab that pops up, switch the package
      * With some
      * Sub bullets
 </details>
-![Screenshot](Screenshots/RPWizard.png)<br>
+
 ## Navigating your workspace
 
 ---
