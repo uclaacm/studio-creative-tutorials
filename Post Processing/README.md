@@ -55,7 +55,7 @@ In the volume component, create a new volume profile.<br>
 ![Screenshot](Screenshots/VolumeProfile.png)<br>
 
 Set your Camera's anti-aliasing (under the general component) to FXAA (Fast Approximate Anti-Aliasing).<br>
-[What is Anti-Aliasing? -->](Dictionary/Anti-Aliasing.md)
+[What is Anti-Aliasing? -->](Dictionary/Anti-Aliasing.md)<br>
 ![Screenshot](Screenshots/FXAA.png)<br>
 
 ## Creating Skyboxes
