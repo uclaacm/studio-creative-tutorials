@@ -29,9 +29,15 @@ Go to Edit > Project Settings > Graphics and make sure that the object under Scr
 [What is a Render Pipeline? -->](Dictionary/Render%20Pipelines.md)
 ![ScreenShot](Screenshots/InitProjSettings.png)<br>
 
-Then go to Window > Package Manager. In the tab that pops up, switch the packages from "In Project" to "Unity Registry". Then search up "High Definition RP" in the search bar.
+Then go to Window > Package Manager. In the tab that pops up, switch the packages from "In Project" to "Unity Registry". Then search up "High Definition RP" in the search bar. Install it.
 ![ScreenShot](Screenshots/PackageManager.png)<br>
  
+ After High Definition Render Pipeline (here on out referred to as HDRP) is finished installing, something called the Render Pipeline Wizard will pop up. Click "Fix All" to fix the errors.
+ <details>
+  <summary>Why are there so many errors?</summary>
+ test
+</details>
+~[Screenshot](Screenshots/RPWizard.png)<br>
 ## Navigating your workspace
 
 ---
