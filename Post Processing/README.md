@@ -93,6 +93,8 @@ When you first add SSR, there will be an error that says "The current HDRP Asset
 
 ## Navigating your workspace
 
+## Final Task
+
 ---
 
 ## Essential Links
