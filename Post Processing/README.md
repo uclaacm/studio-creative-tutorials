@@ -59,8 +59,11 @@ Set your Camera's anti-aliasing (under the general component) to FXAA (Fast Appr
 ![Screenshot](Screenshots/FXAA.png)<br>
 
 ## Creating Skyboxes
+A skybox can be thought of as a wrapper around your scene and level that fills in distant environment. Because a skybox is static (doesn't move as the camera or player moves) it will immediately make the scene look more expansive. A basic skybox can be thought of as a cube, can be created by converting a texture's texture shape to cube. To create a compatible texture, you just need to create an "unwrapped" cube. Both the texture's shape parameters and an unwrapped cube example are below.<br>
+![Screenshot](Screenshots/Skybox.png)<br>
+
 Set an override, by going to Add Override > Sky > HDRI Sky.<br>
-[What is a Skybox? -->](Dictionary/Materials%20Textures%20and%20Shaders.md)<br>
+[What is a Texture? -->](Dictionary/Materials%20Textures%20and%20Shaders.md)<br>
 ![Screenshot](Screenshots/SkyOverride.png)<br>
 
 Check the HDRI Sky (cubemap) variable. In your project folders, search "ReflectionProbe" And drag and drop one into the cubemap variable. Your scene should suddenly look like this:<br>
