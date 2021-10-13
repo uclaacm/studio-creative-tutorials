@@ -60,7 +60,7 @@ Set your Camera's anti-aliasing (under the general component) to FXAA (Fast Appr
 
 ## Creating Skyboxes
 Set an override, by going to Add Override > Sky > HDRI Sky.<br>
-[What is a Skybox? -->](Dictionary/Skybox.md)<br>
+[What is a Skybox? -->](Dictionary/Materials%20Textures%20and%20Shaders.md)<br>
 ![Screenshot](Screenshots/SkyOverride.png)<br>
 
 Check the HDRI Sky (cubemap) variable. In your project folders, search "ReflectionProbe" And drag and drop one into the cubemap variable. Your scene should suddenly look like this:<br>
