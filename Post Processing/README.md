@@ -60,10 +60,10 @@ Set your Camera's anti-aliasing (under the general component) to FXAA (Fast Appr
 
 ## Creating Skyboxes
 A skybox can be thought of as a wrapper around your scene and level that fills in distant environment. Because a skybox is static (doesn't move as the camera or player moves) it will immediately make the scene look more expansive. A basic skybox can be thought of as a cube (i.e. a cubemap), can be created by converting a texture's texture shape to cube. To create a compatible texture, you just need to create an "unwrapped" cube. Both the texture's shape parameters and an unwrapped cube example are below.<br>
+[What is a Texture? -->](Dictionary/Materials%20Textures%20and%20Shaders.md)<br>
 ![Screenshot](Screenshots/Skybox.png)<br>
 
 Set an override, by going to Add Override > Sky > HDRI Sky.<br>
-[What is a Texture? -->](Dictionary/Materials%20Textures%20and%20Shaders.md)<br>
 ![Screenshot](Screenshots/SkyOverride.png)<br>
 
 Check the HDRI Sky variable. In your project folders, search "ReflectionProbe" And drag and drop one into the cubemap variable. Your scene should suddenly look like this:<br>
@@ -80,9 +80,16 @@ If you want to use the other Sky Overrides like Gradient, or Physically Based, y
 
 ![Screenshot](Screenshots/VisualEnvironment.png)<br>
 
+Some settings will make the lighting seem unbearable (this is simply due to some incompatible lighting settings as the scene was ported to HDRP). To fix this, simply switch the Intensity Mode in the HDRI Sky override from Exposure to Lux.
+
+![Screenshot](Screenshots/Lighting.png)<br>
+
 ## Creating Screen Space Reflections
-Screen space reflections are quick ways to create dynamic reflections on surfaces, without a need to make every texture metallic/reflective. Instead, it uses raytracing, that simulates how light interacts with objects in the real world. Below is an example.<br>
+Screen space reflections (from here on referred to as SSR) are quick ways to create dynamic reflections on surfaces, without a need to make every texture metallic/reflective. Instead, it uses raytracing, that simulates how light interacts with objects in the real world. Below is an example.<br>
 ![Screenshot](Screenshots/RaytraceEX.png)<br>
+
+When you first add SSR, there will be an error that says "The current HDRP Asset does not support Screen Space Reflection". This is because some post-processing effects are incredibly computationally intensive, and Unity is trying to ensure that if it does not need to load or compute a post processing effect, it doesn't. To activate SSR, go to Edit > Project Settings > Quality > HDRP. With HDRenderPipelineAsset selected, toggle the checkmark next to "Screen Space Reflection". The error should go away. Then feel free to play around with the settings as you wish.<br>
+![Screenshot](Screenshots/ToggleSSR.png)<br>
 
 ## Navigating your workspace
 
