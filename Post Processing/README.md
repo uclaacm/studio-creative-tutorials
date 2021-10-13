@@ -47,6 +47,10 @@ Then go to Window > Package Manager. In the tab that pops up, switch the package
 Now find wherever you downloaded PostProcessTPKG and double click on it. An "Import Unity Package" pop up will appear. Click on Import. You should now see two more folders under assets, and a new scene in Scenes called TutorialScene. Your project should look like this once you click on TutorialScene.
 ![Screenshot](Screenshots/TutorialScene.png)<br>
 
+## Setting up post-processing
+Navigate to "First Person Camera" in your hierarchy (under "First Person Controller Minimal"). Upon clicking on it, navigate to your inspector and click "Add Component" at the very bottom of the inspector. Search up "Volume" and add that component.
+![Screenshot](Screenshots/VolumeComponent.png)<br>
+
 ## Navigating your workspace
 
 ---
