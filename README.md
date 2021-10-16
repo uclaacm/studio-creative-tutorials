@@ -7,7 +7,7 @@ We also offer the [Beginner Track](https://github.com/uclaacm/studio-beginner-tu
 ## Curriculum Overview
 | Tutorials | Topics Covered | Live Schedule | Slides | Video |
 |-----------|----------------|---------------|--------|-------|
-| [Week 3: Post-Processing](https://github.com/uclaacm/studio-creative-tutorials-f21/blob/main/Post%20Processing/README.md) | | October 11th | Slides | Video |
+| [Week 3: Post-Processing](https://github.com/uclaacm/studio-creative-tutorials-f21/blob/main/Post%20Processing/README.md) | <ul> <li>Different Render Pipelines</li> <li>Package Importing and Updating</li> <li>Asset Importing and Updating</li> <li>Basics of Materials and Shaders</li> <li>Post Processing/Render Pipeline Effects</li> </ul> | October 11th | Slides | [Video](https://www.youtube.com/watch?v=iRmBxDrh5gk) |
 | Week 4: Spritesheets & Tilemaps | | October 18th | Slides | Video |
 | Week 5: Audio & Sound Design    | | October 25th | Slides | Video |
 | Week 6: Writing                 | | November 1st | Slides | Video |
