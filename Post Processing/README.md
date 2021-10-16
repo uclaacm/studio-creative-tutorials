@@ -93,18 +93,22 @@ When you first add SSR, there will be an error that says "The current HDRP Asset
 
 ## Navigating your workspace
 Press the **Right Mouse Button (RMB)**. Drag it around to look around the scene.
-Then use any of these in tandem to navigate your scene.
-**W**: Move forward
-**S**: Move back
-**A**: Move left
-**D**: Move right
-**Q**: Move up
-**E**: Move down
+Then use any of these in tandem to navigate your scene.<br>
+**W**: Move forward<br>
+**S**: Move back<br>
+**A**: Move left<br>
+**D**: Move right<br>
+**Q**: Move up<br>
+**E**: Move down<br>
 
-If you need to zoom in or out, simply **scroll with the middle mouse button**.
-If you need to focus on some object specifically, press **f**.
+If you need to zoom in or out, simply **scroll with the middle mouse button**.<br>
+If you need to focus on some object specifically, press **f**.<br>
 
----
+## Final Task
+Change the entire mood of the base scene into something else using only post-processing! Whether it be horror/foreboding, fantastical, or otherwise, find some way to invoke a specific feeling. Feel free to play around with the other assets in the package as you wish- experimenting with what can be a tilemap, lights, etc.<br>
+
+Example:<br>
+![Screenshot](Screenshots/PostProcessEX.png)<br>
 
 ## Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
