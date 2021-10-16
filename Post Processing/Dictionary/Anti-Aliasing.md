@@ -3,7 +3,7 @@ Monitors and screens are made up of pixels (squares/rectangles), and game engine
 
 Anti-Aliasing is simply a process to remove those jagged edges. Below is an example.<br>
 Note: Another way is simply by drastically increasing the resolution, which a lot of moderm monitors are able to do.<br>
-![Screenshot](Screenshots/AA.png)<br>
+![Screenshot](Screenshots/AntiAliasing.png)<br>
 
 ## How does Anti-Aliasing work?
 There are three ways. The first is by utilizing and sampling high resolutions, which is very effective but very slow. The second is by using color sampling, which is moderately effective and moderately fast and often the most customizable, so it's also the most common. The final method is smudging aliased lines/edges; this is something a lot of raster digital art programs utilize (Photoshop, Paint Tool Sai, etc.)-- when you zoom in close you'll see some color smearing despite your brush's predicted radius to be smaller than the smeared radius, and that's your art program's anti-aliasing at work. This is the least accurate, but incredibly fast.
