@@ -5,8 +5,7 @@
 **Instructor(s)**: Athena Dai
  
 ## Resources
-[Slides]()<br>
-[Video]()<br>
+[Video](https://youtu.be/iRmBxDrh5gk)<br>
 [Zoom Link](https://ucla.zoom.us/j/99684783298?pwd=Ykh2NlJCTDdoRGYxZzg2Z2xVWU1RZz09)<br>
  
 ## Topics Covered
