@@ -105,7 +105,7 @@ If you need to zoom in or out, simply **scroll with the middle mouse button**.<b
 If you need to focus on some object specifically, press **f**.<br>
 
 ## Final Task
-Change the entire mood of the base scene into something else using only post-processing! Whether it be horror/foreboding, fantastical, or otherwise, find some way to invoke a specific feeling. Feel free to play around with the other assets in the package as you wish- experimenting with what can be a tilemap, lights, etc.<br>
+Experiment with all of the volume settings to change the entire mood of the base scene into something else using only post-processing! Whether it be horror/foreboding, fantastical, or otherwise, find some way to invoke a specific feeling. Feel free to play around with the other assets in the package as you wish- experimenting with what can be a tilemap, lights, etc.<br>
 
 Example:<br>
 ![Screenshot](Screenshots/PostProcessEX.png)<br>
