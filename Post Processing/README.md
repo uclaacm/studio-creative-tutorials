@@ -98,8 +98,8 @@ Then use any of these in tandem to navigate your scene.<br>
 **S**: Move back<br>
 **A**: Move left<br>
 **D**: Move right<br>
-**Q**: Move up<br>
-**E**: Move down<br>
+**Q**: Move down<br>
+**E**: Move up<br>
 
 If you need to zoom in or out, simply **scroll with the middle mouse button**.<br>
 If you need to focus on some object specifically, press **f**.<br>
