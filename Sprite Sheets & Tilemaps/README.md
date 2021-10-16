@@ -1,4 +1,4 @@
-# Studio Creative Tutorials - Post Processing
+# Studio Creative Tutorials - Sprite Sheets & Tilemaps
  
 **Date**: October 18, 2021<br>
 **Location**: Online (On Zoom)<br>
