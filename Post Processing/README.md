@@ -92,8 +92,17 @@ When you first add SSR, there will be an error that says "The current HDRP Asset
 ![Screenshot](Screenshots/ToggleSSR.png)<br>
 
 ## Navigating your workspace
+Press the **Right Mouse Button (RMB)**. Drag it around to look around the scene.
+Then use any of these in tandem to navigate your scene.
+**W**: Move forward
+**S**: Move back
+**A**: Move left
+**D**: Move right
+**Q**: Move up
+**E**: Move down
 
-## Final Task
+If you need to zoom in or out, simply **scroll with the middle mouse button**.
+If you need to focus on some object specifically, press **f**.
 
 ---
 
