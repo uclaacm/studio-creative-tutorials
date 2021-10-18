@@ -144,36 +144,46 @@ A tilemap is a grid that allows you to place sprites or “tiles” into your ga
     * For example, sometimes I create tilesets that are meant to be cut in 3x3 squares, so I choose 3 cells by 3 cells
     * If you have irregular (not all uniform size) sprites on a transparent sprite sheet, select “Automatic”
 6. For our first tileset, we will be using “Cell Size”
-    * The artist created these tiles to be 32x32
-    * Type 32 under pixel size for both x and y
+    * The artist created these tiles to be 64x64
+    * Type 64 under pixel size for both x and y
     * Click “Slice”
     * Click “Apply”
     * Exit out of the sprite editor
 7. In your scene, create a new Game Object
     * Right click, “2D Object”, “Tilemap”, “Rectangular”
     * Other grids available include hexagon and isometric, but we will not be using those today
-8. Go to your Tilemap Renderer and Add Component “Tilemap Collider 2D”
-    * This will make it so that objects cannot pass through your tiles
-    * I have included this step to introduce you to working with colliders on your tilemaps, however we will not be working extensively with colliders in this tutorial
-    * You can also Add Component “Composite Collider 2D”, which will group together neighboring tiles so that there are not too many individual colliders affecting your game’s performance
-9. You should see a grid and a selection to create a Tile Palette. Open the Tile Palette Window
-10. Click “Create New Palette” and name it
-11. Drag your tileset into the tile palette
-12. Tile Palette Tools
+8. You should see a grid and a selection to create a Tile Palette. Open the Tile Palette Window
+9. Click “Create New Palette” and name it
+10. Drag your tileset into the tile palette
+11. Tile Palette Tools
     * Select Tool: Click and drag to select an area on the grid in the scene view
     * Move Tool: Click and drag to move your selection in the scene view
     * Paint Tool: Select a tile on the palette and draw onto the grid in the scene view
     * Fill Selection Tool: Fill a selected area on the grid with the active brush (tile)
     * Erase Tool: Erase tiles from the grid in the scene view
     * Flood Fill Tool: Fill an enclosed area on the grid with the active brush (tile) (The area you want to fill does not need to be selected, it just needs to have a border)
-13. You can also use tilemaps for other assets to make putting then into your scene easier
-14. Find the sprite labeled “TX Props” and repeat steps 2-6
+12. You can also use tilemaps for other assets to make putting then into your scene easier
+13. Find the sprite labeled “TX Props” and repeat steps 2-6
     * For this one we will be using “Automatic”
     * You will see that it will automatically cut around each of these props
     * Now drag the sprite into your palette and start drawing again
-15. Play around in your scene!
-
-We didn’t manage to cover colliders in this tutorial, but they’re very important, so we recommend that you check out [Athena’s Tilemaps tutorial](https://youtu.be/EQUxWQ80osc?list=PLPO7_kXilXFbvbERRf1S0pJdXYkKPCDJr&t=4000) (timestamp is at where she starts talking about colliders.)
+14. Play around with your palette and create an environment!
+15. Now we will make our environment function as a platformer level. Go to your Tilemap Renderer and Add Component “Tilemap Collider 2D”
+    * This will make it so that objects cannot pass through your tiles
+16. Add Component “Composite Collider 2D”
+    * This will group together neighboring tiles so that there are not too many individual colliders affecting your game’s performance
+    * Doing this will automatically add the component  “Rigid Body 2D” to your tilemap as well
+    * Now go to the Tilemap Collider component and check the box that says “use by composite”
+17. Add Component “Platform Effector 2D” since we are making a platformer
+    * If you are creating a top-down game, you will not need this component
+    * Check the box on your Composite Collider 2D that says “used by effector”
+18. Now let’s put a player into our scene by dragging in the player prefab in your package
+19. In play mode, move your player around your platforms (WASD). As you can see, the player is able to stand on top of the platforms and not fall through. 
+20. Now let’s play around with the Platform Effector 2D. Go ahead and paint in a platform above where your player starts.
+    * Make sure that “Surface Arc” is set to 180. Now use the W key to jump up through the platform in play mode. You should be able to land on top of it. This is because the Platform Effector 2D manages one way colliders, which means you can jump through the bottom of a platform but not fall through the top when the Surface Arc is set to 180
+    * Try setting Surface Arc to 360 and see the difference. Now, you are unable to jump through the bottom of the platform because the collider is blocking your character from passing through the tiles from any angle.
+    * You can use this setting and the “Sides” settings to create more complex platforms, including ones you can slide or bounce off of. 
+21. Continue playing around in your scene! If you’re interested in what else you can do with tilemaps, I recommend looking into Prefab Brushes, which unfortunately I wasn’t able to cover today. Here is a quick tutorial that I recommend: https://www.youtube.com/watch?v=UqhK6GpCgrM 
 
 ## Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
