@@ -67,7 +67,7 @@ Now, you can drag your dog into the hierarchy! If you want to use a different sp
 
 
 ### Pixel Food Example
-Note: These food sprites can be yours for free from the Unity Asset Store! https://assetstore.unity.com/packages/2d/environments/free-pixel-food-113523
+Note: These food sprites can be yours for free through the [Unity Asset Store](https://assetstore.unity.com/packages/2d/environments/free-pixel-food-113523)!
 
 Sprite Sheets can contain completely distinct sprites! This Sprite Sheet lets you add a whopping 64 food sprites at once with just one imported image!
 
