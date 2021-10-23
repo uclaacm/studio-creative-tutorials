@@ -5,7 +5,7 @@
 **Instructor(s)**: Ray Hsiao, Zoë Chavez
  
 ## Resources
-Video<br>
+[Video](https://youtu.be/olHfwMMzKg0)<br>
 [Zoom Link](https://ucla.zoom.us/j/94661432392)<br>
  
 ## Topics Covered
