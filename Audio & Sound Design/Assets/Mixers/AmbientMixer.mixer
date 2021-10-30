@@ -69,6 +69,7 @@ AudioMixerController:
     - fc2db0c3f3be9c24c90675cbb51225a5
     - d2813324836f5e04090e1842e6df1a03
     - d539c7e87ad2abf4c982831613be4025
+    - c6243abbb8776ac43aeb51a815e8bda8
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -85,6 +86,7 @@ AudioMixerGroupController:
   - {fileID: 3829168652776941112}
   - {fileID: -7309364548801500210}
   - {fileID: 446625960600037916}
+  - {fileID: 7136938786708574099}
   m_Volume: 28b68cd96cfe0034f8e4e972574e05c5
   m_Pitch: 55f5e262c9a5e5c469df33c51737c3df
   m_Send: 00000000000000000000000000000000
@@ -171,3 +173,36 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &5619235768894030586
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 79b5233bcfe3aac419e8e7beebb736b6
+  m_EffectName: Attenuation
+  m_MixLevel: 6ecef1b4b9d42aa4cad3ee5f46cfb8bd
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &7136938786708574099
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Rune
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: c6243abbb8776ac43aeb51a815e8bda8
+  m_Children: []
+  m_Volume: 2cd391884cb329743b3b28dc882ad5ae
+  m_Pitch: 6c024f835f5845244863655e39d8ab49
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 5619235768894030586}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
