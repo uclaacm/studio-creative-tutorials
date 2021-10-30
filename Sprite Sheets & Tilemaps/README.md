@@ -18,35 +18,32 @@
 ## What you'll need
 * [Unity Hub](https://unity.com/download)
 * [Unity 2020.3.19f2](https://unity3d.com/unity/qa/lts-releases)
+    * Create a new 2D project in Unity!
 * This [Package](https://github.com/uclaacm/studio-creative-tutorials-f21/blob/main/Sprite%20Sheets%20%26%20Tilemaps/SpriteSheets_Tilemaps_Tutorial_2021.unitypackage)
+    * Make sure your new Unity project is open when importing the package!
 ---
 
-## Topics covered
-* Best practices for art assets
-* Using the Sprite Editor
-* Slicing Sprite Sheets and Tilemaps
-* Using Tile Palettes
-* Adding tiles to your Scene
+## Intro and Art Best Practices
 
-## Sprite Sheets
-
-### Basics
+### Sprites
 A sprite is a 2D image or animation separate from the background of a scene. A sprite can also be defined as a box with variable alpha channels, which is what represents transparency and ranges between 0 (transparent) and 1 (opaque). A Sprite Sheet is an image file containing multiple sprites, ideally in a tiled grid arrangement since that makes separating sprites easier. It is preferable to import a Sprite Sheet into Unity rather than each individual sprite. It is more time-efficient (if the Sprite Sheet is correctly processed) and reduces draw calls (based on number of materials, not number of objects), improving performance.
 
-### Resolution and Unity PPU
-A common screen resolution is 1920x1080 (Full HD), so we will continue with this tutorial with that being our assumed screen resolution. 
-
-Unity screen space (space defined by the screen) scales using Pixels Per Unit (PPU), which is unchangeable from 100 PPU. Because of this, you need to be careful with your import settings: even if your art is proportional, and your character is 200 pixels and your tiles are 200 pixels, if you pass in 1 unit unmodified to Unity, it will only ever move you 100 pixels at a time.
+### Unity PPU
+Unity screen space (space defined by the screen) scales using Pixels Per Unit (ppu), which is unchangeable from 100 PPU. By default, sprites will default to 100 and fill one Unit on import. However, you are able to customize your sprite's ppu: If your sprite is 32 pixels on import, and you change the ppu to 32, it will fill exactly 1 (100%) of one grid. If you want to make it smaller, you will go off of 32 pixels. So if you want a sprite that is 75% of its size and it started as 32 pixels, you would make the ppu 40.
 
 ### Pixel Art Best Practices
-Good dimensions for pixel backgrounds are 320x180 (scale up by a factor of 6) and 640x360 (scale up by a factor of 3). The largest dimensions people generally use for pixel sprites is 64x64. Originally, pixel art was a result of technological limitations, which is why 8-bit, 16-bit, and so on are used for retro games.
+A common screen resolution is 1920x1080 (Full HD). Good dimensions for pixel backgrounds are 320x180 (scale up by a factor of 6) and 640x360 (scale up by a factor of 3). The largest dimensions people generally use for pixel sprites is 64x64. Originally, pixel art was a result of technological limitations, which is why 8-bit, 16-bit, and so on are used for retro games.
 
 Make a small canvas with the exact number of pixels you need and use a 1 pixel brush (make sure to turn off antialiasing and other effects). After importing into Unity, reduce the field of the camera to match the size of your canvas. If you use a large canvas with a large “pixel” brush, you’re almost guaranteed to fail to meet the criteria for pixel art. If the canvas dimensions aren’t a multiple of the “pixel” brush dimensions, you will have cut-off “pixels.” If the “pixel” brush is larger than 1 pixel, it will cut off your previously drawn “pixels” like so:
+
 ![Two overlapping squares.](Screenshots/OverlappingSquares.png)<br>
 
 
 ### Raster Art Best Practices
 It’s best to draw at a larger resolution and then scale down since scaling up will decrease quality. When making art assets, it’s best to decide on the size for one particular asset and scale other assets accordingly.
+
+
+## Sprite Sheets
 
 ### Pixel Dog Example
 In the Sprites folder under Assets, open the Inspector for the dog. Make sure to set the Texture Type to “Sprite (2D and UI)” and Sprite Mode to “Multiple” -- this will be necessary for all of the following examples as well. If you don’t have these settings, you won’t be able to open the Sprite Editor. The Sprite Mode “Single” is for when there is only one sprite in the asset rather than an entire Sprite Sheet, and the Sprite Mode “Polygon” clips the sprite into a customizable polygon shape other than a rectangle (default).
@@ -116,7 +113,7 @@ You can manually create the borders for a sprite by clicking and dragging on the
 
 ![Manually cut the bottom stapler and its staples as one sprite.](Screenshots/ManuallyCut.PNG)<br>
 
-After dealing with the bottom stapler, you can use Automatic slicing on the top two staplers! By setting the Method to Safe, the Sprite Editor will cut new sprites without affecting your previously cut sprites.
+After dealing with the bottom stapler, you can use Automatic slicing on the top two staplers! By setting the Method to Safe, the Sprite Editor will cut new sprites without affecting your previously cut sprites. It will also preserve the names of already-cut sprites.
 ![Automatic slicing with the Safe Method in the Sprite Editor.](Screenshots/SafeMethod.PNG)<br>
 
 The Delete Existing option will replace existing selections, and Smart will attempt to create new rectangles while retaining or adjusting existing ones.
