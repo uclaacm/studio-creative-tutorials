@@ -564,6 +564,7 @@ GameObject:
   - component: {fileID: 234807686}
   - component: {fileID: 234807687}
   - component: {fileID: 234807688}
+  - component: {fileID: 234807689}
   m_Layer: 0
   m_Name: AmbientAudio
   m_TagString: Untagged
@@ -777,6 +778,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &234807689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234807685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b51bc35717a6f4db168c8449f190df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  birdAudioSource: {fileID: 234807688}
+  fadeTime: 5
+  minTimeOff: 5
+  maxTimeOff: 25
+  minTimeOn: 5
+  maxTimeOn: 25
+  minVol: 0.5
+  maxVol: 1
+  timer: 0
+  timeUntilNextEvent: 0
 --- !u!1 &348962308
 GameObject:
   m_ObjectHideFlags: 0
