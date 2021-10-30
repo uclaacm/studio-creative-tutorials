@@ -1,0 +1,2 @@
+# This .gitignore file is included to prevent import folder from being committed
+/Assets/Imports
