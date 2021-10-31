@@ -37,7 +37,7 @@
 - Groups and why it's good to have them
 - Views and Snapshots (high level)
 - Audio mixer settings and some effects
-- 
+
 ### Modifying an Audio Source
 - Different settings
 - Going through runes
