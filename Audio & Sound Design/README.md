@@ -22,27 +22,24 @@
 * [Unity 2020.3.15f2](https://unity3d.com/unity/qa/lts-releases)
 * [Lowpoly Environment - Nature Pack](https://drive.google.com/file/d/1AGSRnSt-Z32ARl03rovPyRvPZ_1j3ixi/view?usp=sharing)
 ---
-## User interface
-![Screenshot](Screenshots/image1.png)<br>
 
-### Creating an Audio Mixer
-- What is an audio mixer
-- Audio mixer window
+## What is an Audio Mixer?
+For the sake of this tutorial and simplicity, the audio mixer has been created for you and should exist in the project folders (Assets > Mixers).
+What it does is simply control audio mastering.
 
-### Creating an Audio Source
+To view this with more granularity, go to Window > Audio > Audio > Audio Mixer.
+![image](https://user-images.githubusercontent.com/49392395/139570448-9a451c5c-7b24-4189-ab10-1bf06711f103.png)
+
+
+## Creating an Audio Source
 - Ambience wind-tree
 - Going over global sound settings (no spatial modifications)
 
-### Modifying the Audio Mixer
-- Groups and why it's good to have them
-- Views and Snapshots (high level)
-- Audio mixer settings and some effects
-
-### Modifying an Audio Source
+## Modifying an Audio Source
 - Different settings
 - Going through runes
 
-### Creating an Audio Reverb Zone
+## Creating an Audio Reverb Zone
 - Creation
 - Explanation of range/Effects (high level)
 - Bypass reverb zone quality (and bypass effects)
