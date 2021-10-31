@@ -7,12 +7,12 @@ public class CheckTerrain : MonoBehaviour
 
     public Transform playerTransform;
     public Terrain terrainObject;
+    public float[] cellMix;
 
     // Start is called before the first frame update
     void Start()
     {
-        //terrainObject = Terrain.activeTerrain;
-        playerTransform = gameObject.transform;    
+        playerTransform = gameObject.transform;
     }
 
     void Update()
@@ -20,7 +20,7 @@ public class CheckTerrain : MonoBehaviour
         UpdatePosition();
     }
 
-    void UpdatePosition()
+    public void UpdatePosition()
     {
         Vector3 terrainPosition = playerTransform.position - terrainObject.transform.position;
         TerrainData tData = terrainObject.terrainData;
@@ -28,17 +28,12 @@ public class CheckTerrain : MonoBehaviour
         int mapX = Mathf.RoundToInt((playerTransform.position.x - terrainObject.transform.position.x) / tData.size.x * tData.alphamapWidth);
         int mapZ = Mathf.RoundToInt((playerTransform.position.z - terrainObject.transform.position.z) / tData.size.z * tData.alphamapHeight);
 
-        Debug.Log(mapX);
-        Debug.Log(mapZ);
-
         float[,,] splatMap = terrainObject.terrainData.GetAlphamaps(mapX, mapZ, 1, 1);
-        float[] cellMix = new float[splatMap.GetUpperBound(2) + 1];
+        cellMix = new float[splatMap.GetUpperBound(2) + 1];
         for (int i = 0; i < cellMix.Length; i++)
         {
             cellMix[i] = splatMap[0, 0, i];
 
         }
-
-
     }
 }
