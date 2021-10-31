@@ -20,6 +20,7 @@
 * [Unity Hub](https://unity.com/download)
 * [Unity 2020.3.15f2](https://unity3d.com/unity/qa/lts-releases)
 * [Lowpoly Environment - Nature Pack](https://drive.google.com/file/d/1AGSRnSt-Z32ARl03rovPyRvPZ_1j3ixi/view?usp=sharing)
+* [Unity Tutorial Package](https://drive.google.com/file/d/1m5rqRRpF5Ak88407HmLDYbY7aHQkOqwK/view?usp=sharing)
 * Headphones/Earbuds
 ---
 
