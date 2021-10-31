@@ -140,6 +140,8 @@ If you want to apply certain audio effects to specific audio sources only, then 
 ## Final Task
 Now that you know how to dynamically change the audio of the scene, change the audio sources and audio clips of the scene in such a way that you can play a musical number depending on where you move to. You can create harmonies with global sounds, make certain areas or objects associated with certain music notes or jingles-- the world is your oyster!
 
+Royalty free sound effects can be found anywhere-- we took some of ours from Zapsplat.com.
+
 If you're more technically minded and want to learn more about the technical capabilities of sound in games/the audio engineering side of things, try to understand the logic below, and the scripts associated with said objects.
 
 ## Extra Functionality - Variant Bird Sounds
