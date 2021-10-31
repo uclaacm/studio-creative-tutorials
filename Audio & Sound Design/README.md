@@ -96,20 +96,20 @@ When you're outside of Play Mode, you can see the distance your sound can reach 
 ### Rune 2 - Logarithmic Rolloff
 This Rune will be represented with blue particles in the scene. Under "3D Sound Settings", toggle the Volume Rolloff to be "Logarithmic Rolloff", named so because the curve of the rolloff is represented by a log curve. The way true human ears percieve sound is actually more similar to a logarithmic rolloff, so for simulating realism this sort of rolloff is used often.
 
-Again, feel free to play around with the distance settings. Sometimes, if the distance is too short, the log curve will never reach 0 (and thus the sound will never taper off). To change this, simply click and drag one of the red nodes/diamonds in the graph down to zero.
+Again, feel free to play around with the distance settings. Sometimes, if the distance is too short, the log curve will never reach 0 (and thus the sound will never taper off). To change this, simply click and drag one of the red nodes/diamonds in the graph down to zero.<br>
 ![image](https://user-images.githubusercontent.com/49392395/139574626-89c39fbb-8732-4ccd-87a5-aa51e9930278.png)
 
 ## Rune 3 - Custom Rolloff
-This Rune will be represented with purple particles in the scene. You will notice that in the previous rune, when we clicked and dragged the red node, the type of rolloff automatically switched to be a custom rolloff-- this is because any modification to the preset Linear v. Logarithmic curves will create a custom rolloff. Simply drag around the nodes to your leisure. If you select a red node, you should also see two grey nodes appear; this allows you to change the curve itself. Double click anywhere on the line (or right click on the line) to create another node, and right click on a pre-existing node to bring up more sub-behaviors.
+This Rune will be represented with purple particles in the scene. You will notice that in the previous rune, when we clicked and dragged the red node, the type of rolloff automatically switched to be a custom rolloff-- this is because any modification to the preset Linear v. Logarithmic curves will create a custom rolloff. Simply drag around the nodes to your leisure. If you select a red node, you should also see two grey nodes appear; this allows you to change the curve itself. Double click anywhere on the line (or right click on the line) to create another node, and right click on a pre-existing node to bring up more sub-behaviors.<br>
 ![image](https://user-images.githubusercontent.com/49392395/139574731-243d60a6-aeb7-4f12-aab3-6fec9243fb7f.png)
 
 ## Other Behaviors
 Before we move onto the final rune, there are other behaviors that haven't been explored. What they do and their use cases are below. Feel free to test them out with any rune.
 
-**Doppler Level**
+**Doppler Level**<br>
 This refers to how a sound can pitch depending on the speed you are approaching/leaving an object (think a car racing past you on the highway). The higher the number, the higher the variance of pitch. Test this out by setting a high number and then walking closer to or away from a rune.
 
-**Spread**
+**Spread**<br>
 This refers to how spread apart the left/right channels are from the audio listener in relation to the rune/object with an audio source. If the spread is at 0, when you are to the right of an audio source the sound will be near exclusively heard (i.e. panned, using the technical word) to your right ear. The higher the spread, the closer that sound sounds to the middle (i.e. not panned to either the left/right). Feel free to test this out by setting a high number and walking closer to or away from a rune.
 
 ## Creating an Audio Reverb Zone - Rune 4
