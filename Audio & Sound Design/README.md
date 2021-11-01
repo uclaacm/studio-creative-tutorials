@@ -5,7 +5,6 @@
 **Instructors**: Athena Dai, Peter Sutarjo<br>
  
 ## Resources
-[Slides](https://docs.google.com/presentation/d/1N__34gQRdCBV8gSB7huCgWJGKWnnMpdQAGUF3QjkW_k/edit?usp=sharing)<br>
 [Video](https://youtu.be/oB3sk4a3VkE)<br>
  
 ## Topics Covered
@@ -99,7 +98,7 @@ This Rune will be represented with blue particles in the scene. Under "3D Sound 
 Again, feel free to play around with the distance settings. Sometimes, if the distance is too short, the log curve will never reach 0 (and thus the sound will never taper off). To change this, simply click and drag one of the red nodes/diamonds in the graph down to zero.<br>
 ![image](https://user-images.githubusercontent.com/49392395/139574626-89c39fbb-8732-4ccd-87a5-aa51e9930278.png)
 
-## Rune 3 - Custom Rolloff
+### Rune 3 - Custom Rolloff
 This Rune will be represented with purple particles in the scene. You will notice that in the previous rune, when we clicked and dragged the red node, the type of rolloff automatically switched to be a custom rolloff-- this is because any modification to the preset Linear v. Logarithmic curves will create a custom rolloff. Simply drag around the nodes to your leisure. If you select a red node, you should also see two grey nodes appear; this allows you to change the curve itself. Double click anywhere on the line (or right click on the line) to create another node, and right click on a pre-existing node to bring up more sub-behaviors.<br>
 ![image](https://user-images.githubusercontent.com/49392395/139574731-243d60a6-aeb7-4f12-aab3-6fec9243fb7f.png)
 
@@ -112,7 +111,7 @@ This refers to how a sound can pitch depending on the speed you are approaching/
 **Spread**<br>
 This refers to how spread apart the left/right channels are from the audio listener in relation to the rune/object with an audio source. If the spread is at 0, when you are to the right of an audio source the sound will be near exclusively heard (i.e. panned, using the technical word) to your right ear. The higher the spread, the closer that sound sounds to the middle (i.e. not panned to either the left/right). Feel free to test this out by setting a high number and walking closer to or away from a rune.
 
-## Creating an Audio Reverb Zone - Rune 4
+### Creating an Audio Reverb Zone - Rune 4
 On occasion, situations like this one will occur: One sound should be played continuously through a level, but the player will be navigating through a lot of varied locations, from a cave to underwater to a cathedral to a grassy plain-- it is unrealistic for a sound to sound exactly the same in such different environments. Reverb zones create areas that will apply certain mixing effects to the sounds you hear once you enter a specific area, to simulate the way sound changes in different terrain.
 
 To make sure we hear this well, first we must create a custom rolloff for Rune 4. Start with a linear rolloff, then modify the curve (using the grey nodes, or by adding nodes) until it looks similar to this.<br>
@@ -146,8 +145,145 @@ Royalty free sound effects can be found anywhere-- we took some of ours from Zap
 If you're more technically minded and want to learn more about the technical capabilities of sound in games/the audio engineering side of things, try to understand the logic below, and the scripts associated with said objects.
 
 ## Extra Functionality - Variant Bird Sounds
+One technique to add variation to an ambient audio loop is to have sounds that play at random intervals and volume during gameplay. Doing this will help mask repetition of the clip that plays on loop. To implement this, we'll first add a separate audio mixer that will called `Birds` which will be routed to the `AmbientAudioMixer`. This will allow us to adjust the overall volume interval of the track. Additionally, we can fade in and fade out the volume to make the transition smoother. Next, we'll add an `AudioSource` to the `AmbientAudio` object and set the `AudioClip` to play birds.wav. Also ensure that `Spatial Blend` is set to 2D and `Loop` is unchecked as we will be controlling when the clip plays using a script.
+
+The following script will be attached to `AmbientAudio` GameObject. 
+```csharp
+// Script adapted from https://johnleonardfrench.com/unity-audio-tutorial-series-adding-sounds-to-the-sun-temple/
+
+public class BirdSoundController : MonoBehaviour
+{   
+    // Bird track audio clip should be put here
+    public AudioSource birdAudioSource;
+
+    // How long it should take for the audio to fade in/out
+    [SerializeField] private float fadeTime = 5;
+    
+    // How long should we wait until the track plays
+    [SerializeField] private float minTimeOff=5;
+    [SerializeField] private float maxTimeOff=25;
+    private float timeOff;
+
+    // How long should we wait before pausing the track
+    [SerializeField] private float minTimeOn=5;
+    [SerializeField] private float maxTimeOn=25;
+
+    // How long has the track been playing
+    private float timeOn;
+
+    // Volume interval 
+    public float minVol=0.5f;
+    public float maxVol=1;
+
+    // Current volume of the track while playing
+    private float birdsVol;
+
+    // Timer to determine when the next event
+    public float timer;
+    public float timeUntilNextEvent;
+
+    // Is the track currently playing?
+    bool birdsPlaying;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        RandomizeValues();
+        timeUntilNextEvent = timeOff;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {   
+        // Timer increases every frame
+        timer += Time.deltaTime;
+        if (timer > timeUntilNextEvent)
+        {   
+            // If the track is currently playing, fade out and randomize duration of clip and volume for the next event.
+            if (birdsPlaying)
+            {
+                StartCoroutine(FadeBirds(birdsVol, 0, fadeTime));
+                birdsPlaying=false;
+                RandomizeValues();
+                timeUntilNextEvent = timeOn + fadeTime;
+            }
+            else
+            {
+              // Otherwise, fade in and randomize the values
+                StartCoroutine(FadeBirds(0, birdsVol, fadeTime));
+                birdsPlaying=true;
+                RandomizeValues();
+                timeUntilNextEvent = timeOn + fadeTime;
+            }
+            // Reset the timer
+            timer = 0f;
+        }
+    }
+
+    void RandomizeValues()
+    {
+        timeOff = Random.Range(minTimeOff, maxTimeOff);
+        timeOn = Random.Range(minTimeOn, maxTimeOn);
+        birdsVol = Random.Range(minVol, maxVol);
+    }
+
+    IEnumerator FadeBirds(float startValue, float endValue, float duration)
+    {
+        float currentTime = 0;
+
+        // The variable currentTime gets updated over multiple frames
+        while (currentTime <= duration) {
+          // Smoothly interpolate starting volume to end volume
+            birdAudioSource.volume = Mathf.Lerp(startValue, endValue, (currentTime / duration));
+            currentTime += Time.deltaTime;
+        }
+        
+        // Wait unitl next frame then continue execution
+        yield return null;
+    }
+```
 
 ## Extra Functionality - Dynamic Footsteps
+We can also write a script to play a specific footstep sound depending on the terrain that player is currenty on. The following script will be attached to the `Player` GameObject. To determine which terrain the player is on, we'll be accessing a `splatmap` contained in the terrain data. A splatmap color codes information where each color represents a specific texture to be rendered. In our case, we'll be using the splatmap to identify whether the texture is dirt or grass. We'll define a script called `CheckTerrain` that will calculate the position of the player relative to the terrain's coordinates. It will update a float array to store the texture at the specified coordinate.
+
+```csharp
+public class CheckTerrain : MonoBehaviour
+{
+    public Transform playerTransform;
+    public Terrain terrainObject;
+    public float[] cellMix;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        playerTransform = gameObject.transform;
+    }
+
+    void Update()
+    {
+        UpdatePosition();
+    }
+
+    public void UpdatePosition()
+    {
+
+        TerrainData tData = terrainObject.terrainData;
+
+        // Get the player position, which is in world space, relative to the terrain then scale it to the alphmap width and height
+        int mapX = Mathf.RoundToInt((playerTransform.position.x - terrainObject.transform.position.x) / tData.size.x * tData.alphamapWidth);
+        int mapZ = Mathf.RoundToInt((playerTransform.position.z - terrainObject.transform.position.z) / tData.size.z * tData.alphamapHeight);
+
+        // 3D array--first 2 coordinates represent the XY position on the map and the 3rd coordinate represents the index of the corresponding texture.
+        float[,,] splatMap = terrainObject.terrainData.GetAlphamaps(mapX, mapZ, 1, 1);
+        cellMix = new float[splatMap.GetUpperBound(2) + 1];
+        for (int i = 0; i < cellMix.Length; i++)
+        {
+            cellMix[i] = splatMap[0, 0, i];
+        }
+    }
+}
+```
+
 
 ---
 

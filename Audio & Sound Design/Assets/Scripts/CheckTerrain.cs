@@ -33,7 +33,6 @@ public class CheckTerrain : MonoBehaviour
         for (int i = 0; i < cellMix.Length; i++)
         {
             cellMix[i] = splatMap[0, 0, i];
-
         }
     }
 }
