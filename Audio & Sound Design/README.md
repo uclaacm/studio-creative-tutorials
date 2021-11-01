@@ -1,11 +1,11 @@
-# Studio Creative Tutorials - Audio & Sound Design (WORK IN PROGRESS)
+# Studio Creative Tutorials - Audio & Sound Design
  
 **Date**: November 2, 2021, 7:00 pm - 9:00 pm<br>
 **Location**: Zoom<br>
 **Instructors**: Athena Dai, Peter Sutarjo<br>
  
 ## Resources
-[Video](https://youtu.be/oB3sk4a3VkE)<br>
+[Video](https://youtu.be/K5IGvGpJ1nA)<br>
  
 ## Topics Covered
 * Audio Mixer
@@ -19,7 +19,7 @@
 * [Unity Hub](https://unity.com/download)
 * [Unity 2020.3.15f2](https://unity3d.com/unity/qa/lts-releases)
 * [Lowpoly Environment - Nature Pack](https://drive.google.com/file/d/1AGSRnSt-Z32ARl03rovPyRvPZ_1j3ixi/view?usp=sharing)
-* [Unity Tutorial Package](https://drive.google.com/file/d/1m5rqRRpF5Ak88407HmLDYbY7aHQkOqwK/view?usp=sharing)
+* [Unity Tutorial Package](https://drive.google.com/file/d/1mAI0R20cla6ZsHo7FqypiPgu1Z4iA3MT/view?usp=sharing)
 * Headphones/Earbuds
 ---
 
