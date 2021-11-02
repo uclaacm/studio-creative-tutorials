@@ -451,6 +451,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  timer: 0
+  timeUntilNextFootstep: 0.4
+  isGrounded: 0
 --- !u!82 &139766772
 AudioSource:
   m_ObjectHideFlags: 0
