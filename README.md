@@ -9,7 +9,7 @@ We also offer the [Beginner Track](https://github.com/uclaacm/studio-beginner-tu
 |-----------|----------------|---------------|--------|-------|
 | [Week 3: Post-Processing](https://github.com/uclaacm/studio-creative-tutorials-f21/blob/main/Post%20Processing/README.md) | <ul> <li>Different Render Pipelines</li> <li>Package Importing and Updating</li> <li>Asset Importing and Updating</li> <li>Basics of Materials and Shaders</li> <li>Post Processing/Render Pipeline Effects</li> </ul> | October 11th | Slides | [Video](https://www.youtube.com/watch?v=iRmBxDrh5gk) |
 | [Week 4: Spritesheets & Tilemaps](https://github.com/uclaacm/studio-creative-tutorials-f21/blob/main/Sprite%20Sheets%20%26%20Tilemaps/README.md) | <ul> <li>Best practices for art assets</li> <li>Using the Sprite Editor</li> <li>Slicing Sprite Sheets and Tilemaps</li> <li>Using Tile Palettes</li> <li>Adding tiles to your Scene</li> | October 18th | Slides | [Video](https://youtu.be/olHfwMMzKg0) |
-| Week 6: Audio & Sound Design    | | November 1st | Slides | Video |
+  | [Week 6: Audio & Sound Design](https://github.com/uclaacm/studio-creative-tutorials-f21/tree/main/Audio%20%26%20Sound%20Design) |<ul><li>Audio Mixer</li><li>Audio Listener</li><li>Audio Source</li><li>Spatial Audio</li><li>Audio Reverb Zones</li><li>Audio Engineering Logic</li></ul> | November 1st | N/A | [Video](https://www.youtube.com/watch?v=K5IGvGpJ1nA) |
 | Week 7: Writing                 | | November 8th | Slides | Video |
 | Week 8: 2D/3D Animation         | | November 15th | Slides | Video |
 | Week 9: Effectors               | | November 22nd | Slides | Video |
