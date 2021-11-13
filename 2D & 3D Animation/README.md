@@ -1,6 +1,6 @@
-# Studio Creative Tutorials - Post Processing
+# Studio Creative Tutorials - 2D & 3D Animation
  
-**Date**: October 11, 2021<br>
+**Date**: November 15, 2021<br>
 **Location**: Online (On Zoom)<br>
 **Instructor(s)**: Caroline Wang, Athena Dai
  
@@ -9,11 +9,14 @@
 [Zoom Link](https://ucla.zoom.us/j/99684783298?pwd=Ykh2NlJCTDdoRGYxZzg2Z2xVWU1RZz09)<br>
  
 ## Topics Covered
-* Different Render Pipelines
-* Package Importing and Updating
-* Asset Importing and Updating
-* Basics of Materials and Shaders
-* Post Processing/Render Pipeline Effects
+* Skinning Editor
+* Bones, Geometry, and Weights
+* Inverse Kinematics (IK) and IK Solvers
+* Animation State Machine
+* Animation Blending
+* Animation Retargeting
+* Basics of Rigging
+* Animation Constraints
  
 ## What you'll need
 * [Unity Hub](https://unity.com/download)
@@ -25,9 +28,31 @@
 yeet
 
 ---
-##3D:
+## 3D:
 
-yote
+### Mixamo
+Animation is a separate category than modeling, and can require different skills. For the purposes of this topic, we will not be covering model creation or skeleton creation (like in blender, maya, etc.), as that is usually done outside of Unity. If you want to know how modeling feeds animation, please visit this file here to learn about how they interact.
+
+Because of this case, we will instead be using a free animation library from Adobe called [mixamo](https://www.mixamo.com/#/). This library has an assortment of pre-set models and a wide range of animations, all for free. For efficiency, all of the needed animations and models have been included in the Unity package, but we will run through Mixamo's use cases all the same.
+
+First, Mixamo's main interface. You can choose a core character in the "Character" tab, and all future animations you choose (regardless of the animation's preview image) will apply to that character model. For example, in the screenshot below, "TheBoss" model was first chosen, and then the "Capoeira" animation was chosen. Despite the preview for the Capoeira animation being the YBot, it is retargeted for the boss. You can verify this by looking at the title over the animation. You can also search for specific animations and models.<br>
+![image](https://user-images.githubusercontent.com/49392395/141603965-370647e6-9e1e-43ac-9a5a-704f8d4f62dc.png)
+
+Zooming in, we can examine the properties of the animation scene. The buttons on the lower left allow you to navigate the scene and look at the animation from different perspectives (including a skeleton perspective); hovering over them will let you know their properties.<br>
+![image](https://user-images.githubusercontent.com/49392395/141604320-b3ed38e5-c6ea-4631-b98d-c88fea4b0180.png)
+
+To the right, there are a lot of different parameters that dictate how the animation can be edited directly from Mixamo. Looking at the previous screenshot and this one, one can see that these properties are highly animation specific; simply modifying the settings will usually let you see what they effect quite easily, and if it doesn't, toggle skeleton mode. You can also upload your own character model if you want to apply the animation to your own models.<br>
+![image](https://user-images.githubusercontent.com/49392395/141604353-f0ba1fb0-456d-491a-a7f9-d174e62ae9e5.png)
+
+The "Mirror" and "In Place" toggles are important for your animations. One will completely flip the animation (EX: If the animation steps in a left-right sequence, it will now step right-left), and "In Place" determines if the animation itself has inherent movement, or simply moves in place. One must be extremely careful if they want animations to have inherent movement or just move in place, as that often dictates the "type" of animation that Unity will perform on the model.<br>
+![image](https://user-images.githubusercontent.com/49392395/141604390-c77c4136-3aae-40a4-b0bc-b41e445a8941.png)
+
+Once you find an animation and you hypothetically want to download it, you will be met with a series of options.
+**Format:** This deals with how the information about the skeleton and model will be kept and processed. If you are using Unity, there is a specific FBX for Unity format.
+**Skin:** This is asking if you would like the model to be exported along with the animation. If you already have the model, materials, and textures, this is unecessary-- it will just export the animation instead.
+**Frames Per Second:** This has the same meaning as 2D or frame by frame animation-- simply asking you how many times the animation will be rendered per second. A lower framerate means the animation is smaller in file size and less intensive to compute, but can lead to choppier animation.
+**Keyframe Reduction:** This is a form of animation culling that is meant to optimize animations. Essentially, if from one frame to another the animation only changes a minute amount, keyframe reduction will remove the second frame entirely. This is also a way to save space and computation, but can also lead to choppier/incorrect animation.
+![image](https://user-images.githubusercontent.com/49392395/141604625-b22be154-5909-4fb3-a55e-6e0cb440edc3.png)
 
 ## Final Task
 
