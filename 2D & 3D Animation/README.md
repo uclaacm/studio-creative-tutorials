@@ -20,13 +20,18 @@
 * [Unity 2020.3.19f2](https://unity3d.com/unity/qa/lts-releases)
 * [This Package](https://drive.google.com/file/d/1c-HtCTB4gnkF9j676lfUNTWDpNo5VmZx/view?usp=sharing)
 ---
-## Stuff:
+## 2D:
 
-whatever
+yeet
+
+---
+##3D:
+
+yote
 
 ## Final Task
 
-also whatever
+yoted
 
 ## Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
