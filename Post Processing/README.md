@@ -1,6 +1,6 @@
-# Studio Creative Tutorials - 2D/3D Animation
+# Studio Creative Tutorials - Post Processing
  
-**Date**: November 15, 2021<br>
+**Date**: October 11, 2021<br>
 **Location**: Online (On Zoom)<br>
 **Instructor(s)**: Athena Dai
  
