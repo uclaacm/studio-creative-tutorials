@@ -54,6 +54,33 @@ Once you find an animation and you hypothetically want to download it, you will 
 **Keyframe Reduction:** This is a form of animation culling that is meant to optimize animations. Essentially, if from one frame to another the animation only changes a minute amount, keyframe reduction will remove the second frame entirely. This is also a way to save space and computation, but can also lead to choppier/incorrect animation.
 ![image](https://user-images.githubusercontent.com/49392395/141604625-b22be154-5909-4fb3-a55e-6e0cb440edc3.png)
 
+### Setting up an Animator
+Upon opening the TUTORIAL scene, you should see the xBot@idle model in the middle of a plane. Despite the xBot@idle model having an idle animation attached to the core import and assuming the first frame/pose of the idle animation, on play that the animation will not play.<br>
+![image](https://user-images.githubusercontent.com/49392395/141670748-1599232d-3f98-4157-bdde-e512b5398ce6.png)
+
+To get the animation to work, you need to create an animator. To do this, navigate to Project > Animators, then right click and go to Create > Animation Controller. Name it whatever you wish. Then drag and drop that animator onto the xBot@idle object in the scene (you can do this by dragging it to the heirarchy, or by dragging it to the xBot@idle object specifically above the "Add Component" button).<br>
+![image](https://user-images.githubusercontent.com/49392395/141670905-cb34b5ec-1ba1-408b-a37a-11e189f1331b.png)
+
+Now open up the animator tab. Navigate to Window > Animation > Animator. It should open up a blank looking grid, but once you select the xBot in the hierarchy, it should be auto-populated by "Entry", "Exit", and "Any State" tabs.<br>
+<details>
+  <summary>What is an Animator?</summary>
+  An Animator is essentially a wrapper that helps maintain, transition, and edit a group of animations. Using it, you can map out how certain animations should transition to others and when, what animations should override others, and more.
+</details>
+
+![image](https://user-images.githubusercontent.com/49392395/141670985-b112b263-08b9-45df-aec7-397e3ca77a0c.png)
+
+The animation still won't play until we add the idle animation to the animator. However, if we add the idle animation as it is (attached to the model in the project), the idle animation will play once, and then stop. Click edit on the animation to access its properties.
+<details>
+  <summary>Why can I not edit the animation directly?</summary>
+  This is because the animation is bound to the model, and Unity will not let you edit bound objects easily because it essentially will edit the components of the overall object.
+</details>
+
+![image](https://user-images.githubusercontent.com/49392395/141673169-fc1f8622-ad8d-4892-8cfc-19f602aaaa18.png)
+
+Scroll down until you reach the Idle animation. There, you should see a "Loop Time" variable. Toggle the variable on. This will loop the Idle animation indefinitely. Then, drag and drop that animation into the animator. It should be immediately bound as the default state and turn orange. When you press play, the idle animation should now play successfully, and indefinitely.<br>
+![image](https://user-images.githubusercontent.com/49392395/141673788-6a8e8161-a0c2-4a0f-8521-d0bb4a60dbd0.png)
+
+
 ## Final Task
 
 yoted
