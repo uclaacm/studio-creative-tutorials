@@ -9,6 +9,7 @@
 [Zoom Link](https://ucla.zoom.us/j/99684783298?pwd=Ykh2NlJCTDdoRGYxZzg2Z2xVWU1RZz09)<br>
  
 ## Topics Covered
+* Good Animation Practices and Basics
 * Skinning Editor
 * Bones, Geometry, and Weights
 * Inverse Kinematics (IK) and IK Solvers
@@ -25,7 +26,16 @@
 ---
 ## 2D:
 
-yeet
+### 2D Rigging
+As opposed to frame by frame animation, 2D rigging Animation typically offers smoother results and a faster, more flexible workflow. To get started in Unity, ensure that you have the correct version of Unity downloaded (refer to the link above in "What you'll need"), as well as the proper packages which will allow you to create a character to rig. Because the 2D IK package is now included in the 2D Animation package, the only two packages you will need for this portion of the tutorial is **2D Animation** and **2D PSDImporter**. Both of these can be found through "Window" > "Package Manager". Ensure that both are in "Packages: In Project".<br>
+(image to be added)
+
+In the Assets folder, you may drag in the file labeled "CharacterExample.psb". When creating the character asset for the purpose of 2D rigging, you should keep in mind that any separate part of the body you want to move around should be on a separate layer (e.g. head, limbs, chest, etc.). PSB files conveniently separate the layers of a photoshop file, which simplifies the workflow visually by a bit. It is also possible to use PNG files, but you must make sure that each part of the body you would like to rig is separated from each other.<br>
+
+### Skinning Editor
+
+Once you click on the character PSB, set the Sprite Mode to "Multiple" and check the box next to "Character Rig". You can then click "Sprite Editor" which will bring up a new window with all the layers of the file separated. Make sure that each part is accurately configured and if not, you can manually fix it by dragging the edges of the box. Once you're satisfied, you can move to the top left tab of the window and change the setting from "Sprite Editor" to "Skinning Editor". The Skinning Editor will allow you to prepare your character for rigging.<br>
+(image to be added) 
 
 ---
 ## 3D:
