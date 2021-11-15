@@ -90,6 +90,44 @@ The animation still won't play until we add the idle animation to the animator. 
 Scroll down until you reach the Idle animation. There, you should see a "Loop Time" variable. Toggle the variable on. This will loop the Idle animation indefinitely. Then, drag and drop that animation into the animator. It should be immediately bound as the default state and turn orange. When you press play, the idle animation should now play successfully, and indefinitely.<br>
 ![image](https://user-images.githubusercontent.com/49392395/141673788-6a8e8161-a0c2-4a0f-8521-d0bb4a60dbd0.png)
 
+### Animation Transitions and a Basic Walk/Run
+We now also want to make the xBot walk and run. To do this, we must first navigate to Assets > Movement, and drag and drop "Walking" and "Running" into the Animator.
+![image](https://user-images.githubusercontent.com/49392395/141732086-533d7ce9-1631-4832-aa89-df6d88e53706.png)
+
+However, if you press play right now, only the idle will play. This is because we need to create animation transitions that will specify what requirements need to be fulfilled before animations are played. If pressing down the "W" key means we should walk, we need to specify that.<br>
+
+To do this, right click on the Idle animation and select make transition. You should see an arrow connected to your cursor. Drag that arrow over to the "Walk" animation and click.That creates a transition from your "Idle" to "Walk".<br>
+![image](https://user-images.githubusercontent.com/49392395/141734561-d1387b1c-b96a-4cde-add3-338c19f560d3.png)
+
+Repeat this from "Walk" to "Idle", and make the same set of transitions from "Walk" to "Run". Your transitions should look like below. If you make a mistake, simply click on the transition (it should be highlighted blue) and then press the "Delete" key.
+![image](https://user-images.githubusercontent.com/49392395/141734632-d78de239-a264-4487-ae6e-5b943520d9a1.png)
+
+Now that we have our transitions hooked, we need to specify what parameter, exactly, will make the animator change from one animation to another. To do this, switch to the "Parameters" tab in the Animator (if you weren't there already) and click on the "+" button, then create a Bool. Name the variable "isWalking". Make another, and name it "isRunning".<br>
+<details>
+  <summary>What is a Bool?</summary>
+  Bool is short for Boolean, and it evaluates things to either "True" or "False". So if we have a bool variable called "isEating", then it will essentially evaluate always to some object is eating, or isn't eating. Another way to think about it is that it is a variable that will evaluate to one of two values given some prerequisites.
+</details>
+
+![image](https://user-images.githubusercontent.com/49392395/141735366-c7a09e29-2eda-4d8b-bf64-78d9c68fc76b.png)
+
+Now we will modify the transitions to recognize these parameters. Click on the transition from idle > Walk (it should turn blue) and in the inspector, find the "Conditions" tab. Click on the "+" button to add a condition; this will essentially give the Animator a requirement that must be met to transition from Idle > Walk. In this case, we want the Animator to change the animation when isWalking is True. Set the variable and variable value until they match the screenshot below.<br>
+![image](https://user-images.githubusercontent.com/49392395/141737502-c252ec04-1730-49e0-b9db-d5202c7adca1.png)
+
+Create conditions for the other transitions. They should be as follows:
+* Walk > Idle should have "isWalking" + false.
+* Walk > Run should have "isRunning" + true.
+* Run > Walk should have "isRunning" + false.<br>
+
+An example is below.<br>
+![image](https://user-images.githubusercontent.com/49392395/141738126-7eb51905-be1c-4496-b8a6-a60a30987893.png)
+
+Now, in your project folders, navigate to Assets > Scripts and drag and drop the "MovementScript" script onto the xBot in the scene (you do not need to understand the contents). Once this is done, you can press play and press the "W" key to walk, and the "Left Shift" key to run. Your animations should now begin working almost perfectly-- but not quite.<br>
+![image](https://user-images.githubusercontent.com/49392395/141738749-2f58c80d-aab9-44dd-aee6-c79a38fdab88.png)
+
+You should notice an incredibly long lag time between holding down the "W" key and when the walk animation actually begins. This is because we have enabled animation "Exit Time". Navigate to your Animator, select on the transition from Idle > Walking, and you'll see in the inspector that "Has Exit Time" is checked. What this does is essentially force a certain animation to play for however many percent specified in the "Settings" tab (default to 98.4%) before the next animation can play. This is useful in some cases, but not in cases where we need player feedback to feel reactive and snappy. Toggle that off for all transitions.<br>
+![image](https://user-images.githubusercontent.com/49392395/141739119-e6a7f92a-dd75-45db-9d61-a69274b1184b.png)<br>
+
+Now, your Walk/Run animations should transition smoothly and quickly depending on the keys you press.
 
 ## Final Task
 
