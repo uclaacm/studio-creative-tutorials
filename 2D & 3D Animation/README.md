@@ -158,7 +158,7 @@ Then, drag and drop the "Big Hit To Head" animation and the "Stunned" animation 
 Next, navigate back to your xBot in the scene, and drag and drop the "Punch Script" script onto the xBot.<br>
 ![image](https://user-images.githubusercontent.com/49392395/141746048-bfe1ab91-b3f4-44f6-9dd9-40e0177c29fe.png)
 
-Press play, and then press "F". You should now see the character get punched, and then slide to the ground (although perhaps not so smoothly getting back to their feet-- this is where blend trees within blend trees are useful).
+Press play, and then press the "F" key. You should now see the character get punched, and then slide to the ground (although perhaps not so smoothly getting back to their feet-- this is where blend trees within blend trees are useful).
 
 ## Final Task
 
