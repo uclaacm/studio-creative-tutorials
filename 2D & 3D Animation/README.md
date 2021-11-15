@@ -129,6 +129,37 @@ You should notice an incredibly long lag time between holding down the "W" key a
 
 Now, your Walk/Run animations should transition smoothly and quickly depending on the keys you press.
 
+### Animation Blending
+A very common use case is needing to blend animations together. What if we want a character to take a punch, and then fall to the ground? It's much easier to find a punched animation, and a falling animation, rather than one with both together. It also helps us resolve unpredictable interpolation, simplify our animation states, and much more.
+
+To introduce the animation system, we will be creating an animation where the xBot model is punched, and then collapses onto the ground. Right click on an empty space in the Animator, then click Create State > From New Blend Tree.<br>
+![image](https://user-images.githubusercontent.com/49392395/141743442-1f44ed4a-bedf-4248-9b36-af340a2c4546.png)
+
+Rename the blend tree to "PunchToStun", and then create transitions from Idle > PunchToStun and back.<br>
+![image](https://user-images.githubusercontent.com/49392395/141743593-af92b054-0326-4420-a71e-b65b46f2671a.png)
+
+Double click into the "PunchToStun" blend tree. You should see a "Blend" parameter, with a slider. There should also be a corresponding float (tldr: a kind of able-to-be-decimal number) under the parameters. Rename that to "stunTime".<br>
+<details>
+  <summary>Why a Float?</summary>
+  The core of blend trees is to transition from one animation to another depending on a sliding value. Let's say we want to blend between animation A and B. Depending on how close a value is to 0, the animation is closer/more similar to animation A, and depending on how close a value is to 1, the animation is closer/more similar to animation B. We can't have this kind of fine-tuned control with a Bool, which only has two states; therefore, we use a float, which is a number that can have decimal values and thus can be modified and tracked in the range of 0-1.
+</details>
+
+![image](https://user-images.githubusercontent.com/49392395/141744457-7a9a75c3-1abe-4399-916b-9fc74a534dbb.png)
+
+Return to the Base Layer, and modify the transition from Idle > PunchToStun to be stunTime + Greater + 0, and modify the transition from PunchToStun > Idle to be stunTime + Less + 0.05. What this does is essentially act out the punching and falling animation once the blending begins to happen, which is also when the stunTime is greater than 0-- and then returning to Idle once the model has recovered, which is when the blend is approaching 0. Below is an example.
+![image](https://user-images.githubusercontent.com/49392395/141747934-cf4536ab-2ed6-4822-bef4-f0886972466c.png)
+
+While blend trees can get complex --adding blend trees within blend trees to blend multiple series of animations, etc-- what we will be working with today are motion fields. These are simply different animations that the blend tree will transition between. Create two by clicking on the "+" symbol underneath "Motion" and adding two Motion Fields.<br>
+![image](https://user-images.githubusercontent.com/49392395/141745425-ff5c3547-fcae-473b-82a1-944965a7c3bb.png)
+
+Then, drag and drop the "Big Hit To Head" animation and the "Stunned" animation into the 1st and 2nd motion field slots respectively. You should see them show up in the Animator tab, connected to the "stunTime" variable.<br>
+![image](https://user-images.githubusercontent.com/49392395/141745692-6343e113-03ef-45a6-b7ea-d309b746a8a3.png)
+
+Next, navigate back to your xBot in the scene, and drag and drop the "Punch Script" script onto the xBot.<br>
+![image](https://user-images.githubusercontent.com/49392395/141746048-bfe1ab91-b3f4-44f6-9dd9-40e0177c29fe.png)
+
+Press play, and then press "F". You should now see the character get punched, and then slide to the ground (although perhaps not so smoothly getting back to their feet-- this is where blend trees within blend trees are useful).
+
 ## Final Task
 
 yoted
