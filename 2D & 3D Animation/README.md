@@ -172,6 +172,22 @@ Click into this blend tree. It looks very similar to our previous blend tree. Ch
 Next, create two more float parameters: "xVelocity" and "zVelocity". In the "Parameters" section in the inspector for the blend tree, set the parameters to these new variables respectively. You should see the blend tree update to now have two sliding values instead of one.<br>
 ![image](https://user-images.githubusercontent.com/49392395/141752104-fc61f33b-3e46-4ed7-8637-38907dc4465d.png)
 
+Create seven new motion fields, and assign idle, plus all of the animations in the Assets > Animations > Movement to the newly created motion fields. Then set the "Pos X" and "Pos Z" values accordingly to the screenshot.<br>
+![image](https://user-images.githubusercontent.com/49392395/141755086-2e466376-6e05-4018-aa41-92a7f7edb1d4.png)
+
+So why did we do this? This is because the parameters that we have given the Blending Tree (xVelocity and zVelocity) have essentially become the axis of the Motion Field graph. So hypothetically, if we set the "W" Key to increase zVelocity until 0.5, and then the "Left Shift" Key to increase zVelocity until 2.0, then looking at the blending tree we can see that the "Walk" animation will play at what is essentially the coordinate (0, 0.5), and the "Run" animation will play at what is essentially the coordinate (0, 2.0).<br>
+![image](https://user-images.githubusercontent.com/49392395/141755950-ca65679a-2eaa-4541-9d2e-5136b5ccacca.png)
+
+The key difference between this and the first animations we set up is that this blending tree will transition smoothly between the walk and run, but also has the capability of transitioning between running forward to running to the left, or walking to the left, etc.; with this blending tree, we can transition smoothly between any combination of radial movement (it would work just as well if we were using a controller). To see this blending in effect, you can click on a node or a motion field-- the light blue is the "weight"/prominence of that specific animation. You can also drag the red node around to see when a certain animation will begin playing, and at what prominence.<br>
+![image](https://user-images.githubusercontent.com/49392395/141756433-1803ad72-fdd1-4c11-9208-06902c99cbea.png)
+
+Navigate back to the xBot, and drag and drop the "BlendMovementScript" Script from the Asset > Script folder to the xBot. Turn off the "Movement" and "Punch" Scripts as well.<br>
+![image](https://user-images.githubusercontent.com/49392395/141757075-48113252-0a25-4b10-b23b-322141db27c4.png)
+
+If you press play, the player should move radially if you press "W", "A", and "D" respectively. Running should work the same way if you press "Left Shift" while simultaneously fiddling with the movement buttons.<br>
+
+### Animation Retargeting
+
 ## Final Task
 
 yoted
