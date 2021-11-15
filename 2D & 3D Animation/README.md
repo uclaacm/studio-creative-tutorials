@@ -160,6 +160,18 @@ Next, navigate back to your xBot in the scene, and drag and drop the "Punch Scri
 
 Press play, and then press the "F" key. You should now see the character get punched, and then slide to the ground (although perhaps not so smoothly getting back to their feet-- this is where blend trees within blend trees are useful).
 
+### Multi-Dimensional Animation Blending
+Currently, we have only been doing animations and animation-blending on a relatively two-dimensional plane. What if we want our character to be able to strafe? Or perhaps have radial aim? Or we want to manipulate a character's individual facial features? We need more simultaneous blending and functionality than our current blending can do. This is where multi-dimensional blending comes into play.
+
+Create another blend tree, and name it "2DMovement". Then, reset the default animation state to this new blend tree by right-clicking on "Entry" and "Set StateMachine Default State".<br>
+![image](https://user-images.githubusercontent.com/49392395/141751444-f5ff0534-c51f-403d-9357-67c0b570dcd8.png)
+
+Click into this blend tree. It looks very similar to our previous blend tree. Change the "Blend Type" in the inspector to "2D Freeform Directional".<br>
+![image](https://user-images.githubusercontent.com/49392395/141751749-15afc939-f5e4-43ba-a347-d31fae67b20c.png)
+
+Next, create two more float parameters: "xVelocity" and "zVelocity". In the "Parameters" section in the inspector for the blend tree, set the parameters to these new variables respectively. You should see the blend tree update to now have two sliding values instead of one.<br>
+![image](https://user-images.githubusercontent.com/49392395/141752104-fc61f33b-3e46-4ed7-8637-38907dc4465d.png)
+
 ## Final Task
 
 yoted
