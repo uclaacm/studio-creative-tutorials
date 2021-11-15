@@ -187,10 +187,36 @@ Navigate back to the xBot, and drag and drop the "BlendMovementScript" Script fr
 If you press play, the player should move radially if you press "W", "A", and "D" respectively. Running should work the same way if you press "Left Shift" while simultaneously fiddling with the movement buttons.<br>
 
 ### Animation Retargeting
+What if there exists an animation on another character, that you want to translate to yours? If you try to drag it in directly, the model will not animated correctly. This is where animation retargeting comes into play. If you abstract your model, Unity will be able to automatically detect which bones to manipulate and how, so all other generic animations will be playable on your model.
+
+Create a new Animator called "RetargetAnim".<br>
+![image](https://user-images.githubusercontent.com/49392395/141758279-7143bd9a-6550-4147-8dc5-382566f3ef7a.png)
+
+Navigate to Assets > Animations > Jump, and drag "theboss@Jump" model into the scene. Apply the "RetargetAnim" to theBoss model.<br>
+![image](https://user-images.githubusercontent.com/49392395/141758494-52aedf7f-1225-4559-9961-0ae942ae1622.png)
+
+In the RetargetAnim animator, drag and drop the "Jump" animation into the RetargetAnim animator window. If you press play, you should now see the Boss jump.<br>
+![image](https://user-images.githubusercontent.com/49392395/141758754-3c9d2c98-1760-418a-8cd9-f51d4342367d.png)
+
+However, if we assign this same animator to our xBot, we will see that the xBot will not jump. This is because the jump animation currently is hard coded to be the jump animation of the Boss model exclusively. This means that whatever the Boss' joints and skeleton is called is what the animation will look for, and it will not be able to detect them on the xBot and instead mark them as missing. To fix this, we essentially need to abstract the Boss and the xBot into a universal skeleton/rigging form, so instead of looking for specific joint names tied to a model, Unity will instead look for general joints and keywords in the models instead.<br>
+![image](https://user-images.githubusercontent.com/49392395/141760910-a93574b0-39b7-47ad-b598-13e18ffa128e.png)
+
+We want to abstract the xBot to a generic humanoid model. To do this, find the xBot model in Animations > xbot@idle. In the inspector, navigate to "Rig", and change the Animation Type to "Humanoid". Then click apply. Unity will essentially try to match all of the skeleton that the xBot's rig to its generic humanoid skeleton rig, and thus apply animations from other "Humanoid" models. Do the same process for the Boss model.<br>
+![image](https://user-images.githubusercontent.com/49392395/141762874-8e9d3ae8-1c57-4272-be05-de7e64d296f8.png)
+
+To check if the rig has been set up correctly, press the "configure" button under "Avatar Definition". It will open up the "Avatar Configuration" windows. You will be able to see all of the bones in the hierarchy, what the model will look like in a T-Pose, and the mapping that Unity has generated for the xBot's rig to a generic humanoid rig.<br>
+![image](https://user-images.githubusercontent.com/49392395/141763200-564a4912-0231-4ce7-b245-2409d0cb5031.png)
+
+The animation still won't play properly-- this is because we haven't actually set the generic avatar to be used by the Animator. To do this, simply navigate to the xBot in the scene, and then in the inspector click on the circles next to the "Avatar" component. Select the "xbot@IdleAvatar". Do the same for "theboss@JumpAvatar".<br>
+![image](https://user-images.githubusercontent.com/49392395/141764137-f5ad97f9-4543-4b57-a9cf-b69eb4e2cedc.png)
+
+If we play the scene now, we can see that both characters are animated-- however, the xBot is animated incredibly strangely. Why is this?
+
+This is because the Jump animation uses Root Motion. Root Motion is when velocity/movement/transform is hard baked into the animation; an example of this is if we don't check the "In Place" parameter on Mixamo when exporting a walk animation. That walk animation will then use Root Motion, and be propelled by the animation itself instead of by script. If we simply check the box and press play, we will see that the jump works perfectly.<br>
+![image](https://user-images.githubusercontent.com/49392395/141764770-e383f227-a8a7-45d7-86d8-f28916bb915d.png)
 
 ## Final Task
-
-yoted
+Find (or make!) a character model that is interesting to you, and create a whole animation set that embodies that character. Are they large and bulky? See how you can manipulate animation transitions, parameters, and switch out certain animations to embody that bulkiness. Are they light on their feet? Would slowing down the timescale attribute to a feeling of floatiness? The list goes on!
 
 ## Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
