@@ -28,14 +28,43 @@
 
 ### 2D Rigging
 As opposed to frame by frame animation, 2D rigging Animation typically offers smoother results and a faster, more flexible workflow. To get started in Unity, ensure that you have the correct version of Unity downloaded (refer to the link above in "What you'll need"), as well as the proper packages which will allow you to create a character to rig. Because the 2D IK package is now included in the 2D Animation package, the only two packages you will need for this portion of the tutorial is **2D Animation** and **2D PSDImporter**. Both of these can be found through "Window" > "Package Manager". Ensure that both are in "Packages: In Project".<br>
-(image to be added)
+![Package Manager Screenshot.](Screenshots/PackageManager.PNG)<br>
 
 In the Assets folder, you may drag in the file labeled "CharacterExample.psb". When creating the character asset for the purpose of 2D rigging, you should keep in mind that any separate part of the body you want to move around should be on a separate layer (e.g. head, limbs, chest, etc.). PSB files conveniently separate the layers of a photoshop file, which simplifies the workflow visually by a bit. It is also possible to use PNG files, but you must make sure that each part of the body you would like to rig is separated from each other.<br>
 
 ### Skinning Editor
 
 Once you click on the character PSB, set the Sprite Mode to "Multiple" and check the box next to "Character Rig". You can then click "Sprite Editor" which will bring up a new window with all the layers of the file separated. Make sure that each part is accurately configured and if not, you can manually fix it by dragging the edges of the box. Once you're satisfied, you can move to the top left tab of the window and change the setting from "Sprite Editor" to "Skinning Editor". The Skinning Editor will allow you to prepare your character for rigging.<br>
-(image to be added) 
+![Sprite Editor Screenshot.](Screenshots/SpriteEditor.PNG)<br> 
+
+### Bones, Geometry, and Weights
+
+As you can see, since you're using a PSB file, the Skinning Editor will automatically place all the body parts in their correct locations. To start off, create the bone going down the center of the character's body (you can select the "Create Bone" button on the left side of the Skinning Editor). Left click to create a bone and start from the bottom of the hip and go all the way to the tip of the head. For this example, I've created two bones going up the main body (one for the hips, one for the chest), one bone going up the neck, and one last bone for the head. You can right click to end the chain of bones. <br>
+![Making Bones Screenshot.](Screenshots/CreatingBones.PNG)<br> 
+
+In order to get started with creating the bones for the limbs, you should keep in mind that while the bones of the limbs should be connected to the chest and body, there should not be a direct bone connecting them. Instead, they should be parented. In order to do this, you can left click on the chest bone (the yellow one in this case) and drag it to the shoulder of an arm. Create two bones: one for the upper arm, one for the lower arm, separating at the elbow area. Do the same for the other arm, as well as the two legs (the legs will be parented with the hip bone (red) instead since it is closer). You can click "reparent bone" on the left side of the Skinning Editor to see the hierarchy of the bones and how they are parented. <br>
+![Making Limb Bones Screenshot.](Screenshots/CreatingLimbBones.PNG)<br> 
+
+Now, we can start pairing the bones we've made to the actual sprite. To get started, click "Auto Geometry" on the left. A small window should appear on the bottom right of the Skinning Editor. Make sure "Weights" is checked off and generate the sprites. This should create a colorful mesh (the colors corresponding to the color of the nearby bones) around your character. If you would like to clean up any edges of the mesh, you can click "Edit Geometry" to manually edit the edges through creating vertices or edges. You have now loosely (and messily) paired the bones to the sprite. However, if you preview the pose while moving around the bones, a lot of strange interactions still occur.<br>
+![Auto Geometry and Editing Screenshot.](Screenshots/GeneratingGeometry.PNG)<br> 
+
+In order to fix these issues, we should edit the "Bone Influence" (found on the left). Here, you can select different parts of the sprite (e.g. the head or the upper body), and see which specific bones are influencing it. For instance, select the body sprite. You will immediately notice that although the bones running through it are red and yellow, there are many other splotches of color influencing the way the body moves. An unwanted interaction is when you move the right arm, the right side of the body stretches with it. To fix this, you can delete the bones from its influence by selecting "bone_8" (or any other unwanted bone) and clicking the minus symbol. You should make sure all the limbs' bones are not influencing the body.<br>
+![Bone Influence Screenshot.](Screenshots/BoneInfluence.PNG)<br> 
+
+To get more detailed with bone influence, you can use the Weight slider to determine how much you want a bone to influence a part of the body. Click the "Weight Slider" and select a part of the body to edit. You can then click on a bone which you think might be having too much influence and slide the "Amount" bar left and right to suit how much you think the bone should influence the part of the body.<br> 
+
+Another method you can use to achieve this idea is by using "Weight Brushes" (which will give you more manual control). The idea is more or less the same: select the body part you would like to edit to "paint" the weight of each bone's influence on the area. You can change the hardness of the brush, the size, as well as which bone (color) you're painting. <br>
+![Weight Slider and Brushes Screenshot.](Screenshots/WeightBrushSlider.PNG)<br> 
+
+Play around with these until you reach a satisfying result (you can click preview pose and wiggle around the bones to see the effects of your edits). Once you're satisfied with editing geometries and weights, click "Apply" on the top right of the Skinning Editor. You can then drag in your character to the Scene (go ahead and resize/reposition the sprite to your liking). <br>
+
+### Inverse Kinematics (IK)
+
+Finally, we will create Inverse Kinematics solvers. These solvers are essentially responsible for making the necessary calculations that make animating a bit easier and smoother. We will be creating 4 limb solvers as an example. To start off, click "Add Component" under the Inspector and search for "IK Manager 2D". Click the plus sign and add a Limb solver (this should appear on the left under CharacterExample) for your left arm. Next, create an empty object under the character's left arm's lowest bone. This object will be the effector. You can use the transform tool to drag the point to the end of the left limb.<br>
+![IK Solvers and Creating Effectors Screenshot.](Screenshots/CreateEffector.PNG)<br> 
+
+Then, click back on the Left Arm Solver and drag the Left Arm Effector to the Effector Bar under Inspector (Limb Solver 2D). You should then see that you are able to create a target. Create the target and the points on your bones should turn green. If you drag at the edge of the limb, the two bones will move accordingly to that point. If the limbs are bending in strange angles, you can check the "Flip" checkbox and it will flip the angles into what is hopefully accurate.<br>
+![Limb Solvers and Creating Targets Screenshot.](Screenshots/CreateTarget.PNG)<br> 
 
 ---
 ## 3D:
