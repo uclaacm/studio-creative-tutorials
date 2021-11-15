@@ -21,8 +21,9 @@
  
 ## What you'll need
 * [Unity Hub](https://unity.com/download)
-* [Unity 2020.3.19f2](https://unity3d.com/unity/qa/lts-releases)
-* [This Package](https://drive.google.com/file/d/1c-HtCTB4gnkF9j676lfUNTWDpNo5VmZx/view?usp=sharing)
+* [Unity 2020.3.19f2 or Unity 2020.3.22f1](https://unity3d.com/unity/qa/lts-releases)
+* [This PSB for 2D Portion](https://github.com/uclaacm/studio-creative-tutorials-f21/blob/main/2D%20%26%203D%20Animation/CharacterExample.psb)
+* [This Package for 3D Portion](https://github.com/uclaacm/studio-creative-tutorials-f21/blob/main/2D%20%26%203D%20Animation/3DAnimTPKG.unitypackage)
 ---
 ## 2D:
 
