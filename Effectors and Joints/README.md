@@ -1,4 +1,4 @@
-# Studio Creative Tutorials - 2D & 3D Animation
+# Studio Creative Tutorials - Effectors and Joints
  
 **Date**: November 22, 2021<br>
 **Location**: Online (On Zoom)<br>
@@ -18,11 +18,6 @@
 * [This Package for 2D Portion](https://github.com/uclaacm/studio-creative-tutorials-f21/blob/main/Effectors%20and%20Joints/2DEffectorsTPKG.unitypackage)
 * [This Package for 3D Portion](https://github.com/uclaacm/studio-creative-tutorials-f21/blob/main/Effectors%20and%20Joints/3DJointsTPKG.unitypackage)
 ---
-## Steps:
-TBA
-
-## Final Task
-TBA
 
 ## Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
