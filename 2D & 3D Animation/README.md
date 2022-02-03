@@ -5,7 +5,7 @@
 **Instructor(s)**: Caroline Wang, Athena Dai
  
 ## Resources
-[Video](https://youtu.be/iRmBxDrh5gk)<br>
+[Video](https://youtu.be/dOU56Z0cVUQ)<br>
 [Zoom Link](https://ucla.zoom.us/j/99684783298?pwd=Ykh2NlJCTDdoRGYxZzg2Z2xVWU1RZz09)<br>
 [2D Animation Basics Slides](https://docs.google.com/presentation/d/1e34MlQsp4xXjgNRHnQKdCQFZff_CYXSa9Vvare7y3qE/edit?usp=sharing)
  
