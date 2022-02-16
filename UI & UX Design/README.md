@@ -20,25 +20,14 @@
 The [Unity documentation for the Canvas](https://docs.unity3d.com/2020.1/Documentation/Manual/UICanvas.html) is a good resource.
 
 ### Context
-<details>
-<summary>What is the Camera?</summary>
-You can think of the Camera as just a window into your game. Your UI will either appear in front of the window, right behind the window, or somewhere in the space beyond the window. More info can be found in the [Unity documentation for the Camera](https://docs.unity3d.com/Manual/class-Camera.html).
-</details>
 
-<details>
-<summary>What is screen space?</summary>
-Screen space is the 2D coordinates of the screen, measured in pixels. Coordinates range from (0,0) to (MAX_WIDTH, MAX_HEIGHT).
-</details>
+The *Camera* is like a window into your game. Your UI will either appear in front of the window, right behind the window, or somewhere in the space beyond the window. More info can be found in the [Unity documentation for the Camera](https://docs.unity3d.com/Manual/class-Camera.html).
 
-<details>
-<summary>What is world space?</summary>
-World space is the 3D coordinates of the game, measured in units. Coordinates range from (-infinity, -infinity) to (infinity, infinity).
-</details>
+*Screen space* is the 2D coordinates of the screen, measured in pixels. Coordinates range from (0,0) to (MAX_WIDTH, MAX_HEIGHT).
 
-<details>
-<summary>What is the render hierarchy?</summary>
-The render hierarchy is the order in which things are rendered in Unity. The game hierarchy is always rendered first, and depending on Canvas Render Modes, the order in which the UI is rendered changes, changing the way it looks.
-</details>
+*World space* is the 3D coordinates of the game, measured in units. Coordinates range from (-infinity, -infinity) to (infinity, infinity).
+
+The *render hierarchy* is the order in which things are rendered in Unity. The game hierarchy is always rendered first, and depending on Canvas Render Modes, the order in which the UI is rendered changes, changing the way it looks.
 
 ### Screen Space - Overlay
 The Canvas containing your UI is placed on the screen and rendered last. The Canvas changes size with screen and will not be affected by post processing since that is attached to the camera.
