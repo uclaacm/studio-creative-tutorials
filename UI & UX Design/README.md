@@ -65,23 +65,23 @@ Use as many canvases as you need! New functions can go on a new canvas. Layer ca
 
 **Scroll view**
 * Notice the mask component in the scroll view game object. (If you delete it the "hidden" game objects will disappear)
-- - masks can be used in other contexts as well (such as health bars)
+    * masks can be used in other contexts as well (such as health bars)
 * Toggle vertical or horizontal scrolling
 * Content size fitter if you need things to scale according to number of objects in "Content"
 * Vertical layout group for things to distribute evenly and stay aligned
 
 **Paths for Exploration:**
-- [TextMeshPro font asset creation](https://learn.unity.com/tutorial/textmesh-pro-font-asset-creation)
-- [Raw image](https://answers.unity.com/questions/1070280/raw-image-vs-image.html)
-- More flexible scrolling
--- Scrollbar
--- Scroll rect
--- [Scroll rect/scroll bar by themselves](https://www.youtube.com/watch?v=rAqyi85IAJ0&ab_channel=CocoCode)
-- Masking Pizzazz
--- For creating health bars and more
--- [Creating a HUD in Unity](https://learn.unity.com/tutorial/visual-styling-ui-head-up-display)
-- Layout components
--- Layout Groups, Fitters, Scalers
+* [TextMeshPro font asset creation](https://learn.unity.com/tutorial/textmesh-pro-font-asset-creation)
+* [Raw image](https://answers.unity.com/questions/1070280/raw-image-vs-image.html)
+* More flexible scrolling
+    * Scrollbar
+    * Scroll rect
+    * [Scroll rect/scroll bar by themselves](https://www.youtube.com/watch?v=rAqyi85IAJ0&ab_channel=CocoCode)
+* Masking Pizzazz
+    * For creating health bars and more
+    * [Creating a HUD in Unity](https://learn.unity.com/tutorial/visual-styling-ui-head-up-display)
+* Layout components
+    * Layout Groups, Fitters, Scalers
 
 
 **Additional Materials**
