@@ -32,10 +32,12 @@ Set your **canvas** to scale with screen size, **reference resolution** to the c
 **Text Component (use Text Mesh Pro)**
 * WHY TMP: text stays CRISP at any size, many additional options available.
 * Explore formatting options and auto size settings.
-* To edit in code: <br>
-`using TMPro;` <br>
-`TextMeshProUGUI example;` <br>
-`example.text = "whatever you want here";` </p>
+* To edit in code:
+```
+using TMPro;
+TextMeshProUGUI example;
+example.text = "whatever you want here";
+```
 
 **Image Component (Panels)**
 * Images take in sprites to display them.
