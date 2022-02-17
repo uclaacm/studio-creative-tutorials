@@ -58,95 +58,83 @@ We will make a rough main menu and settings menu, an introduction to useful UI C
 ### Main Menu
 Set your **canvas** to scale with screen size, **reference resolution** to the current aspect ratio (such as 1920 x 1080), so that our UI will scale according to your screen.
 
-<details>
-<summary>Button Component</summary>
-<p>Transition Types determine how the UI looks when clicked on or diabled.</p>
-<p>If your UI will be used on computers, turn off automatic navigation to make sure it doesn't stay selected after being clicked on. </p>
-</details>
+**Button Component**
+* Transition Types determine how the UI looks when clicked on or diabled.
+* If your UI will be used on computers, turn off automatic navigation to make sure it doesn't stay selected after being clicked on.
 
-<details>
-<summary>Text Component (use Text Mesh Pro)</summary>
-<p>WHY TMP: text stays CRISP at any size, many additional options available.</p>
-<p>If your UI will be used on computers, turn off automatic navigation to make sure it doesn't stay selected after being clicked on (this is used for consoles)</p>
-</details>
+**Text Component (use Text Mesh Pro)**
+* WHY TMP: text stays CRISP at any size, many additional options available.
+* Explore formatting options and auto size settings.
+* To edit in code: <br>
+`using TMPro;` <br>
+`TextMeshProUGUI example;` <br>
+`example.text = "whatever you want here";` </p>
 
+**Image Component (Panels)**
+* Images take in sprites to display them.
+* To set the background image, hold shift to set its pivot and hold alt to set its size at the same time as setting its anchors.
+* *Landscape image from: https://www.adorama.com/alc/basic-landscape-photography-tips/*
 
-explore formatting options, AUTO SIZE
-custom font imports
-To edit in code: 
-`using TMPro;
-TextMeshProUGUI example;
-example.text = "whatever you want here";`
-Images (Panels)
-background: Anchors, and holding shift/alt to set the size or anchors/pivots/positions
-Landscape image: https://www.adorama.com/alc/basic-landscape-photography-tips/
+### Settings Menu
+Use as many canvases as you need! New functions can go on a new canvas. Layer canvases using their sort orders. You can make a canvas preset to make sure all canvases use the same settings (adjust the matching float according to the platforms you will be using).
 
-SETTINGS MENU
-(use as many canvases as you need! new functions can go on a new canvas; layer canvases based on sort order; can make a canvas preset to make sure all canvases use the same settings)
-Canvas settings: adjust matching according to the platforms
-Sliders (navi: none)
-directions can be adjusted 
-min/max value is what the slider represents at each end of the area (0-1 normally)
-check whole numbers to slide up in whole number increments
-value returns the value the slider represents
-Toggles
-(no tmp option, can see how blurry it gets; add text if needed)
-is On (on/off)
-graphic is the child
-toggle group: mutually exclusive (https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/script-ToggleGroup.html)
-Input Field (Panel)
-(https://stackoverflow.com/questions/57223275/access-the-tm-pro-inputfield-text-in-unity)
-Dropdown Menu
-(https://www.youtube.com/watch?v=5onggHOiZaw)
-scroll view
-NOTICE MASK COMPONENT (delete to demonstrate function)
-can be used for other things as well
-toggle vertical or horizontal
-content size fitter if you need things to scale accordingly
-vertical layout group for things to distribute evenly
+**Slider Component** (navigation: none)
+* Sliding direction can be adjusted.
+* "Min/max" value is what the slider represents at each end of the area (0-1 normally).
+* Check "whole numbers" box to slide up in whole-number increments.
+* "Value" returns the value the slider represents.
 
-Paths for Exploration:
-TextMeshPro font asset creation
-https://learn.unity.com/tutorial/textmesh-pro-font-asset-creation
-Raw image
-https://answers.unity.com/questions/1070280/raw-image-vs-image.html
-https://forum.unity.com/threads/downsides-to-using-rawimage-over-image.614284/ 
-More flexible scrolling
-Scrollbar
-scroll rect
-scroll rect/scroll bar by themselves (Scrolling and scrollbars in Unity - Unity UI tutorial)
-Masking Pizzazz
-For creating health bars and more
-Creating a HUD in Unity: https://learn.unity.com/tutorial/visual-styling-ui-head-up-display
-Layout components
-Layout Groups, Fitters, Scalers
+**Toggles** <br>
+(Toggles don't have built-in TMP option, we can see how blurry it gets. Add TMP text if needed)
+* "Is On" adjusts whether it is on/off.
+* "Graphic" is the child of the toggle game object.
+* [Toggle group](https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/script-ToggleGroup.html): mutually exclusive selections.
+
+**Input Field**
+* [How to access text in TMPro Input Field.](https://stackoverflow.com/questions/57223275/access-the-tm-pro-inputfield-text-in-unity)
+
+**Dropdown Menu**
+* [How to create a dropdown menu and access the value.](https://www.youtube.com/watch?v=5onggHOiZaw)
+
+**Scroll view**
+* Notice the mask component in the scroll view game object. (If you delete it the "hidden" game objects will disappear)
+- - masks can be used in other contexts as well (such as health bars)
+* Toggle vertical or horizontal scrolling
+* Content size fitter if you need things to scale according to number of objects in "Content"
+* Vertical layout group for things to distribute evenly and stay aligned
+
+**Paths for Exploration:**
+* [TextMeshPro font asset creation](https://learn.unity.com/tutorial/textmesh-pro-font-asset-creation)
+* [Raw image](https://answers.unity.com/questions/1070280/raw-image-vs-image.html)
+* More flexible scrolling
+- - Scrollbar
+- - Scroll rect
+- - [Scroll rect/scroll bar by themselves](https://www.youtube.com/watch?v=rAqyi85IAJ0&ab_channel=CocoCode)
+* Masking Pizzazz
+- - For creating health bars and more
+- - [Creating a HUD in Unity](https://learn.unity.com/tutorial/visual-styling-ui-head-up-display)
+* Layout components
+- - Layout Groups, Fitters, Scalers
 
 
-Additional Materials
-UI Best practices
-https://medium.com/@dariarodionovano/unity-ui-best-practices-40964a7a9aba
-Optimizing unity UI
-https://learn.unity.com/tutorial/optimizing-unity-ui
-Scrollview grid tutorial
-https://blog.studica.com/unity-ui-tutorial-scroll-grid
-Toggle group
-https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/script-ToggleGroup.html
-Enabling UI w the new input system:
-https://www.youtube.com/watch?v=TBcfhJoCVQo 
-Unity UI course:
-https://learn.unity.com/tutorial/ui-components# 
+**Additional Materials**
+* [UI Best practices](https://medium.com/@dariarodionovano/unity-ui-best-practices-40964a7a9aba)
+* [Optimizing unity UI](https://learn.unity.com/tutorial/optimizing-unity-ui)
+* [Scrollview grid tutorial](https://blog.studica.com/unity-ui-tutorial-scroll-grid)
+* [Toggle group](https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/script-ToggleGroup.html)
+* [Enabling UI with the new input system](https://www.youtube.com/watch?v=TBcfhJoCVQo)
+* [Unity UI course](https://learn.unity.com/tutorial/ui-components#)
 
-On Optimization/Shortcuts
-Turn off raycast target if not needed
-scale uniformly by clicking and dragging scale tool center
-To move pivot, change from center to pivot
-Hold shift/alt to set pivot or scale while setting anchor presets
-Can toggle canvas component to enable or disable canvas objects (or set active or inactive for the entire game object)
+**On Optimization/Shortcuts**
+* Turn off "raycast target" if not needed
+* Scale uniformly by clicking and dragging scale tool center
+* To move pivot, change from "center" to "pivot"
+* Hold shift/alt to set pivot or scale while setting anchor presets
+* Can toggle canvas component to enable or disable canvas objects (vs. setting active or inactive for the entire game object)
 
-Notes
-"raycast?" whether it is interactable https://answers.unity.com/questions/1099030/raycast-target-on-ui-elements.html
-what is a "rect?" (it is essentially a rectangle)
-https://docs.unity3d.com/ScriptReference/Rect.html
+**Notes**
+* "raycast?" [whether it is interactable](https://answers.unity.com/questions/1099030/raycast-target-on-ui-elements.html)
+* What is a "rect?" [(it is essentially a rectangle)](https://docs.unity3d.com/ScriptReference/Rect.html)
 
 
 ## Essential Links
