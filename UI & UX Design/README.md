@@ -125,10 +125,10 @@ The *render hierarchy* is the order in which things are rendered in Unity. The g
 The Canvas containing your UI is placed on the *screen* and rendered last. The Canvas changes size with screen and will not be affected by post processing.
 
 ### Screen Space - Camera
-The Canvas containing your UI is placed relative to a chosen Camera and rendered after the game hierarchy and post processing. Since the Canvas is placed relative to the Camera, it is possible to place game objects between the Canvas and the Camera, covering the Canvas. 
+The Canvas containing your UI is placed relative to a chosen Camera and rendered after the game hierarchy and before post processing. Since the Canvas is placed relative to the Camera, it is possible to place game objects between the Canvas and the Camera, covering the Canvas. 
 
 ### World Space
-The Canvas is rendered in the game hierarchy like a game object and is affected by post processing. It behaves like a game object: it can be resized using Rect Transform, it can be placed in front of or behind other objects in world space, and it is affected by everything a game object would be, such as physics and in-game systems.
+The Canvas is rendered in the game hierarchy like a game object and, as such, is affected by post processing. It behaves like a game object: it can be resized using Rect Transform, it can be placed in front of or behind other objects in world space, and it is affected by everything a game object would be, such as physics and in-game systems.
 
 ## Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
