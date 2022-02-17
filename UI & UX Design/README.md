@@ -100,7 +100,7 @@ Use as many canvases as you need! New functions can go on a new canvas. Layer ca
 * Can toggle canvas component to enable or disable canvas objects (vs. setting active or inactive for the entire game object)
 
 **Notes**
-* "raycast?" [whether it is interactable](https://answers.unity.com/questions/1099030/raycast-target-on-ui-elements.html)
+* "raycast?" [whether it is clickable](https://answers.unity.com/questions/1099030/raycast-target-on-ui-elements.html)
 * What is a "rect?" [(it is essentially a rectangle)](https://docs.unity3d.com/ScriptReference/Rect.html)
 
 
