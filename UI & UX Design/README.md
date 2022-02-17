@@ -111,34 +111,24 @@ Use as many canvases as you need! New functions can go on a new canvas. Layer ca
 The [Unity documentation for the Canvas](https://docs.unity3d.com/2020.1/Documentation/Manual/UICanvas.html) is a good resource.
 
 ### Context
-<details>
-<summary>What is the Camera?</summary>
-You can think of the Camera as just a window into your game. Your UI will either appear in front of the window, right behind the window, or somewhere in the space beyond the window. More info can be found in the [Unity documentation for the Camera](https://docs.unity3d.com/Manual/class-Camera.html).
-</details>
+The *Camera* is just a window into your game. Your UI will either appear in front of the window, right behind the window, or somewhere in the space beyond the window. You can see the view of the Camera in the Scene window in 3D view and change Camera attributes in the Inspector. More info can be found in the [Unity documentation for the Camera](https://docs.unity3d.com/Manual/class-Camera.html).
 
-<details>
-<summary>What is screen space?</summary>
-Screen space is the 2D coordinates of the screen, measured in pixels. Coordinates range from (0,0) to (MAX_WIDTH, MAX_HEIGHT).
-</details>
+*Screen space* is the 2D coordinates of the screen, measured in pixels. Coordinates range from (0,0) in the bottom-left to (MAX_WIDTH, MAX_HEIGHT) in the top-right.
 
-<details>
-<summary>What is world space?</summary>
-World space is the 3D coordinates of the game, measured in units. Coordinates range from (-infinity, -infinity) to (infinity, infinity).
-</details>
+*World space* is the 3D coordinates of the game, measured in units. Coordinates range from (-infinity, -infinity, -infinity) to (infinity, infinity, infinity).
 
-<details>
-<summary>What is the render hierarchy?</summary>
-The render hierarchy is the order in which things are rendered in Unity. The game hierarchy is always rendered first, and depending on Canvas Render Modes, the order in which the UI is rendered changes, changing the way it looks.
-</details>
+The *render hierarchy* is the order in which things are rendered in Unity. The game hierarchy is always rendered first, then post processing, and depending on Canvas Render Modes, the order in which the UI is rendered changes, changing the way it looks.
+
+*Post processing* consists of visual filters and effects applied after a scene is drawn but before it is rendered. If you're interested in learning more about post processing, we recommend [Athena's tutorial on post processing](https://github.com/uclaacm/studio-creative-tutorials/tree/fall-21/Post%20Processing).
 
 ### Screen Space - Overlay
-The Canvas containing your UI is placed on the screen and rendered last. The Canvas changes size with screen and will not be affected by post processing since that is attached to the camera.
+The Canvas containing your UI is placed on the *screen* and rendered last. The Canvas changes size with screen and will not be affected by post processing.
 
 ### Screen Space - Camera
-The Canvas containing your UI is placed relative to a chosen Camera and rendered after the game hierarchy but before camera effects. Thus, it is affected by changes in the camera's attributes and position and post processing. If you're interested in learning more about post processing, we recommend [Athena's tutorial on post processing](https://github.com/uclaacm/studio-creative-tutorials/tree/fall-21/Post%20Processing).
+The Canvas containing your UI is placed relative to a chosen Camera and rendered after the game hierarchy and post processing. Since the Canvas is placed relative to the Camera, it is possible to place game objects between the Canvas and the Camera, covering the Canvas. 
 
 ### World Space
-The Canvas is rendered in the game hierarchy like a game object. It behaves like a game object: it can be resized using Rect Transform, it can be placed in front of or behind other objects in world space, and it is affected by everything a game object would be, such as physics and in-game systems. Since it is rendered before camera effects, it is affected by post processing. However, since it is not placed relative to the camera as in the `Screen Space - Camera` Render Mode, it is not affected by changes in the camera's perspective and position.
+The Canvas is rendered in the game hierarchy like a game object and is affected by post processing. It behaves like a game object: it can be resized using Rect Transform, it can be placed in front of or behind other objects in world space, and it is affected by everything a game object would be, such as physics and in-game systems.
 
 ## Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
