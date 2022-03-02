@@ -20,7 +20,7 @@
 ---
 
 ## Canvas Components
-We will make a rough main menu and settings menu as an introduction to useful UI Components in Unity. Check out the [Unity UI Tutorial](https://learn.unity.com/tutorial/ui-componentsv).
+We will make a rough main menu and settings menu as an introduction to useful UI Components in Unity. Check out the [Unity UI Tutorial](https://learn.unity.com/tutorial/ui-components).
 
 ### Main Menu
 Set your **canvas** to scale with screen size, **reference resolution** to the current aspect ratio (such as 1920 x 1080), so that our UI will scale according to your screen.
