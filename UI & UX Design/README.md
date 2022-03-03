@@ -7,7 +7,7 @@
 ## Resources
 [Slides](https://docs.google.com/presentation/d/1NLSH-O6HlAjAkD2QMGLmoSrs5iogmbQl7fjtGaVB_-k/edit#slide=id.p)
 
-[Video]()
+[Video](https://youtu.be/w3pyDio0xM8)
  
 ## Topics Covered
 * UI/UX Theory
