@@ -28,11 +28,9 @@ For the rest of this tutorial, we will use `shader` to refer to this type of `gr
 ### What can `shaders` do?
 At the very basic level, shaders let your game actually display things - Unity provides a plethora of built-in shaders that do just that. However, shaders can also be used to do much, much more! Here are a few images illustrating what shaders can do:
 
-<p>
-   <img src="http://vodacek.zvb.cz/archiv/stranky/0ee161e63f3c6543a78370b3377c73da.png" width="200" alt="A toon shader with hard shadow and highlight lines on a blue sphere, green cylinder, orange cone, and brown knotted shape."/>
-   <img src="http://vodacek.zvb.cz/archiv/stranky/0ee161e63f3c6543a78370b3377c73da.png" width="200"/>
-   <img src="http://vodacek.zvb.cz/archiv/stranky/0ee161e63f3c6543a78370b3377c73da.png" width="200"/>
-</p>
+| <img src="http://vodacek.zvb.cz/archiv/stranky/0ee161e63f3c6543a78370b3377c73da.png" width="200"/> | Another image here |
+| :-: | :-: |
+| A toon shader with hard lines separating shadows and highlights. | Another caption here |
 
 ## Shader Graph
 
