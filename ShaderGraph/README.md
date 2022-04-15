@@ -28,9 +28,9 @@ For the rest of this tutorial, we will use `shader` to refer to this type of `gr
 ### What can `shaders` do?
 At the very basic level, shaders let your game actually display things - Unity provides a plethora of built-in shaders that do just that. However, shaders can also be used to do much, much more! Here are a few images illustrating what shaders can do:
 
-| <img src="http://vodacek.zvb.cz/archiv/stranky/0ee161e63f3c6543a78370b3377c73da.png" width="200"/> | Another image here |
+| <img src="https://i1.wp.com/cghow.com/wp-content/uploads/2019/02/ToonShaderAnimation.gif" width="200"/> | <img src="http://3909.co/dev/od/img/Dither2-CameraSphere2.gif" width="200"/> |
 | :-: | :-: |
-| A toon shader with hard lines separating shadows and highlights. | Another caption here |
+| A cell or toon shader with hard lines separating shadows and highlights. | A monocolor dithering shader from *Return of the Obra Dinn* |
 
 ## Shader Graph
 
