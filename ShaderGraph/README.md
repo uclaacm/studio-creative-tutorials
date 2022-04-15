@@ -9,8 +9,9 @@
 * Video Coming Soon
  
 ### Topics Covered
-* Shaders
-* Shader Graph
+* [Shaders](#shaders)
+  * [What is a Shader?](#what-is-a-shader)
+* [Shader Graph](#shader-graph)
  
 ### What you'll need
 * Unity version 2020.x or newer. Note that in 2021 versions, shaders generated with Shader Graph are not compatible with UI components, unlike 2020 versions.
@@ -18,14 +19,16 @@
 ---
 
 ## Shaders
-### What is a shader?
+### What is a `Shader`?
 The term `shader` is often used to refer to several related concepts, but in the broadest sense a `shader` is a program that runs on the GPU instead of the CPU. This includes `compute shaders` and `ray tracing shaders`, but for the purposes of this tutorial, we are interested in the type of `shader` which determines the color of pixels. In other words, these `graphics pipeline shaders` determine what you see on the screen.
 
 For the rest of this tutorial, we will use `shader` to refer to this type of `graphics pipeline shader` specifically, unless otherwise noted, but you can read more about these other kinds of `shaders` at the links provided in [Additional Resources](#additional-resources) below.
 
+## Shader Graph
+
 **Paths for Exploration:**
 * List stuff here
-    * List more stuff here
+  * List more stuff here
 
 ---
 ## Additional Resources
