@@ -10,7 +10,8 @@
  
 ### Topics Covered
 * [Shaders](#shaders)
-  * [What is a Shader?](#what-is-a-shader)
+  * [What is a shader?](#what-is-a-shader)
+  * [What can shaders do?](#what-can-shaders-do)
 * [Shader Graph](#shader-graph)
  
 ### What you'll need
@@ -19,10 +20,19 @@
 ---
 
 ## Shaders
-### What is a `Shader`?
+### What is a `shader`?
 The term `shader` is often used to refer to several related concepts, but in the broadest sense a `shader` is a program that runs on the GPU instead of the CPU. This includes `compute shaders` and `ray tracing shaders`, but for the purposes of this tutorial, we are interested in the type of `shader` which determines the color of pixels. In other words, these `graphics pipeline shaders` determine what you see on the screen.
 
 For the rest of this tutorial, we will use `shader` to refer to this type of `graphics pipeline shader` specifically, unless otherwise noted, but you can read more about these other kinds of `shaders` at the links provided in [Additional Resources](#additional-resources) below.
+
+### What can `shaders` do?
+At the very basic level, shaders let your game actually display things - Unity provides a plethora of built-in shaders that do just that. However, shaders can also be used to do much, much more! Here are a few images illustrating what shaders can do:
+
+<p>
+   <img src="http://vodacek.zvb.cz/archiv/stranky/0ee161e63f3c6543a78370b3377c73da.png" width="200" alt="A toon shader with hard shadow and highlight lines on a blue sphere, green cylinder, orange cone, and brown knotted shape."/>
+   <img src="http://vodacek.zvb.cz/archiv/stranky/0ee161e63f3c6543a78370b3377c73da.png" width="200"/>
+   <img src="http://vodacek.zvb.cz/archiv/stranky/0ee161e63f3c6543a78370b3377c73da.png" width="200"/>
+</p>
 
 ## Shader Graph
 
