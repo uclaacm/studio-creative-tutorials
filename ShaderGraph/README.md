@@ -19,7 +19,9 @@
 
 ## Shaders
 ### What is a shader?
-The term "shader" is often used to refer to several related concepts, but in the broadest sense a shader is a program that runs on the GPU instead of the CPU. This includes compute shaders and ray tracing shaders, but for the purposes of this tutorial, we are interested in the type of shaders which determine the color of pixels, or in other words, compute what you actually see on the screen. For the rest of this tutorial, we will use "shader" to refer to this type of shader specifically, unless otherwise noted.
+The term `shader` is often used to refer to several related concepts, but in the broadest sense a `shader` is a program that runs on the GPU instead of the CPU. This includes `compute shaders` and `ray tracing shaders`, but for the purposes of this tutorial, we are interested in the type of `shader` which determines the color of pixels. In other words, these `graphics pipeline shaders` determine what you see on the screen.
+
+For the rest of this tutorial, we will use `shader` to refer to this type of `graphics pipeline shader` specifically, unless otherwise noted, but you can read more about these other kinds of `shaders` at the links provided in [Additional Resources](#additional-resources) below.
 
 **Paths for Exploration:**
 * List stuff here
