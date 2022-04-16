@@ -101,7 +101,15 @@ The `Sample Texture 2D` node also has two other inputs, of which `UV(2)` is very
 </details>
 
 ### UV Coordinates
+#### What are UV coordinates?
+UV coordinates are a way of mapping a 2D texture onto a 3D surface! As shown in the images below, to properly texture a 3D model you need some way to "unwrap" the 3D model into a flat 2D plane. Then a shader can use those UV coordinates to determine what should go on your screen.
 
+<p align="center">
+ <img src="https://www.pluralsight.com/content/dam/pluralsight/blog/dt/wp-uploads/2014/01/UV_Distortion.jpg" width=500 alt="Mapping a 2D texture onto a 3D dinosaur"/>
+ <img src="https://www.pluralsight.com/content/dam/pluralsight/blog/dt/wp-uploads/2014/01/UVs_Example.jpg" width=500 alt="Unwrapping the 3D dinosaur onto a 2D plane/>
+</p>
+
+Even though we're working with sprite shaders today, it turns out there are a lot of neat things you can do with UV coordinates, even when you're on a `Quad` (a flat plane). But first, let's take a look at how to read UV coordinates in Shader Graph. The image to the right shows a UV node connected to a `Split` node to split the two channels of the UV. Each channel is then connected to a `Preview` node to show what each channel looks like.
 
 ---
 
