@@ -28,6 +28,9 @@ For the rest of this tutorial, we will use `shader` to refer to this type of `gr
 
 A `shader` is composed of two parts: a `vertex shader` and a `fragment shader`. The `vertex shader` runs first, and does computations for each `vertex` in the `mesh` a game object being rendered is composed of. Things `vertex shaders` can do include moving the position of `vertices` to distort the `mesh` (and thus its appearance), and running calculations to produce data that will be used by the `fragment shader`, such determining the distance to a point at each `vertex`. After the `vertex shader` runs, the GPU does some processing to interpolate the output of the `vertex shader` between the `vertices` and rasterizes the object being rendered to produce `fragments`. (You can think of `fragments` as the pixels on the screen, although they're not actually equivalent.) Finally, the `fragment shader` does computations for each `fragment` to determine what color it should be.
 
+#### `Materials`
+Unity also has assets called `materials`, which are different but related to `shaders`. Basically, a `material` is a preset configuration of parameters that should be used in a `shader`, so multiple `materials` can use the same shader with different parameters.
+
 ### What can `shaders` do?
 At the very basic level, `shaders` let your game actually display things - Unity provides a plethora of built-in `shaders` that do just that. However, `shaders` can also be used to do much, much more! Here are a few images illustrating what `shaders` can do, with links to guides/tutorials on recreating them:
 
