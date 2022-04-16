@@ -52,13 +52,16 @@ A shader is composed of two parts: a **vertex shader** and a **fragment shader**
 <img src="./Sprite%20Tinted.png" width=300 align="right" alt="material using default shader but tinted blue"/>
 <img src="./Sprite%20Untinted.png" width=300 align="right" alt="material using default shader but untinted"/>
 
-Unity also has assets called **materials**, which are different but related to shaders. Basically, a material is a preset configuration of parameters that should be used in a shader, so multiple materials can use the same shader with different parameters.
+Unity also has assets called **materials**, which are different but related to shaders. In essence, a material is a collection of textures, numbers, and other values used by the material's shader as inputs. Thus, you can create multiple materials that use the same shader, but have different values, to create different graphics while reusing the shader.
 
-For example, the images to the right show two materials which both use the `Sprites/Default` shader, but one of them is set to be tinted blue while the other is untinted. When applied to a sprite with the ACM Game Studio logo, the tinted material causes the logo to be tinted blue, even though both materials use the same shader.
+For example, the images to the right show two materials which both use the `Sprites/Default` shader, but one of them is set to be tinted blue, while the other is untinted. When applied to a sprite with the ACM Game Studio logo, the tinted material causes the logo to be tinted blue, even though both materials use the same shader.
 
 <img src="./Sprite%20Materials.png" width=300 align="right" alt="studio logo, one untinted and the other tinted blue"/>
 
-Note: All objects which use the same material will share the same values for the parameters, even if the values are changed at runtime. If you want to modify these parameters at runtime separately for different objects without creating a bunch of identical materials, you can use [`MaterialPropertyBlocks`](https://docs.unity3d.com/ScriptReference/MaterialPropertyBlock.html).
+<details>
+ <summary>An Aside About MaterialPropertyBlocks</summary>
+ All objects which use the same material will share the same values for the parameters. This can be very helpful if you need to create a bunch of objects which look identical, but if you need to modify the parameters at runtime for individual instances instead of all of the objects, you can use <a href="https://docs.unity3d.com/ScriptReference/MaterialPropertyBlock.html">MaterialPropertyBlocks</a>. Unfortunately, MaterialPropertyBlocks don't work with UI components, so the other workaround for those is to create a material for each instance you want to modify separately.
+</details>
 
 ### What can shaders do?
 At the very basic level, shaders let your game actually display things - Unity provides a plethora of built-in shaders that do just that. However, shaders can also be used to do much, much more! Here are a few images illustrating what shaders can do, with links to guides/tutorials on recreating them:
