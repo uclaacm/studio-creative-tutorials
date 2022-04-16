@@ -16,7 +16,8 @@
   * [How do I make and use shaders in Unity?](#how-do-i-make-and-use-shaders-in-unity)
 * [Shader Graph](#shader-graph)
   * [Setup](#setup)
-  * [Creating a Shader](#displaying-a-texture)
+  * [Creating a Shader](#creating-a-shader)
+  * [Sampling Textures](#sampling-textures)
   * [UV Coordinates](#uv-coordinates)
  
 ### What You'll Need
@@ -99,24 +100,36 @@ For this tutorial, we will be working in a new, empty 2D project. Since Shader G
 
 The Universal RP package actually includes the Shader Graph package as a dependency, so installing it will also automatically install Shader Graph as well. However, before we can start using Shader Graph, we need to configure the project's settings to use URP instead of the built-in pipeline. First, in your project right click and select: `Create → Rendering → Universal Render Pipeline → Pipeline Asset (Forward Renderer)`. This should create a `UniversalRenderPipelineAsset` and a `UniversalRenderPipelineAsset_Renderer`.
 
-Next, go to `Edit → Project Settings` and find the `Graphics` section. In the scriptable render pipeline section, select or drag in your `UniversalRenderPipelineAsset`, as shown in the image to the right. Finally, in the hierarchy, right click and select `2D Object → Sprites → Square`. Select the square, and in the inspector, change the sprite to a more interesting image (preferably one with some transparent parts instead of a full rectangle). We will be using this sprite to test your shaders with. Congratulations, you are now ready to start working in Shader Graph!
+Next, go to `Edit → Project Settings` and find the `Graphics` section. In the scriptable render pipeline section, select or drag in your `UniversalRenderPipelineAsset`, as shown in the image to the right. Finally, in the hierarchy, right click and select `2D Object → Sprites → Square`. Select the square, and in the inspector, change the sprite to a more interesting image (preferably one with some transparent parts instead of a full rectangle). We will be using this sprite to test your shaders with. Congratulations, you are now ready to start working with Shader Graph!
 
-### Displaying a Texture
-In the project section, right click and select `Create → Shader → Universal Render Pipeline → Sprite Unlit Shader Graph`, and name the newly create Shader Graph asset. Then right click your new Shader Graph asset and select `Create → Material`, and name that material too. Finally, select your square and drag your new material into the material parameter of the `Sprite Renderer` component. Your sprite should turn into a grey square in the scene. Huzzah! You've made the simplest shader possible - one that always draws a grey square.
+### Creating a Shader
+In the project section, right click and select `Create → Shader → Universal Render Pipeline → Sprite Unlit Shader Graph`, and name the newly create Shader Graph asset. Then right click your new Shader Graph asset and select `Create → Material`, which will create a new material that uses your new Shader Graph. Name this material too. 
+
+Finally, select your square and drag your new material into the material parameter of the `Sprite Renderer` component. In the scene and game views, your sprite should turn into a grey square. Huzzah! You've created the simplest shader - one that always draws a grey square.
 
 <img src="./Shader%20Graph%20Window.png" align="right" width=700 alt="Shader Graph window"/>
 
-Okay, but we probably want to at least show your original image instead of a grey square. To do that, we'll need to open up Shader Graph by double-clicking on the shader graph asset you made earlier. Something like the image to the right should pop up - this is the shader graph window. At the top of the window is a bar with a couple of buttons - most notably the `Save Asset` button. Shader Graph won't save by itself, and the normal save shortcut of `Ctrl+s` or `Cmd+s` don't seem to work, so you'll need to remember to press that save button often.
+A grey square is nice, but we probably want to at least show the image you chose earlier instead. To do that, we'll need to open up Shader Graph by double-clicking on the shader graph asset you made earlier. Something like the image to the right should pop up - this is the shader graph window.
 
-On the right side of the top bar, there are also three buttons to enable and disable the `Blackboard`, `Graph Inspector`, and the `Main Preview`. If you click these buttons, you'll find that the the `Blackboard` is that box on the left, the `Graph Inspector` is the box in the upper right, and the `Main Preview` is the box in the lower right. The `Blackboard` is where you can define properties (input parameters) and keywords (used to make shader variants, but outside the scope of this tutorial). The `Graph Inspector` is like the inspector window of the rest of Unity, except just for Shader Graph. It shows the graph's settings, and if you click on a node in the graph, it will also show the settings for that node. Finally, the `Main Preview` shows what the current graph will output. By default, it maps to a sphere, but since we're working with a sprite, you should right click it and select `Quad` instead.
+At the top of the window is a bar with a couple of buttons - most notably the `Save Asset` button. Shader Graph won't save by itself, and the normal save shortcut of `Ctrl+s` or `Cmd+s` don't seem to work, so you'll need to remember to press that save button often.
 
-Finally, in the center, you should see a node labeled `Vertex` and node labeled `Fragment`, which we'll need to connect the output of other nodes to in order to not display a grey square. You can move these (and other nodes) by clicking and dragging, and you can pan around the graph by holding the left alt key while clicking and dragging. Alright, can you guess which of the parameters on the Vertex and Fragment nodes we need to modify to show a non-grey box?
+On the right side of the top bar, there are also three buttons to enable and disable the `Blackboard`, `Graph Inspector`, and the `Main Preview`. If you click these buttons, you'll find that the the `Blackboard` is that box on the left, the `Graph Inspector` is the box in the upper right, and the `Main Preview` is the box in the lower right.
+* The `Blackboard` is where you can define properties (input parameters) and keywords (used to make shader variants, but outside the scope of this tutorial).
+* The `Graph Inspector` is like the inspector window of the rest of Unity, except just for Shader Graph. It shows the graph's settings, and if you click on a node in the graph, it will also show the settings for that node.
+* The `Main Preview` shows what the current graph will output. By default, it maps to a sphere, but since we're working with a sprite, you should right click it and select `Quad` instead.
+
+Finally, in the center, you should see a node labeled `Vertex` and node labeled `Fragment`. We'll need to connect the output of nodes we'll create later to display a something other than a grey square. First, take a moment to examine each parameter of the `Vertex` and `Fragment` boxes. Can you guess which of the parameters on the Vertex and Fragment nodes we need to modify to show a non-grey box?
 
 <details>
  <summary>Answer</summary>
- We need to change the Base Color(3) of the fragment node! If you click on the grey box connected to the Base Color(3) node, you can pick a different non-grey color for your sprite. Progress! Note that the (3) at the end of Base Color(3) indicates that this parameter has three channels - namely red, green, and blue. Other parameters like Position(3) can also have three channels but have them mean something completely different (such as x, y, and z coordinates). Values with up to 4 channels are common in Shader Graph, so you'll need to get used to remembering how many channels each parameter has and what each channel means!
+ We need to change the Base Color(3) of the fragment node! If you click on the grey box connected to the Base Color(3) node, you can pick a different non-grey color for your sprite. Progress! If you also mess around with the Alpha(1) node, you'll also see that it changes how transparent our box is.
+ 
+ An important note is that the numbers at the end of each value indicate how many channels that value holds. For instance, Base Color(3) has 3 channels - namely red, green, and blue. Position(3) also has three channels, but in this case they something completely different (x, y, and z coordinates). Alpha(1) only has 1 channel, the transparency of the image. Values with up to 4 channels are frequent in shaders, and it's important to keep track of how many channels each value has, and what each channel represents.
 </details>
 
+You can create new nodes by right clicking and selecting a node from the list. You can move nodes by clicking and dragging them, and you can pan around the graph by holding the left alt key while clicking and dragging. Finally you can create connections between nodes by clicking and dragging from a circular port on the right side of a node (an output) to a circular port on the left side of a node (an input). This allows data to "flow" from one node to the next.
+
+### Sampling Textures
 To display the sprite instead of a square, the shader will need a property to accept input from the renderer. On the `Blackboard`, click the plus button and add a new `Texture2D` property, or basically an image. Click on the property to inspect it in the `Node Settings` section of the `Graph Inspector`. Change the `name` **and** the `reference` to `_MainTex` exactly. The reference **must** be `_MainTex` in order for the renderer to correctly supply the sprite to the shader. In addition, you can choose your image as the default, so it will show up instead of a monocolor square when we start connecting nodes.
 
 Click and drag the `_MainTex` property onto the graph to create a node. Unfortunately, if we try to drag the output of this node to attach it to any of the vertex and fragment inputs, it will fail to connect, because we can't convert a `Texture2D` into `Vector(3)` or a `Vector(1)`. Instead, we need to sample the texture first. Right click and select `Create Node`. Then find and select `Sample Texture 2D` by typing in the search bar or under `Input → Texture` to create the node. You can connect the `_MainTex` node to the `Texture(T2)` input of the `Sample Texture 2D` node, and your image should appear!
