@@ -20,13 +20,21 @@
   * [UV Coordinates](#uv-coordinates)
  
 ### What You'll Need
-* Unity version 2020.3.33f1
-  * Other 2020 versions, as well as newer versions, should also work.
-  * Note that in 2021 versions, shaders generated with Shader Graph are not compatible with UI components, unlike 2020 versions.
-* Universal Render Pipeline (URP) package
-  * Other scriptable render pipelines (such as HDRP) should also work, although they may require more setup not covered in this tutorial.
-* Shader Graph package
-  * This is included in the URP and HDRP packages, but can also be installed separately.
+<details>
+ <summary>Unity version 2020.3.33f1</summary>
+ <ul>
+  <li>Other 2020 versions, as well as newer versions, should also work.</li>
+  <li>Note that in 2021 versions, shaders generated with Shader Graph are not compatible with UI components, unlike 2020 versions.</li>
+ </ul>
+</details>
+<details>
+ <summary>Universal Render Pipeline (URP) package</summary>
+ <ul><li>Other scriptable render pipelines (such as HDRP) should also work, although they may require more setup not covered in this tutorial.</li></ul>
+</details>
+<details>
+ <summary>Shader Graph package</summary>
+ <ul><li>This is included in the URP and HDRP packages, but can also be installed separately.</li></ul>
+</details>
 
 Detailed setup instructions are covered [below](#setup).
 
