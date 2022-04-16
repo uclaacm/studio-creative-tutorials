@@ -87,6 +87,8 @@ Finally, in the center, you should see a node labeled `Vertex` and node labeled 
  We need to change the Base Color(3) of the fragment node! If you click on the grey box connected to the Base Color(3) node, you can pick a different non-grey color for your sprite. Progress! Note that the (3) at the end of Base Color(3) indicates that this parameter has three channels - namely red, green, and blue. Other parameters like Position(3) can also have three channels but have them mean something completely different (such as x, y, and z coordinates). Values with up to 4 channels are common in Shader Graph, so you'll need to get used to remembering how many channels each parameter has and what each channel means!
 </details>
 
+To display the sprite instead of a square, the shader will need a property to accept input from the renderer. On the `Blackboard`, click the plus button and add a new `Texture2D` property, or basically an image. Click on the property to inspect it in the `Node Settings` section of the `Graph Inspector`. Change the `name` **and** the `reference` to `_MainTex` exactly. The reference **must** be `_MainTex` in order for the renderer to correctly supply the sprite to the shader. In addition, you can choose your image as the default, so it will show up instead of a monocolor square when we start connecting nodes.
+
 ---
 
 ## Additional Resources
