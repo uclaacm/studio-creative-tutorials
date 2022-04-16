@@ -34,8 +34,8 @@ For the rest of this tutorial, we will use shader to refer to this type of graph
 A shader is composed of two parts: a **vertex shader** and a **fragment shader**. The vertex shader runs first, and does computations for each **vertex** in the mesh a object being rendered is composed of. Vertex shaders can run computations including moving the position of vertices to distort the mesh (and thus its appearance), and running calculations to produce data that will be used by the fragment shader, such as determining the distance to a point at each vertex. After the vertex shader runs, the GPU does some processing to interpolate the output of the vertex shader between the vertices and rasterizes the object being rendered to produce **fragments**. (You can think of fragments as the pixels on the screen, although they're not actually equivalent.) Finally, the fragment shader does computations for each fragment to determine what color it should be.
 
 #### Materials
-<img src="./Sprite%20Tinted.png" width="300" align="right"/>
-<img src="./Sprite%20Untinted.png" width="300" align="right"/>
+<img src="./Sprite%20Tinted.png" width="300" align="right" alt="material using default shader but tinted blue"/>
+<img src="./Sprite%20Untinted.png" width="300" align="right" alt="material using default shader but untinted"/>
 
 Unity also has assets called **materials**, which are different but related to shaders. Basically, a material is a preset configuration of parameters that should be used in a shader, so multiple materials can use the same shader with different parameters.
 
@@ -46,7 +46,7 @@ Note: All objects which use the same material will share the same values for the
 ### What can shaders do?
 At the very basic level, shaders let your game actually display things - Unity provides a plethora of built-in shaders that do just that. However, shaders can also be used to do much, much more! Here are a few images illustrating what shaders can do, with links to guides/tutorials on recreating them:
 
-| <img src="https://i1.wp.com/cghow.com/wp-content/uploads/2019/02/ToonShaderAnimation.gif" width=300/> | <img src="http://3909.co/dev/od/img/Dither2-CameraSphere2.gif" width="300"/> | <img src="https://images.squarespace-cdn.com/content/v1/5a724d26a8b2b04c5d34119e/1534964689364-56OGVPAS5EIT8KHPJ7I6/grass2.gif" width="300"/> |
+| <img src="https://i1.wp.com/cghow.com/wp-content/uploads/2019/02/ToonShaderAnimation.gif" width=300 alt="toon shader with directional light"/> | <img src="http://3909.co/dev/od/img/Dither2-CameraSphere2.gif" width=300 alt="monocolor dither shader"/> | <img src="https://images.squarespace-cdn.com/content/v1/5a724d26a8b2b04c5d34119e/1534964689364-56OGVPAS5EIT8KHPJ7I6/grass2.gif" width="300" alt="low-poly grass waving in the wind"/> |
 | :-: | :-: | :-: |
 | A cell shader (also known as a toon shader), featuring two-tone shading (with hard lines separating light and shadow), specular reflection (brighter highlights representing reflected light), and rim lighting (bright edges). | A monocolor dithering shader from *Return of the Obra Dinn*, using a pixellated dithering pattern to show light and shadow. | A vertex shader simulating grass blowing in the wind, achieved by animating the position of vertices based on world position and local y position. |
 | [Toon Shader Tutorial](https://roystan.net/articles/toon-shader.html) | [*Return of the Obra Dinn* Devlog](https://forums.tigsource.com/index.php?topic=40832.msg1363742#msg1363742) | [Waving Grass Tutorial](https://lindenreidblog.com/2018/01/07/waving-grass-shader-in-unity/) |
@@ -60,11 +60,11 @@ Once you have a shader, regardless of how it was created, you will need a materi
 
 ## Shader Graph
 ### Setup
-<img src="./Universal%20RP%20Package.png" align="right" width=500/>
+<img src="./Universal%20RP%20Package.png" align="right" width=500 alt="Universal RP package in Unity registry"/>
 
 Since Shader Graph is not compatible with Unity's built-in render pipeline, we will need to install one of Unity's scriptable render pipeline. For this tutorial, we will be using the Universal Render Pipeline, or URP. To install this package, open the Package Manager by going to `Window → Package Manager`, then find and install the `Universal RP` package in the Unity registry.
 
-<img src="./Project%20Settings.png" align="right" width=500/>
+<img src="./Project%20Settings.png" align="right" width=500 alt="Graphics section of the project settings, with the URP pipeline asset selected"/>
 
 The Universal RP package actually includes the Shader Graph package as a dependency, so installing it will also automatically install Shader Graph as well. However, before we can start using Shader Graph, we need to configure the project's settings to use URP instead of the built-in pipeline. First, in your project right click and select: `Create → Rendering → Universal Render Pipeline → Pipeline Asset (Forward Renderer)`. This should create a `UniversalRenderPipelineAsset` and a `UniversalRenderPipelineAsset_Renderer`.
 
