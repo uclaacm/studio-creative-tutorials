@@ -26,11 +26,12 @@ The term `shader` is often used to refer to several related concepts, but in the
 For the rest of this tutorial, we will use `shader` to refer to this type of `graphics pipeline shader` specifically, unless otherwise noted, but you can read more about these other kinds of `shaders` at the links provided in [Additional Resources](#additional-resources) below.
 
 ### What can `shaders` do?
-At the very basic level, shaders let your game actually display things - Unity provides a plethora of built-in shaders that do just that. However, shaders can also be used to do much, much more! Here are a few images illustrating what shaders can do:
+At the very basic level, shaders let your game actually display things - Unity provides a plethora of built-in shaders that do just that. However, shaders can also be used to do much, much more! Here are a few images illustrating what shaders can do, with links to recreating them:
 
 | <img src="https://i1.wp.com/cghow.com/wp-content/uploads/2019/02/ToonShaderAnimation.gif" width="200"/> | <img src="http://3909.co/dev/od/img/Dither2-CameraSphere2.gif" width="200"/> |
 | :-: | :-: |
-| A cell or toon shader with hard lines separating shadows and highlights. | A monocolor dithering shader from *Return of the Obra Dinn* |
+| A cell (or toon) shader, featuring two-tone shading (with hard lines separating light and shadow), specular reflection (see the brighter highlights on small parts of the shapes), and rim lighting (bright edges). | A monocolor dithering shader from *Return of the Obra Dinn*, using a pixellated dithering pattern to show light and shadow |
+| [Toon Shader Tutorial](https://roystan.net/articles/toon-shader.html) | [*Return of the Obra Dinn* Devlog](https://forums.tigsource.com/index.php?topic=40832.msg1363742#msg1363742) |
 
 ## Shader Graph
 
