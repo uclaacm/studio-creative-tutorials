@@ -80,6 +80,13 @@ Okay, but we probably want to at least show your original image instead of a gre
 
 On the right side of the top bar, there are also three buttons to enable and disable the `Blackboard`, `Graph Inspector`, and the `Main Preview`. If you click these buttons, you'll find that the the `Blackboard` is that box on the left, the `Graph Inspector` is the box in the upper right, and the `Main Preview` is the box in the lower right. The `Blackboard` is where you can define properties (input parameters) and keywords (used to make shader variants, but outside the scope of this tutorial). The `Graph Inspector` is like the inspector window of the rest of Unity, except just for Shader Graph. It shows the graph's settings, and if you click on a node in the graph it will also show the settings for that node. Finally, the `Main Preview` shows what the current graph will output. By default, it maps to a sphere, but since we're working with a sprite, you should right click it and select `Quad` instead.
 
+Finally, in the center, you should see a node labeled `Vertex` and node labeled `Fragment`, which we'll need to connect the output of other nodes to in order to not display a grey square. You can move these (and other nodes) by clicking and dragging, and you can pan around the graph by holding the left alt key while clicking and dragging. Alright, can you guess which of the parameters on the Vertex and Fragment nodes we need to modify to show a non-grey box?
+
+<details>
+ <summary>Answer</summary>
+ We need to change the `Base Color(3)` of the fragment node! If you click on the grey box connected to the `Base Color(3)` node, you can pick a different non-grey color for your sprite. Progress! Note that the (3) at the end of `Base Color(3)` indicates that this parameter has three channels - namely red, green, and blue. Other parameters like `Position(3)` can also have three channels but have them mean something completely different (such as x, y, and z coordinates). Values with up to 4 channels are common in Shader Graph, so you'll need to get used to remembering how many channels each parameter has and what each channel means!
+</details>
+
 ---
 
 ## Additional Resources
