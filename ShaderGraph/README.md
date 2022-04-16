@@ -155,7 +155,7 @@ Pop quiz time! Using UV coordinates, figure out how to make each effect.
 #### Scrolling Textures
 The Tiling and Offset node allows us to tile UV coordinates to create duplicates of an image, with an offset. We can combine this with the Time node, which provides input information about how much time has passed, to create an infinitely scrolling texture. Using these nodes and what you've learned so far, try creating a shader which will tile an image four times and scroll infinitely, repeating the images forever!
 <details>
- <summary>Infinitely scrolling textures!</summary>\
+ <summary>Infinitely scrolling textures!</summary>
  <img src="./Scrolling.png" alt="Shader graph for infinitely scrolling texture"/>
  We can connect the time node to the Offset(2) to scroll diagonally. However, we need to take the fractional component of the Tiling and Offset node since both tiling and offset will increase the values of the UV past 1.
 </details>
