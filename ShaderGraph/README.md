@@ -153,9 +153,17 @@ Pop quiz time! Using UV coordinates, figure out how to make each effect.
 </details>
 
 #### Scrolling Textures
-The Tiling and Offset node allows us to tile UV coordinates to create duplicates of an image, with an offset. We can combine this with the Time node, which provides input information about how much time has passed, to create an infinitely scrolling texture. Using these nodes and what you've learned so far, try creating a shader which will tile an image four times and scroll diagonally, repeating the images forever!
+The Tiling and Offset node allows us to tile UV coordinates to create duplicates of an image, with an offset. We can combine this with the Time node, which provides input information about how much time has passed, to create an infinitely scrolling texture. Using these nodes and what you've learned so far, try creating a shader which will tile an image four times and scroll infinitely, repeating the images forever!
 <details>
  <summary>Infinitely scrolling textures!</summary>
+ We can connect the time node to the Offset(2) to scroll diagonally. However, we need to take the fractional component of the Tiling and Offset node since both tiling and offset will increase the values of the UV past 1.
+</details>
+
+#### Screen Space UV
+Right click and create a `Screen Position` node. Look familiar? Try swapping it in and playing around with it to see what happens!
+<details>
+ <summary>UV Spaces</summary>
+ Thus far, we've been working with UVs in terms of the object, but you can also apply UVs from other "spaces" or coordinate systems, such as the entire screen, where the lower left corner of the screen is (0,0) and the upper right corner of the screen is (1,1). In case you didn't see it while messing around, the Screen node provides the width and height of the screen, so some simple division can tell you how to scale an image to maintain its correct aspect ratio and size. In addition to screen UVs, you can even use world position as your UVs!
 </details>
 
 ---
