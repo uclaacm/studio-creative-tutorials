@@ -120,6 +120,13 @@ Pop quiz time! Using UV coordinates, figure out how to make each effect.
 
 <details>
  <summary>Flip an image vertically.</summary>
+ <img src="./Flip%20Vertical%20Solution.png" alt="Shader Graph for flipping an image vertically."/>
+ If we subtract the green channel from 1, that makes the top of the square black, and the bottom white, flipping it vertically. (There is a subtract node, but why use that when we have a handy one-minus node available?) Then we recombine it with the red channel and feed that into the UV coordinates.
+</details>
+<details>
+ <summary>Flip an image across its diagonal.</summary>
+ <img src="./Rotate%20Solution.png" alt="Shader Graph for rotating an image 90 degrees."/>
+ If we simply swap the red and the green channels, our image is flipped! (There's actually a node for this called the Swizzle node, which works for changing the order of up to 4 channels. This solution just splits and recombines for clarity though.)
 </details>
 <details>
  <summary>Rotate an image 90 degrees.</summary>
