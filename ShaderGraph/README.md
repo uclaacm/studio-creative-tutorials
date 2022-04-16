@@ -134,13 +134,18 @@ Pop quiz time! Using UV coordinates, figure out how to make each effect.
  The solution to this puzzle is simply combining the previous two puzzles. We use one minus on the red channel before swizzling. Note the use of a redirect node to route the connection around another node, making the graph more readable!
 </details>
 <details>
- <summary>Split the image into four corners.
-  <p><img src="./Four%20Corners%20Puzzle.png" alt="An image split into four corners." width=100/></p>
+ <summary>Split the image into 4 corners, each showing the plus symbol.<br>
+  <img src="./Four%20Corners%20Puzzle.png" alt="An image split into four corners." width=100/>
  </summary>
  <img src="./Four%20Corners%20Solution.png" alt="Shader Graph for splitting an image into four corners."/>
+ This one's definitely trickier! We add 0.5 to both red and green channels, then subtract both channels from one, and take the absolute value of that. This gives us (0,0) in the center, and (0.5, 0.5) in the corners!
 </details>
 <details>
- <summary>Duplicate the image to a total of four images.</summary>
+ <summary>Fully duplicate the image in each corner.<br>
+  <img src="./Four%20Puzzle.png" alt="Image that has been duplicated in each corner." width=100/>
+ </summary>
+ <img src="./Four%20Puzzle%20Solution.png" alt="Shader Graph for duplicating an image in each corner."/>
+ Here, we multiply the entire UV by 2, and then take the fractional part of that with the frac node. This leaves us with 4 copies of the UV, one in each corner. There's actually a Tiling and Offset node, which we will cover next, that does this as well.
 </details>
 
 ---
