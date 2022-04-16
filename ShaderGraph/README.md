@@ -16,6 +16,7 @@
 * [Shader Graph](#shader-graph)
   * [Setup](#setup)
   * [Creating a Shader](#creating-the-simplest-shader-possible)
+  * [UV Coordinates](#uv-coordinates)
  
 ### What You'll Need
 * Unity version 2020.x or newer. Note that in 2021 versions, shaders generated with Shader Graph are not compatible with UI components, unlike 2020 versions.
@@ -95,8 +96,12 @@ The `Sample Texture 2D` node also has two other inputs, of which `UV(2)` is very
 
 <details>
  <summary>Finished shader</summary>
+ <img src="./Finished%20Shader.png"/>
  Connect the RGBA(4) output to the Base Color(3) input. Note that even though RGBA has 4 channels, shader graph intelligently drops the 4th channel automatically. However, that means we also still need to supply that 4th alpha channel somewhere, namely the Alpha(1) input. If you don't do this, your image won't have transparent parts!
 </details>
+
+### UV Coordinates
+
 
 ---
 
