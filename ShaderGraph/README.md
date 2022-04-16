@@ -12,6 +12,7 @@
 * [Shaders](#shaders)
   * [What is a shader?](#what-is-a-shader)
   * [What can shaders do?](#what-can-shaders-do)
+  * [When should I use a shader?](#when-should-i-use-a-shader)
   * [How do I make and use shaders in Unity?](#how-do-i-make-and-use-shaders-in-unity)
 * [Shader Graph](#shader-graph)
   * [Setup](#setup)
@@ -52,6 +53,9 @@ At the very basic level, shaders let your game actually display things - Unity p
 | :-: | :-: | :-: |
 | A cell shader (also known as a toon shader), featuring two-tone shading (with hard lines separating light and shadow), specular reflection (brighter highlights representing reflected light), and rim lighting (bright edges). | A monocolor dithering shader from *Return of the Obra Dinn*, using a pixellated dithering pattern to show light and shadow. | A vertex shader simulating grass blowing in the wind, achieved by animating the position of vertices based on world position and local y position. |
 | [Toon Shader Tutorial](https://roystan.net/articles/toon-shader.html) | [*Return of the Obra Dinn* Devlog](https://forums.tigsource.com/index.php?topic=40832.msg1363742#msg1363742) | [Waving Grass Tutorial](https://lindenreidblog.com/2018/01/07/waving-grass-shader-in-unity/) |
+
+### When should I use a shader?
+Although the above shaders look really cool, you might be wondering why we use shaders instead of simply baking the art style into the art. Actually, that is frequently a valid approach - but there are also many times when using a shader is better or even the only way to do something. The primary reason you might use a shader is dynamic effects. For things such as lighting, the look of the object has to be calculated at runtime - there's simply no way to include how an object might look from every possible angle with every configuration of lights while making the game. Other effects that rely on data only available at runtime like how a building will look after the player splatters paint on it randomly can also only be done with shaders. Another reason to use shaders is saving development time. Although you could in theory draw a thousand different color variations of an item, it's much less time consuming to simply use a shader to recolor the item. Finally, shaders can help with optimization to make the game run faster - the GPU is really good at parallelism, so it's much more efficient to allow the GPU to animate wind blowing through thousands of blades of grass than using the CPU. (In fact, the compute shaders mentioned earlier take this a step further by running calculations often completely unrelated to graphics on the GPU to speed up the game).
 
 ### How do I make and use shaders in Unity?
 Unity has two primary methods for creating custom shaders. First, you can write a shader in **ShaderLab** (a Unity-specific language used to define the structure of a shader and can contain multiple shader programs) and **HLSL** (high-level shader language, in which the actual shader programs are written). Second, you can use Unity's **Shader Graph** package to create shaders with a visual node-based system.
