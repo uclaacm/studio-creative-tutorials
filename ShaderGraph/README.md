@@ -10,8 +10,8 @@
  
 ### Topics Covered
 * [Shaders](#shaders)
-  * [What is a shader?](#what-is-a-shader)
   * [What can shaders do?](#what-can-shaders-do)
+  * [What is a shader?](#what-is-a-shader)
   * [When should I use a shader?](#when-should-i-use-a-shader)
   * [How do I make and use shaders in Unity?](#how-do-i-make-and-use-shaders-in-unity)
 * [Shader Graph](#shader-graph)
@@ -41,8 +41,16 @@ Detailed setup instructions are covered [below](#setup).
 ---
 
 ## Shaders
+### What can shaders do?
+At the most basic level, shaders allow your game to render onto the screen, so the player can see the game - Unity provides a plethora of built-in shaders that do just that. However, shaders can also be used to do much, much more! Here are a few images illustrating what shaders can do, with links to guides/tutorials on recreating them:
+
+| <img src="https://i1.wp.com/cghow.com/wp-content/uploads/2019/02/ToonShaderAnimation.gif" width=300 alt="toon shader with directional light"/> | <img src="http://3909.co/dev/od/img/Dither2-CameraSphere2.gif" width=300 alt="monocolor dither shader"/> | <img src="https://images.squarespace-cdn.com/content/v1/5a724d26a8b2b04c5d34119e/1534964689364-56OGVPAS5EIT8KHPJ7I6/grass2.gif" width="300" alt="low-poly grass waving in the wind"/> |
+| :-: | :-: | :-: |
+| A cel shader (also known as a toon shader), featuring two-tone shading (with hard lines separating light and shadow), specular reflection (brighter highlights representing reflected light), and rim lighting (bright edges). | A monocolor dithering shader from *Return of the Obra Dinn*, using a pixellated dithering pattern to show light and shadow. | A vertex shader simulating grass blowing in the wind, achieved by animating the position of vertices based on world position and local y position. |
+| [Toon Shader Tutorial](https://roystan.net/articles/toon-shader.html) | [*Return of the Obra Dinn* Devlog](https://forums.tigsource.com/index.php?topic=40832.msg1363742#msg1363742) | [Waving Grass Tutorial](https://lindenreidblog.com/2018/01/07/waving-grass-shader-in-unity/) |
+
 ### What is a shader?
-The term **shader** is often used to refer to several related concepts, but in the broadest sense a shader is a program that runs on the GPU instead of the CPU. This includes compute shaders and ray tracing shaders, but for the purposes of this tutorial, we are interested in graphics pipeline shaders which determines the color of pixels, or in other words, determine what you see on the screen.
+Now that you've seen a few examples of interesting shaders, you may be wondering, "What is a shader?" The term **shader** is used to refer to several related concepts, but in the broadest sense a shader is a program that runs on the GPU instead of the CPU. This includes compute shaders and ray tracing shaders, but for the purposes of this tutorial, we are interested in graphics pipeline shaders. These shaders calculate what color pixels should be, or in other words, determine what you see on the screen.
 
 For the rest of this tutorial, we will use shader to refer to this type of graphics pipeline shader specifically, unless otherwise noted, but you can read more about these other kinds of shaders at the links provided in [Additional Resources](#additional-resources) below. These graphics pipeline shaders run during the rendering step of Unity's graphics pipelines, which you can learn more about [here](https://github.com/uclaacm/studio-creative-tutorials/blob/fall-21/Post%20Processing/Dictionary/Render%20Pipelines.md).
 
@@ -63,16 +71,16 @@ For example, the images to the right show two materials which both use the `Spri
  All objects which use the same material will share the same values for the parameters. This can be very helpful if you need to create a bunch of objects which look identical, but if you need to modify the parameters at runtime for individual instances instead of all of the objects, you can use <a href="https://docs.unity3d.com/ScriptReference/MaterialPropertyBlock.html">MaterialPropertyBlocks</a>. Unfortunately, MaterialPropertyBlocks don't work with UI components, so the other workaround for those is to create a material for each instance you want to modify separately.
 </details>
 
-### What can shaders do?
-At the very basic level, shaders let your game actually display things - Unity provides a plethora of built-in shaders that do just that. However, shaders can also be used to do much, much more! Here are a few images illustrating what shaders can do, with links to guides/tutorials on recreating them:
-
-| <img src="https://i1.wp.com/cghow.com/wp-content/uploads/2019/02/ToonShaderAnimation.gif" width=300 alt="toon shader with directional light"/> | <img src="http://3909.co/dev/od/img/Dither2-CameraSphere2.gif" width=300 alt="monocolor dither shader"/> | <img src="https://images.squarespace-cdn.com/content/v1/5a724d26a8b2b04c5d34119e/1534964689364-56OGVPAS5EIT8KHPJ7I6/grass2.gif" width="300" alt="low-poly grass waving in the wind"/> |
-| :-: | :-: | :-: |
-| A cell shader (also known as a toon shader), featuring two-tone shading (with hard lines separating light and shadow), specular reflection (brighter highlights representing reflected light), and rim lighting (bright edges). | A monocolor dithering shader from *Return of the Obra Dinn*, using a pixellated dithering pattern to show light and shadow. | A vertex shader simulating grass blowing in the wind, achieved by animating the position of vertices based on world position and local y position. |
-| [Toon Shader Tutorial](https://roystan.net/articles/toon-shader.html) | [*Return of the Obra Dinn* Devlog](https://forums.tigsource.com/index.php?topic=40832.msg1363742#msg1363742) | [Waving Grass Tutorial](https://lindenreidblog.com/2018/01/07/waving-grass-shader-in-unity/) |
-
 ### When should I use a shader?
-Although the above shaders look really cool, you might be wondering why we use shaders instead of simply baking the art style into the art. Actually, that is frequently a valid approach - but there are also many times when using a shader is better or even the only way to do something. The primary reason you might use a shader is dynamic effects. For things such as lighting, the look of the object has to be calculated at runtime - there's simply no way to include how an object might look from every possible angle with every configuration of lights while making the game. Other effects that rely on data only available at runtime like how a building will look after the player splatters paint on it randomly can also only be done with shaders. Another reason to use shaders is saving development time. Although you could in theory draw a thousand different color variations of an item, it's much less time consuming to simply use a shader to recolor the item. Finally, shaders can help with optimization to make the game run faster - the GPU is really good at parallelism, so it's much more efficient to allow the GPU to animate wind blowing through thousands of blades of grass than using the CPU. (In fact, the compute shaders mentioned earlier take this a step further by running calculations often completely unrelated to graphics on the GPU to speed up the game).
+You might also be wondering why we use shaders instead of simply baking the art style into the art. Actually, that is frequently a valid approach - but there are also many times when using a shader is better or even the only way to do something.
+* Dynamic effects: For effects like lighting, the look of the object has to be calculated at runtime - there's simply no way to include how an object might look from every possible angle with every configuration of lights. Other effects that rely on data only available at runtime, such as how a building will look after the player splatters paint on it randomly, are also only feasible with shaders.
+* Saving development time: Although you could in theory draw a thousand different color variations of an item, it's much less work to simply write a shader to recolor the item, especially when you can probably also reuse that shader for a thousand other items as well.
+* Optimization: The GPU is really good at running calculations in parallel, so it's much more efficient to allow the GPU to animate wind blowing through thousands of blades of grass than using the CPU. (In fact, the compute shaders mentioned earlier take this a step further by running calculations often completely unrelated to graphics on the GPU to speed up the game).
+
+Although shaders are great, there are also times when you probably shouldn't write a custom shader:
+* Unity's default shaders and components already do what you need: You don't need to wrtie a shader to fade in and out a sprite, because you can just animate the alpha channel of the color in the `Sprite Renderer`!
+* Optimization: If an effect is computationally expensive to create at runtime, you may be better off pre-rendering it and including it as an asset instead. For example, in many older games 3D cutscenes are pre-rendered because computers weren't powerful enough to render good-looking scenes in real time. (Note: Many shaders also use the related trick of baking information into a texture (e.g. lightmaps, normal maps), so that information can simply be sampled from the texture instead of being calculated at runtime.)
+* Prototyping: Many shaders are "visual polish" - they add to the aesthetic of a game but don't impart functionality. When you want to rapidly prototype and explore new concepts, you shouldn't be spending time on polish. (Caveat: There are shaders which you might need to make your game functional, such as outlining important objects in a scene).
 
 ### How do I make and use shaders in Unity?
 Unity has two primary methods for creating custom shaders. First, you can write a shader in **ShaderLab** (a Unity-specific language used to define the structure of a shader and can contain multiple shader programs) and **HLSL** (high-level shader language, in which the actual shader programs are written). Second, you can use Unity's **Shader Graph** package to create shaders with a visual node-based system.
@@ -190,6 +198,7 @@ Right click and create a `Screen Position` node. Look familiar? Try swapping it 
 * [Unity Documentation: Shaders](https://docs.unity3d.com/Manual/Shaders.html)
 * [Unity Documentation: ShaderLab](https://docs.unity3d.com/Manual/SL-Reference.html)
 * [Unity Documentation: MaterialPropertyBlocks](https://docs.unity3d.com/ScriptReference/MaterialPropertyBlock.html)
+* [Render Pipelines](https://github.com/uclaacm/studio-creative-tutorials/blob/fall-21/Post%20Processing/Dictionary/Render%20Pipelines.md)
 
 ## Non-Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
