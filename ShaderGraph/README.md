@@ -106,10 +106,14 @@ UV coordinates are a way of mapping a 2D texture onto a 3D surface! As shown in 
 
 <p align="center">
  <img src="https://www.pluralsight.com/content/dam/pluralsight/blog/dt/wp-uploads/2014/01/UV_Distortion.jpg" width=500 alt="Mapping a 2D texture onto a 3D dinosaur"/>
- <img src="https://www.pluralsight.com/content/dam/pluralsight/blog/dt/wp-uploads/2014/01/UVs_Example.jpg" width=500 alt="Unwrapping the 3D dinosaur onto a 2D plane/>
+ <img src="https://www.pluralsight.com/content/dam/pluralsight/blog/dt/wp-uploads/2014/01/UVs_Example.jpg" width=500 alt="Unwrapping the 3D dinosaur onto a 2D plane"/>
 </p>
 
+<img src="./UV%20Coordinates.png" width=500 alt="Splitting UV coordinates into separate channels" align="right"/>
+
 Even though we're working with sprite shaders today, it turns out there are a lot of neat things you can do with UV coordinates, even when you're on a `Quad` (a flat plane). But first, let's take a look at how to read UV coordinates in Shader Graph. The image to the right shows a UV node connected to a `Split` node to split the two channels of the UV. Each channel is then connected to a `Preview` node to show what each channel looks like.
+
+The preview of the UV might be confusing at first glance, but take a look at each channel separately. The red channel is black on the left and white on the right, indicating that it increases from 0 to 1 from left to right. Similarly, the green channel is black on the bottom and white on the top, increasing from 0 to 1 from bottom to top. So basically, the default UV coordinates are a square with (0,0) in the lower left corner and (1,1) in the upper right, and this is represented with red and green. Thus, in the lower left, where red and green are both close to 0, the preview is black, and in the upper right where red and green are both close to 1, the preview is a bright yellow (the combination of red and green). On the lower right where red is much greater than green, the preview is red, and in the upper left where green is much greater than red, the preview appears green. Make sense? If not, play around with these nodes and some basic math nodes until it does, because you'll need a solid understanding of how to read UV coordinates in the future.
 
 ---
 
