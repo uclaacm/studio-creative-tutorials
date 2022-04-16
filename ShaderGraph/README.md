@@ -49,14 +49,14 @@ For the rest of this tutorial, we will use shader to refer to this type of graph
 A shader is composed of two parts: a **vertex shader** and a **fragment shader**. The vertex shader runs first, and does computations for each **vertex** in the mesh a object being rendered is composed of. Vertex shaders can run computations including moving the position of vertices to distort the mesh (and thus its appearance), and running calculations to produce data that will be used by the fragment shader, such as determining the distance to a specific point at each vertex. After the vertex shader runs, the GPU does some processing to interpolate the output of the vertex shader between the vertices, and rasterizes the object being rendered to produce **fragments**. (You can think of fragments as the pixels on the screen, although they're not actually equivalent.) Finally, the fragment shader does computations for each fragment to determine what color it should be.
 
 #### Materials
-<img src="./Sprite%20Tinted.png" width=300 align="right" alt="material using default shader but tinted blue"/>
-<img src="./Sprite%20Untinted.png" width=300 align="right" alt="material using default shader but untinted"/>
+<img src="./Sprite%20Tinted.png" width=325 align="right" alt="material using default shader but tinted blue"/>
+<img src="./Sprite%20Untinted.png" width=325 align="right" alt="material using default shader but untinted"/>
 
 Unity also has assets called **materials**, which are different but related to shaders. In essence, a material is a collection of textures, numbers, and other values used by the material's shader as inputs. Thus, you can create multiple materials that use the same shader, but have different values, to create different graphics while reusing the shader.
 
-For example, the images to the right show two materials which both use the `Sprites/Default` shader, but one of them is set to be tinted blue, while the other is untinted. When applied to a sprite with the ACM Game Studio logo, the tinted material causes the logo to be tinted blue, even though both materials use the same shader.
+<img src="./Sprite%20Materials.png" width=325 align="right" alt="studio logo, one untinted and the other tinted blue"/>
 
-<img src="./Sprite%20Materials.png" width=300 align="right" alt="studio logo, one untinted and the other tinted blue"/>
+For example, the images to the right show two materials which both use the `Sprites/Default` shader, but one of them is set to be tinted blue, while the other is untinted. When applied to a sprite with the ACM Game Studio logo, the tinted material causes the logo to be tinted blue, even though both materials use the same shader.
 
 <details>
  <summary>An Aside About MaterialPropertyBlocks</summary>
