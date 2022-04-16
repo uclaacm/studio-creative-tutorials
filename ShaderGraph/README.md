@@ -9,48 +9,51 @@
 * Video Coming Soon
  
 ### Topics Covered
-* [`Shaders`](#shaders)
-  * [What is a `shader`?](#what-is-a-shader)
-  * [What can `shaders` do?](#what-can-shaders-do)
-  * [How do I make and use `shaders` in Unity?](#how-do-i-make-and-use-shaders-in-unity)
+* [Shaders](#shaders)
+  * [What is a shader?](#what-is-a-shader)
+  * [What can shaders do?](#what-can-shaders-do)
+  * [How do I make and use shaders in Unity?](#how-do-i-make-and-use-shaders-in-unity)
 * [Shader Graph](#shader-graph)
  
 ### What you'll need
 * Unity version 2020.x or newer. Note that in 2021 versions, shaders generated with Shader Graph are not compatible with UI components, unlike 2020 versions.
+* A scriptable render pipeline - the URP (universal render pipeline) package is recommended.
+* Shader Graph package.
 
 ---
 
 ## Shaders
-### What is a `shader`?
-The term `shader` is often used to refer to several related concepts, but in the broadest sense a `shader` is a program that runs on the GPU instead of the CPU. This includes `compute shaders` and `ray tracing shaders`, but for the purposes of this tutorial, we are interested in the type of `shader` which determines the color of pixels. In other words, these `graphics pipeline shaders` determine what you see on the screen.
+### What is a shader?
+The term **shader** is often used to refer to several related concepts, but in the broadest sense a shader is a program that runs on the GPU instead of the CPU. This includes compute shaders and ray tracing shaders, but for the purposes of this tutorial, we are interested in graphics pipeline shaders which determines the color of pixels, or in other words, determine what you see on the screen.
 
-For the rest of this tutorial, we will use `shader` to refer to this type of `graphics pipeline shader` specifically, unless otherwise noted, but you can read more about these other kinds of `shaders` at the links provided in [Additional Resources](#additional-resources) below.
+For the rest of this tutorial, we will use shader to refer to this type of graphics pipeline shader specifically, unless otherwise noted, but you can read more about these other kinds of shaders at the links provided in [Additional Resources](#additional-resources) below.
 
-A `shader` is composed of two parts: a `vertex shader` and a `fragment shader`. The `vertex shader` runs first, and does computations for each `vertex` in the `mesh` a game object being rendered is composed of. Things `vertex shaders` can do include moving the position of `vertices` to distort the `mesh` (and thus its appearance), and running calculations to produce data that will be used by the `fragment shader`, such determining the distance to a point at each `vertex`. After the `vertex shader` runs, the GPU does some processing to interpolate the output of the `vertex shader` between the `vertices` and rasterizes the object being rendered to produce `fragments`. (You can think of `fragments` as the pixels on the screen, although they're not actually equivalent.) Finally, the `fragment shader` does computations for each `fragment` to determine what color it should be.
+A shader is composed of two parts: a **vertex shader** and a **fragment shader**. The vertex shader runs first, and does computations for each **vertex** in the mesh a object being rendered is composed of. Vertex shaders can run computations including moving the position of vertices to distort the mesh (and thus its appearance), and running calculations to produce data that will be used by the fragment shader, such as determining the distance to a point at each vertex. After the vertex shader runs, the GPU does some processing to interpolate the output of the vertex shader between the vertices and rasterizes the object being rendered to produce **fragments**. (You can think of fragments as the pixels on the screen, although they're not actually equivalent.) Finally, the fragment shader does computations for each fragment to determine what color it should be.
 
-#### `Materials`
-Unity also has assets called `materials`, which are different but related to `shaders`. Basically, a `material` is a preset configuration of parameters that should be used in a `shader`, so multiple `materials` can use the same shader with different parameters.
+#### Materials
+<img src="./Sprite%20Tinted.png" width="300" align="right"/>
+<img src="./Sprite%20Untinted.png" width="300" align="right"/>
 
-### What can `shaders` do?
-At the very basic level, `shaders` let your game actually display things - Unity provides a plethora of built-in `shaders` that do just that. However, `shaders` can also be used to do much, much more! Here are a few images illustrating what `shaders` can do, with links to guides/tutorials on recreating them:
+Unity also has assets called **materials**, which are different but related to shaders. Basically, a material is a preset configuration of parameters that should be used in a shader, so multiple materials can use the same shader with different parameters, so multiple materials can use the same shader.
+For example, the images to the right show two materials which use the `Sprites/Default` shader, but one of them is set to be tinted blue while the other is untinted.
+
+### What can shaders do?
+At the very basic level, shaders let your game actually display things - Unity provides a plethora of built-in shaders that do just that. However, shaders can also be used to do much, much more! Here are a few images illustrating what shaders can do, with links to guides/tutorials on recreating them:
 
 | <img src="https://i1.wp.com/cghow.com/wp-content/uploads/2019/02/ToonShaderAnimation.gif" width=300/> | <img src="http://3909.co/dev/od/img/Dither2-CameraSphere2.gif" width="300"/> | <img src="https://images.squarespace-cdn.com/content/v1/5a724d26a8b2b04c5d34119e/1534964689364-56OGVPAS5EIT8KHPJ7I6/grass2.gif" width="300"/> |
 | :-: | :-: | :-: |
-| A `cell shader` (also known as a `toon shader`), featuring two-tone shading (with hard lines separating light and shadow), specular reflection (see the brighter highlights on small parts of the shapes), and rim lighting (bright edges). | A monocolor dithering `shader` from *Return of the Obra Dinn*, using a pixellated dithering pattern to show light and shadow. | A `vertex shader` simulating grass blowing in the wind, achieved by animating the position of vertices based on world position and local y position. |
+| A cell shader (also known as a toon shader), featuring two-tone shading (with hard lines separating light and shadow), specular reflection (see the brighter highlights on small parts of the shapes), and rim lighting (bright edges). | A monocolor dithering shader from *Return of the Obra Dinn*, using a pixellated dithering pattern to show light and shadow. | A vertex shader simulating grass blowing in the wind, achieved by animating the position of vertices based on world position and local y position. |
 | [Toon Shader Tutorial](https://roystan.net/articles/toon-shader.html) | [*Return of the Obra Dinn* Devlog](https://forums.tigsource.com/index.php?topic=40832.msg1363742#msg1363742) | [Waving Grass Tutorial](https://lindenreidblog.com/2018/01/07/waving-grass-shader-in-unity/) |
 
-### How do I make and use `shaders` in Unity?
-Unity has two primary methods for creating custom `shaders`. First, you can write a `shader` in `ShaderLab` (a Unity-specific language used to define the structure of a `shader` and contains `shader programs`) and `HLSL` (high-level shader language, which the actual `shader programs` are written in). Second, you can use Unity's `Shader Graph` package to create `shaders` with a visual node-based system.
+### How do I make and use shaders in Unity?
+Unity has two primary methods for creating custom shaders. First, you can write a shader in **ShaderLab** (a Unity-specific language used to define the structure of a shader and can contains mulitple shader programs) and **HLSL** (high-level shader language, in which the actual shader programs are written). Second, you can use Unity's **Shader Graph** package to create shaders with a visual node-based system.
 
-This tutorial will focus on `Shader Graph` because it's much easier to pick up, and provides an easy way to start developing your intuition for the math behind beautiful `shaders` (warning: `shaders` involve a lot of math). That being said, if you are serious about diving into the world of `shaders`, you'll want to learn `ShaderLab` and `HLSL` eventually, since `Shader Graph` has a few disadvantages such as not being compatible with the built-in render pipeline, and that some tools like the stencil buffer are not available in `Shader Graph`, preventing certain effects from being made.
+This tutorial will focus on Shader Graph because it's much easier to pick up, and provides an easy way to start developing your intuition for the math behind beautiful shaders (warning: shaders involve a lot of math). That being said, if you are serious about diving into the world of shaders, you'll want to learn ShaderLab and HLSL eventually, since Shader Graph has a few disadvantages such as not being compatible with the built-in render pipeline, and that some effects are impossible to create in Shader Graph alone because tools like the stencil buffer are only available with code.
 
-## `Shader Graph`
-
-**Paths for Exploration:**
-* List stuff here
-  * List more stuff here
+## Shader Graph
 
 ---
+
 ## Additional Resources
 * [Unity Documentation: Shaders](https://docs.unity3d.com/Manual/Shaders.html)
 * [Unity Documentation: ShaderLab](https://docs.unity3d.com/Manual/SL-Reference.html)
