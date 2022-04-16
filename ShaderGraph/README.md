@@ -84,7 +84,7 @@ Finally, in the center, you should see a node labeled `Vertex` and node labeled 
 
 <details>
  <summary>Answer</summary>
- We need to change the `Base Color(3)` of the fragment node! If you click on the grey box connected to the `Base Color(3)` node, you can pick a different non-grey color for your sprite. Progress! Note that the (3) at the end of `Base Color(3)` indicates that this parameter has three channels - namely red, green, and blue. Other parameters like `Position(3)` can also have three channels but have them mean something completely different (such as x, y, and z coordinates). Values with up to 4 channels are common in Shader Graph, so you'll need to get used to remembering how many channels each parameter has and what each channel means!
+ We need to change the Base Color(3) of the fragment node! If you click on the grey box connected to the Base Color(3) node, you can pick a different non-grey color for your sprite. Progress! Note that the (3) at the end of Base Color(3) indicates that this parameter has three channels - namely red, green, and blue. Other parameters like Position(3) can also have three channels but have them mean something completely different (such as x, y, and z coordinates). Values with up to 4 channels are common in Shader Graph, so you'll need to get used to remembering how many channels each parameter has and what each channel means!
 </details>
 
 ---
