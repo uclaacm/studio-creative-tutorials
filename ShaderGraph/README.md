@@ -19,7 +19,7 @@
 ### What You'll Need
 * Unity version 2020.x or newer. Note that in 2021 versions, shaders generated with Shader Graph are not compatible with UI components, unlike 2020 versions.
 * A scriptable render pipeline - the URP (universal render pipeline) package is recommended.
-* Shader Graph package.
+* Shader Graph package (which is included within the URP package, but can also be installed separately).
 
 Note that more detailed setup instructions are covered [below](#setup).
 
@@ -41,6 +41,8 @@ Unity also has assets called **materials**, which are different but related to s
 
 For example, the images to the right show two materials which both use the `Sprites/Default` shader, but one of them is set to be tinted blue while the other is untinted.
 
+Note: All objects which use the same material will share the same values for the parameters, even if the values are changed at runtime. If you want to modify these parameters at runtime separately for different objects without creating a bunch of identical materials, you can use [`MaterialPropertyBlocks`](https://docs.unity3d.com/ScriptReference/MaterialPropertyBlock.html).
+
 ### What can shaders do?
 At the very basic level, shaders let your game actually display things - Unity provides a plethora of built-in shaders that do just that. However, shaders can also be used to do much, much more! Here are a few images illustrating what shaders can do, with links to guides/tutorials on recreating them:
 
@@ -58,12 +60,16 @@ Once you have a shader, regardless of how it was created, you will need a materi
 
 ## Shader Graph
 ### Setup
+<img src="./Universal%20RP%20Package.png" align="right" width=500/>
+
+Since Shader Graph is not compatible with Unity's built-in render pipeline, we will need to install one of Unity's scriptable render pipeline. For this tutorial, we will be using the Universal Render Pipeline, or URP. To install this package, open the Package Manager by going to `Window → Package Manager`, then find and install the `Universal RP` package in the Unity registry.
 
 ---
 
 ## Additional Resources
 * [Unity Documentation: Shaders](https://docs.unity3d.com/Manual/Shaders.html)
 * [Unity Documentation: ShaderLab](https://docs.unity3d.com/Manual/SL-Reference.html)
+* [Unity Documentation: MaterialPropertyBlocks](https://docs.unity3d.com/ScriptReference/MaterialPropertyBlock.html)
 
 ## Non-Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
