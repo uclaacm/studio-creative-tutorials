@@ -34,8 +34,9 @@ A shader is composed of two parts: a **vertex shader** and a **fragment shader**
 <img src="./Sprite%20Tinted.png" width="300" align="right"/>
 <img src="./Sprite%20Untinted.png" width="300" align="right"/>
 
-Unity also has assets called **materials**, which are different but related to shaders. Basically, a material is a preset configuration of parameters that should be used in a shader, so multiple materials can use the same shader with different parameters, so multiple materials can use the same shader.
-For example, the images to the right show two materials which use the `Sprites/Default` shader, but one of them is set to be tinted blue while the other is untinted.
+Unity also has assets called **materials**, which are different but related to shaders. Basically, a material is a preset configuration of parameters that should be used in a shader, so multiple materials can use the same shader with different parameters.
+
+For example, the images to the right show two materials which both use the `Sprites/Default` shader, but one of them is set to be tinted blue while the other is untinted.
 
 ### What can shaders do?
 At the very basic level, shaders let your game actually display things - Unity provides a plethora of built-in shaders that do just that. However, shaders can also be used to do much, much more! Here are a few images illustrating what shaders can do, with links to guides/tutorials on recreating them:
@@ -46,9 +47,11 @@ At the very basic level, shaders let your game actually display things - Unity p
 | [Toon Shader Tutorial](https://roystan.net/articles/toon-shader.html) | [*Return of the Obra Dinn* Devlog](https://forums.tigsource.com/index.php?topic=40832.msg1363742#msg1363742) | [Waving Grass Tutorial](https://lindenreidblog.com/2018/01/07/waving-grass-shader-in-unity/) |
 
 ### How do I make and use shaders in Unity?
-Unity has two primary methods for creating custom shaders. First, you can write a shader in **ShaderLab** (a Unity-specific language used to define the structure of a shader and can contains mulitple shader programs) and **HLSL** (high-level shader language, in which the actual shader programs are written). Second, you can use Unity's **Shader Graph** package to create shaders with a visual node-based system.
+Unity has two primary methods for creating custom shaders. First, you can write a shader in **ShaderLab** (a Unity-specific language used to define the structure of a shader and can contain multiple shader programs) and **HLSL** (high-level shader language, in which the actual shader programs are written). Second, you can use Unity's **Shader Graph** package to create shaders with a visual node-based system.
 
 This tutorial will focus on Shader Graph because it's much easier to pick up, and provides an easy way to start developing your intuition for the math behind beautiful shaders (warning: shaders involve a lot of math). That being said, if you are serious about diving into the world of shaders, you'll want to learn ShaderLab and HLSL eventually, since Shader Graph has a few disadvantages such as not being compatible with the built-in render pipeline, and that some effects are impossible to create in Shader Graph alone because tools like the stencil buffer are only available with code.
+
+Once you have a shader, regardless of how it was created, you will need a material to use it. You can right-click in the `Project` section of Unity and use `Create → Material` to create a new material, then change the shader the material uses near the top of the inspector window. After filling in any appropriate parameters for your material to provide to the shader, you can add it to an game object by finding the object's `Renderer` component (e.g. `MeshRenderer`, `SpriteRenderer`, `Image`) and dragging your material into the renderer's `Material` parameter.
 
 ## Shader Graph
 
