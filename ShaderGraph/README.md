@@ -46,15 +46,17 @@ The term **shader** is often used to refer to several related concepts, but in t
 
 For the rest of this tutorial, we will use shader to refer to this type of graphics pipeline shader specifically, unless otherwise noted, but you can read more about these other kinds of shaders at the links provided in [Additional Resources](#additional-resources) below. These graphics pipeline shaders run during the rendering step of Unity's graphics pipelines, which you can learn more about [here](https://github.com/uclaacm/studio-creative-tutorials/blob/fall-21/Post%20Processing/Dictionary/Render%20Pipelines.md).
 
-A shader is composed of two parts: a **vertex shader** and a **fragment shader**. The vertex shader runs first, and does computations for each **vertex** in the mesh a object being rendered is composed of. Vertex shaders can run computations including moving the position of vertices to distort the mesh (and thus its appearance), and running calculations to produce data that will be used by the fragment shader, such as determining the distance to a point at each vertex. After the vertex shader runs, the GPU does some processing to interpolate the output of the vertex shader between the vertices and rasterizes the object being rendered to produce **fragments**. (You can think of fragments as the pixels on the screen, although they're not actually equivalent.) Finally, the fragment shader does computations for each fragment to determine what color it should be.
+A shader is composed of two parts: a **vertex shader** and a **fragment shader**. The vertex shader runs first, and does computations for each **vertex** in the mesh a object being rendered is composed of. Vertex shaders can run computations including moving the position of vertices to distort the mesh (and thus its appearance), and running calculations to produce data that will be used by the fragment shader, such as determining the distance to a specific point at each vertex. After the vertex shader runs, the GPU does some processing to interpolate the output of the vertex shader between the vertices, and rasterizes the object being rendered to produce **fragments**. (You can think of fragments as the pixels on the screen, although they're not actually equivalent.) Finally, the fragment shader does computations for each fragment to determine what color it should be.
 
 #### Materials
-<img src="./Sprite%20Tinted.png" width="300" align="right" alt="material using default shader but tinted blue"/>
-<img src="./Sprite%20Untinted.png" width="300" align="right" alt="material using default shader but untinted"/>
+<img src="./Sprite%20Tinted.png" width=300 align="right" alt="material using default shader but tinted blue"/>
+<img src="./Sprite%20Untinted.png" width=300 align="right" alt="material using default shader but untinted"/>
 
 Unity also has assets called **materials**, which are different but related to shaders. Basically, a material is a preset configuration of parameters that should be used in a shader, so multiple materials can use the same shader with different parameters.
 
-For example, the images to the right show two materials which both use the `Sprites/Default` shader, but one of them is set to be tinted blue while the other is untinted.
+For example, the images to the right show two materials which both use the `Sprites/Default` shader, but one of them is set to be tinted blue while the other is untinted. When applied to a sprite with the ACM Game Studio logo, the tinted material causes the logo to be tinted blue, even though both materials use the same shader.
+
+<img src="./Sprite%20Materials.png" width=300 align="right" alt="studio logo, one untinted and the other tinted blue"/>
 
 Note: All objects which use the same material will share the same values for the parameters, even if the values are changed at runtime. If you want to modify these parameters at runtime separately for different objects without creating a bunch of identical materials, you can use [`MaterialPropertyBlocks`](https://docs.unity3d.com/ScriptReference/MaterialPropertyBlock.html).
 
