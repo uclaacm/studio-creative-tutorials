@@ -115,6 +115,22 @@ Even though we're working with sprite shaders today, it turns out there are a lo
 
 The preview of the UV might be confusing at first glance, but take a look at each channel separately. The red channel is black on the left and white on the right, indicating that it increases from 0 to 1 from left to right. Similarly, the green channel is black on the bottom and white on the top, increasing from 0 to 1 from bottom to top. So basically, the default UV coordinates are a square with (0,0) in the lower left corner and (1,1) in the upper right, and this is represented with red and green. Thus, in the lower left, where red and green are both close to 0, the preview is black, and in the upper right where red and green are both close to 1, the preview is a bright yellow (the combination of red and green). On the lower right where red is much greater than green, the preview is red, and in the upper left where green is much greater than red, the preview appears green. Make sense? If not, play around with these nodes and some basic math nodes until it does, because you'll need a solid understanding of how to read UV coordinates in the future.
 
+#### Transforming UV coordinates
+Pop quiz time! Using UV coordinates, figure out how to make each effect.
+
+<details>
+ <summary>Flip an image vertically.</summary>
+</details>
+<details>
+ <summary>Rotate an image 90 degrees.</summary>
+</details>
+<details>
+ <summary>Split the image into four corners.</summary>
+</details>
+<details>
+ <summary>Duplicate the image to a total of four images.</summary>
+</details>
+
 ---
 
 ## Additional Resources
