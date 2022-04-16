@@ -64,7 +64,7 @@ Once you have a shader, regardless of how it was created, you will need a materi
 ### Setup
 <img src="./Universal%20RP%20Package.png" align="right" width=500 alt="Universal RP package in Unity registry"/>
 
-For this tutorial, we will be working in a new, empty 2D project. Since Shader Graph is not compatible with Unity's built-in render pipeline, we will need to install one of Unity's scriptable render pipeline. For this tutorial, we will be using the Universal Render Pipeline, or URP. To install this package, open the Package Manager by going to `Window → Package Manager`, then find and install the `Universal RP` package in the Unity registry.
+For this tutorial, we will be working in a new, empty 2D project. Since Shader Graph is not compatible with Unity's built-in render pipeline, we will need to install one of Unity's scriptable render pipelines, such as the Universal Render Pipeline, or URP. To install this package, open the Package Manager by going to `Window → Package Manager`, then find and install the `Universal RP` package in the Unity registry.
 
 <img src="./Project%20Settings.png" align="right" width=500 alt="Graphics section of the project settings, with the URP pipeline asset selected"/>
 
