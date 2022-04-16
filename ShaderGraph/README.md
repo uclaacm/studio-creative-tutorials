@@ -89,6 +89,15 @@ Finally, in the center, you should see a node labeled `Vertex` and node labeled 
 
 To display the sprite instead of a square, the shader will need a property to accept input from the renderer. On the `Blackboard`, click the plus button and add a new `Texture2D` property, or basically an image. Click on the property to inspect it in the `Node Settings` section of the `Graph Inspector`. Change the `name` **and** the `reference` to `_MainTex` exactly. The reference **must** be `_MainTex` in order for the renderer to correctly supply the sprite to the shader. In addition, you can choose your image as the default, so it will show up instead of a monocolor square when we start connecting nodes.
 
+Click an drag the `_MainTex` property onto the graph to create a node. Unfortunately, if we try to drag the output of this node to attach it to any of the vertex and fragment inputs, it will fail to connect, because we can't convert a `Texture2D` into `Vector(3)` or a `Vector(1)`. Instead, we need to sample the texture first. Right click and select `Create Node`. Then find and select `Sample Texture 2D` by typing in the search bar or under `Input → Texture` to create the node. You can connect the `_MainTex` node to the `Texture(T2)` input of the `Sample Texture 2D` node, and your image should appear!
+
+The `Sample Texture 2D` node also has two other inputs, of which `UV(2)` is very important. But we'll cover that a little later. Instead, we now need to link the output of the `Sample Texture 2D` node to the output so that our shader correctly displays an image. Try to figure this part out on your own based on what you've learned so far! The solution is below if you get stuck.
+
+<details>
+ <summary>Finished shader</summary>
+ Connect the RGBA(4) output to the Base Color(3) input. Note that even though RGBA has 4 channels, shader graph intelligently drops the 4th channel automatically. However, that means we also still need to supply that 4th alpha channel somewhere, namely the Alpha(1) input. If you don't do this, your image won't have transparent parts!
+</details>
+
 ---
 
 ## Additional Resources
