@@ -125,14 +125,19 @@ Pop quiz time! Using UV coordinates, figure out how to make each effect.
 </details>
 <details>
  <summary>Flip an image across its diagonal.</summary>
- <img src="./Rotate%20Solution.png" alt="Shader Graph for rotating an image 90 degrees."/>
+ <img src="./Flip%20Diagonal%20Solution.png" alt="Shader Graph for flipping an image across its diagonal."/>
  If we simply swap the red and the green channels, our image is flipped! (There's actually a node for this called the Swizzle node, which works for changing the order of up to 4 channels. This solution just splits and recombines for clarity though.)
 </details>
 <details>
- <summary>Rotate an image 90 degrees.</summary>
+ <summary>Rotate an image 90 degrees counterclockwise.</summary>
+ <img src="./Rotate%20Counterclockwise%20Solution.png" alt="Shader Graph for rotating an image 90 degrees counterclockwise."/>
+ The solution to this puzzle is simply combining the previous two puzzles. We use one minus on the red channel before swizzling. Note the use of a redirect node to route the connection around another node, making the graph more readable!
 </details>
 <details>
- <summary>Split the image into four corners.</summary>
+ <summary>Split the image into four corners.
+  <p><img src="./Four%20Corners%20Puzzle.png" alt="An image split into four corners." width=100/></p>
+ </summary>
+ <img src="./Four%20Corners%20Solution.png" alt="Shader Graph for splitting an image into four corners."/>
 </details>
 <details>
  <summary>Duplicate the image to a total of four images.</summary>
