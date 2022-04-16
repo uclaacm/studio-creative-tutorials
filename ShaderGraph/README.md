@@ -9,10 +9,10 @@
 * Video Coming Soon
  
 ### Topics Covered
-* [Shaders](#shaders)
-  * [What is a shader?](#what-is-a-shader)
-  * [What can shaders do?](#what-can-shaders-do)
-  * [How do I make and use shaders in Unity?](#how-do-i-make-and-use-shaders-in-unity)
+* [`Shaders`](#shaders)
+  * [What is a `shader`?](#what-is-a-shader)
+  * [What can `shaders` do?](#what-can-shaders-do)
+  * [How do I make and use `shaders` in Unity?](#how-do-i-make-and-use-shaders-in-unity)
 * [Shader Graph](#shader-graph)
  
 ### What you'll need
@@ -36,10 +36,12 @@ At the very basic level, `shaders` let your game actually display things - Unity
 | A `cell shader` (also known as a `toon shader`), featuring two-tone shading (with hard lines separating light and shadow), specular reflection (see the brighter highlights on small parts of the shapes), and rim lighting (bright edges). | A monocolor dithering `shader` from *Return of the Obra Dinn*, using a pixellated dithering pattern to show light and shadow. | A `vertex shader` simulating grass blowing in the wind, achieved by animating the position of vertices based on world position and local y position. |
 | [Toon Shader Tutorial](https://roystan.net/articles/toon-shader.html) | [*Return of the Obra Dinn* Devlog](https://forums.tigsource.com/index.php?topic=40832.msg1363742#msg1363742) | [Waving Grass Tutorial](https://lindenreidblog.com/2018/01/07/waving-grass-shader-in-unity/) |
 
-### How do I make and use shaders in Unity?
+### How do I make and use `shaders` in Unity?
+Unity has two primary methods for creating custom `shaders`. First, you can write a `shader` in `ShaderLab` (a Unity-specific language used to define the structure of a `shader` and contains `shader programs`) and `HLSL` (high-level shader language, which the actual `shader programs` are written in). Second, you can use Unity's `Shader Graph` package to create `shaders` with a visual node-based system.
 
+This tutorial will focus on `Shader Graph` because it's much easier to pick up, and provides an easy way to start developing your intuition for the math behind beautiful `shaders` (warning: `shaders` involve a lot of math). That being said, if you are serious about diving into the world of `shaders`, you'll want to learn `ShaderLab` and `HLSL` eventually, since `Shader Graph` has a few disadvantages such as not being compatible with the built-in render pipeline, and that some tools like the stencil buffer are not available in `Shader Graph`, preventing certain effects from being made.
 
-## Shader Graph
+## `Shader Graph`
 
 **Paths for Exploration:**
 * List stuff here
@@ -47,7 +49,8 @@ At the very basic level, `shaders` let your game actually display things - Unity
 
 ---
 ## Additional Resources
-* [Unity's Shader Documentation](https://docs.unity3d.com/Manual/Shaders.html)
+* [Unity Documentation: Shaders](https://docs.unity3d.com/Manual/Shaders.html)
+* [Unity Documentation: ShaderLab](https://docs.unity3d.com/Manual/SL-Reference.html)
 
 ## Non-Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
