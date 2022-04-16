@@ -12,6 +12,7 @@
 * [Shaders](#shaders)
   * [What is a shader?](#what-is-a-shader)
   * [What can shaders do?](#what-can-shaders-do)
+  * [How do I make and use shaders in Unity?](#how-do-i-make-and-use-shaders-in-unity)
 * [Shader Graph](#shader-graph)
  
 ### What you'll need
@@ -34,6 +35,9 @@ At the very basic level, `shaders` let your game actually display things - Unity
 | :-: | :-: | :-: |
 | A `cell shader` (also known as a `toon shader`), featuring two-tone shading (with hard lines separating light and shadow), specular reflection (see the brighter highlights on small parts of the shapes), and rim lighting (bright edges). | A monocolor dithering `shader` from *Return of the Obra Dinn*, using a pixellated dithering pattern to show light and shadow. | A `vertex shader` simulating grass blowing in the wind, achieved by animating the position of vertices based on world position and local y position. |
 | [Toon Shader Tutorial](https://roystan.net/articles/toon-shader.html) | [*Return of the Obra Dinn* Devlog](https://forums.tigsource.com/index.php?topic=40832.msg1363742#msg1363742) | [Waving Grass Tutorial](https://lindenreidblog.com/2018/01/07/waving-grass-shader-in-unity/) |
+
+### How do I make and use shaders in Unity?
+
 
 ## Shader Graph
 
