@@ -14,11 +14,14 @@
   * [What can shaders do?](#what-can-shaders-do)
   * [How do I make and use shaders in Unity?](#how-do-i-make-and-use-shaders-in-unity)
 * [Shader Graph](#shader-graph)
+  * [Setup](#setup)
  
-### What you'll need
+### What You'll Need
 * Unity version 2020.x or newer. Note that in 2021 versions, shaders generated with Shader Graph are not compatible with UI components, unlike 2020 versions.
 * A scriptable render pipeline - the URP (universal render pipeline) package is recommended.
 * Shader Graph package.
+
+Note that more detailed setup instructions are covered [below](#setup).
 
 ---
 
@@ -54,6 +57,7 @@ This tutorial will focus on Shader Graph because it's much easier to pick up, an
 Once you have a shader, regardless of how it was created, you will need a material to use it. You can right-click in the `Project` section of Unity and use `Create → Material` to create a new material, then change the shader the material uses near the top of the inspector window. After filling in any appropriate parameters for your material to provide to the shader, you can add it to an game object by finding the object's `Renderer` component (e.g. `MeshRenderer`, `SpriteRenderer`, `Image`) and dragging your material into the renderer's `Material` parameter.
 
 ## Shader Graph
+### Setup
 
 ---
 
