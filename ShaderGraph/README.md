@@ -20,11 +20,15 @@
   * [UV Coordinates](#uv-coordinates)
  
 ### What You'll Need
-* Unity version 2020.x or newer. Note that in 2021 versions, shaders generated with Shader Graph are not compatible with UI components, unlike 2020 versions.
-* A scriptable render pipeline - the URP (universal render pipeline) package is recommended.
-* Shader Graph package (which is included within the URP package, but can also be installed separately).
+* Unity version 2020.3.33f1
+  * Other 2020 versions, as well as newer versions, should also work.
+  * Note that in 2021 versions, shaders generated with Shader Graph are not compatible with UI components, unlike 2020 versions.
+* Universal Render Pipeline (URP) package
+  * Other scriptable render pipelines (such as HDRP) should also work, although they may require more setup not covered in this tutorial.
+* Shader Graph package
+  * This is included in the URP and HDRP packages, but can also be installed separately.
 
-Note that more detailed setup instructions are covered [below](#setup).
+Detailed setup instructions are covered [below](#setup).
 
 ---
 
@@ -68,7 +72,7 @@ Once you have a shader, regardless of how it was created, you will need a materi
 ### Setup
 <img src="./Universal%20RP%20Package.png" align="right" width=500 alt="Universal RP package in Unity registry"/>
 
-For this tutorial, we will be working in a new, empty 2D project. Since Shader Graph is not compatible with Unity's built-in render pipeline, we will need to install one of Unity's scriptable render pipelines, such as the Universal Render Pipeline, or URP. To install this package, open the Package Manager by going to `Window → Package Manager`, then find and install the `Universal RP` package in the Unity registry.
+For this tutorial, we will be working in a new, empty 2D project. Since Shader Graph is not compatible with Unity's built-in render pipeline, we will need to install the Universal Render Pipeline, or URP. To install this package, open the Package Manager by going to `Window → Package Manager`, then find and install the `Universal RP` package in the Unity registry.
 
 <img src="./Project%20Settings.png" align="right" width=500 alt="Graphics section of the project settings, with the URP pipeline asset selected"/>
 
