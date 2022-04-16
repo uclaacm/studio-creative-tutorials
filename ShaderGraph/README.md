@@ -16,7 +16,7 @@
   * [How do I make and use shaders in Unity?](#how-do-i-make-and-use-shaders-in-unity)
 * [Shader Graph](#shader-graph)
   * [Setup](#setup)
-  * [Creating a Shader](#creating-the-simplest-shader-possible)
+  * [Creating a Shader](#displaying-a-texture)
   * [UV Coordinates](#uv-coordinates)
  
 ### What You'll Need
@@ -101,7 +101,7 @@ The Universal RP package actually includes the Shader Graph package as a depende
 
 Next, go to `Edit → Project Settings` and find the `Graphics` section. In the scriptable render pipeline section, select or drag in your `UniversalRenderPipelineAsset`, as shown in the image to the right. Finally, in the hierarchy, right click and select `2D Object → Sprites → Square`. Select the square, and in the inspector, change the sprite to a more interesting image (preferably one with some transparent parts instead of a full rectangle). We will be using this sprite to test your shaders with. Congratulations, you are now ready to start working in Shader Graph!
 
-### Creating the Simplest Shader Possible
+### Displaying a Texture
 In the project section, right click and select `Create → Shader → Universal Render Pipeline → Sprite Unlit Shader Graph`, and name the newly create Shader Graph asset. Then right click your new Shader Graph asset and select `Create → Material`, and name that material too. Finally, select your square and drag your new material into the material parameter of the `Sprite Renderer` component. Your sprite should turn into a grey square in the scene. Huzzah! You've made the simplest shader possible - one that always draws a grey square.
 
 <img src="./Shader%20Graph%20Window.png" align="right" width=700 alt="Shader Graph window"/>
