@@ -186,7 +186,7 @@ Pop quiz time! Using UV coordinates, figure out how to make each effect.
   <img src="./Four%20Puzzle.png" alt="Image that has been duplicated in each corner." width=100/>
  </summary>
  <img src="./Four%20Puzzle%20Solution.png" alt="Shader Graph for duplicating an image in each corner."/>
- Here, we multiply the entire UV by 2, so the UV now goes from 0 to 2 both horizontally and vertically. Then, we take the fractional part of that with the frac node, resulting in going from 0 to 1 and then 0 to 1 again. This leaves us with 4 copies of the UV, one in each corner. There's actually a Tiling and Offset node, which we will cover next, that does this as well.
+ Here, we multiply the entire UV by 2, so the UV now goes from 0 to 2 both horizontally and vertically. Then, we take the fractional part of that with the fraction node, resulting in going from 0 to 1 and then 0 to 1 again. This leaves us with 4 copies of the UV, one in each corner. There's actually a Tiling and Offset node, which we will cover next, that does this as well.
 </details>
 
 #### Scrolling Textures
@@ -194,7 +194,7 @@ The Tiling and Offset node allows us to tile UV coordinates to create duplicates
 <details>
  <summary>Infinitely scrolling textures!</summary>
  <img src="./Scrolling.png" alt="Shader graph for infinitely scrolling texture"/>
- We can connect the time node to the Offset(2) to scroll diagonally. However, we need to take the fractional component of the Tiling and Offset node since both tiling and offset will increase the values of the UV past 1.
+ We can connect the time node to the Offset(2) to scroll diagonally. This works by adding the offset to the UVs, so that the (1,1) corner appears to move towards the lower left as time increases! However, we need to take the fractional component of the Tiling and Offset node since both tiling and offset so that values greater than 1 are "wrapped around" to 0, thus repeating the texture infinitely.
 </details>
 
 #### Screen Space UV
