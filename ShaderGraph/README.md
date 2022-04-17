@@ -169,24 +169,24 @@ Pop quiz time! Using UV coordinates, figure out how to make each effect.
 <details>
  <summary>Flip an image vertically.</summary>
  <img src="./Flip%20Vertical%20Solution.png" alt="Shader Graph for flipping an image vertically."/>
- If we subtract the green channel from 1, that makes the top of the square black, and the bottom white, flipping it vertically. (There is a subtract node, but why use that when we have a handy one-minus node available?) Then we recombine it with the red channel and feed that into the UV coordinates.
+ If we subtract the green channel from 1, that makes the top of the square black, and the bottom white, flipping it vertically. (There is a subtract node, but why use that when we have a handy one-minus node available?) Then we recombine it with the red channel and feed that into the UV coordinates, resulting in an image that has been flipped vertically.
 </details>
 <details>
  <summary>Flip an image across its diagonal.</summary>
  <img src="./Flip%20Diagonal%20Solution.png" alt="Shader Graph for flipping an image across its diagonal."/>
- If we simply swap the red and the green channels, our image is flipped! (There's actually a node for this called the Swizzle node, which works for changing the order of up to 4 channels. This solution just splits and recombines for clarity though.)
+ If we simply swap the red and the green channels, our image is flipped across the diagonal! (There's actually a node for this called the Swizzle node, which works for changing the order of up to 4 channels. This solution just splits and recombines for clarity though.)
 </details>
 <details>
  <summary>Rotate an image 90 degrees counterclockwise.</summary>
  <img src="./Rotate%20Counterclockwise%20Solution.png" alt="Shader Graph for rotating an image 90 degrees counterclockwise."/>
- The solution to this puzzle is simply combining the previous two puzzles. We use one minus on the red channel before swizzling. Note the use of a redirect node to route the connection around another node, making the graph more readable!
+ The solution to this puzzle is simply combining the previous two puzzles. We use one minus on the red channel to flip the image horizontally before swizzling to also flip the image across its diagonal. Combined these two effects make it seem like the image has been rotated. Also note the use of a redirect node to route the connection around another node, making the graph more readable! You can create redirect nodes by right-clicking on the line connecting two nodes.
 </details>
 <details>
  <summary>Fully duplicate the image in each corner.<br>
   <img src="./Four%20Puzzle.png" alt="Image that has been duplicated in each corner." width=100/>
  </summary>
  <img src="./Four%20Puzzle%20Solution.png" alt="Shader Graph for duplicating an image in each corner."/>
- Here, we multiply the entire UV by 2, and then take the fractional part of that with the frac node. This leaves us with 4 copies of the UV, one in each corner. There's actually a Tiling and Offset node, which we will cover next, that does this as well.
+ Here, we multiply the entire UV by 2, so the UV now goes from 0 to 2 both horizontally and vertically. Then, we take the fractional part of that with the frac node, resulting in going from 0 to 1 and then 0 to 1 again. This leaves us with 4 copies of the UV, one in each corner. There's actually a Tiling and Offset node, which we will cover next, that does this as well.
 </details>
 
 #### Scrolling Textures
