@@ -213,6 +213,7 @@ Right click and create a `Screen Position` node. Look familiar? Try swapping it 
 ## Additional Resources
 * [Unity Documentation: Shaders](https://docs.unity3d.com/Manual/Shaders.html)
 * [Unity Documentation: ShaderLab](https://docs.unity3d.com/Manual/SL-Reference.html)
+* [Unity Documentation: Shader Graph](https://docs.unity3d.com/Packages/com.unity.shadergraph@10.9/manual/index.html)
 * [Unity Documentation: MaterialPropertyBlocks](https://docs.unity3d.com/ScriptReference/MaterialPropertyBlock.html)
 * [Render Pipelines](https://github.com/uclaacm/studio-creative-tutorials/blob/fall-21/Post%20Processing/Dictionary/Render%20Pipelines.md)
 
