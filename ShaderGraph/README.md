@@ -19,6 +19,7 @@
   * [Creating a Shader](#creating-a-shader)
   * [Sampling Textures](#sampling-textures)
   * [UV Coordinates](#uv-coordinates)
+  * [Noise and Blending](#noise-and-blending)
  
 ### What You'll Need
 <details>
@@ -207,6 +208,9 @@ Right click and create a `Screen Position` node. Look familiar? Try swapping it 
  <summary>UV Spaces</summary>
  Thus far, we've been working with UVs in terms of the object, but you can also apply UVs from other "spaces" or coordinate systems, such as the entire screen, where the lower left corner of the screen is (0,0) and the upper right corner of the screen is (1,1). In case you didn't see it while messing around, the Screen node provides the width and height of the screen, so some simple division can tell you how to scale an image to maintain its correct aspect ratio and size. In addition to screen UVs, you can even use world position as your UVs!
 </details>
+
+### Noise and Blending
+For the final shader of this tutorial, we will be making a dissolving shader:
 
 ---
 
