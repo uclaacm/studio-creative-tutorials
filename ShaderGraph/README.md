@@ -219,7 +219,7 @@ Right click and create a `Screen Position` node. Look familiar? Try swapping it 
 
 ## Non-Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
-- [Linktree](https://linktr.ee/acmstudio)
+- [Studio Website](https://acmstudio.carrd.co/)
 - [ACM Membership Portal](https://members.uclaacm.com/)
 - [Unity Documentation](https://docs.unity3d.com/Manual/index.html)
 - [ACM Website](https://www.uclaacm.com/)
