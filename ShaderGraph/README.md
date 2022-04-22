@@ -216,7 +216,11 @@ For the final shader of this tutorial, we will be making a dissolving shader, sh
  <img src="./Dissolve.gif" alt="Studio logo dissolving in and out with a pink border"/>
 </p>
 
-As you may have guessed from this section's title, one of the important tools that we need to create this effect is **noise**. In this context, noise refers to a type of procedural texture, where the color or value of the texture is based on pseudo-random mathematical functions using the (u,v) coordinates as input parameters. However, noise is not completely random, as for many applications, such as this one, we don't want adjacent (u, v) positions to have completely different values. Instead, the values are interpolated, so that nearby values are more similar and there is a smoother transition. Here's what the `Simple Noise` node looks like:
+As you may have guessed from this section's title, one of the important tools that we need to create this effect is **noise**. In this context, noise refers to a type of procedural texture, where the color or value of the texture is based on pseudo-random mathematical functions using the (u,v) coordinates as input parameters. However, noise is not completely random, as for many applications, such as this one, we don't want adjacent (u, v) positions to have completely different values. Instead, the values are interpolated, so that nearby values are more similar and there is a smoother transition. If you want to learn more about noise, you can read more about it [here](https://catlikecoding.com/unity/tutorials/noise/).
+
+<img src="./Simple%20Noise.png" align="right" width="300" alt="Simple noise node, with scale set to 30"/>
+
+The image to the right shows the `Simple Noise` node. Notice how the interpolation makes the noise looks a little fuzzy, unlike TV static. Similar to the `Sample Texture 2D` node, this and other noise nodes have a UV input to allow you to distort the sampling of the noise texture, but the noise node also has a `Scale(1)` input, which you can adjust to "zoom" in and out. As in the image to the right, you can set the scale to 30 or a similar number to get a good balance between detail and graininess.
 
 ---
 
