@@ -210,8 +210,11 @@ Right click and create a `Screen Position` node. Look familiar? Try swapping it 
 </details>
 
 ### Noise and Blending
-For the final shader of this tutorial, we will be making a dissolving shader:
+For the final shader of this tutorial, we will be making a dissolving shader, shown in the gif below. Before moving on, closely observe the effect and try to figure out how it could be made, based on what you know. What do you already know how to do? What kind of nodes or math functions that we haven't covered so far might be helpful for creating this effect? 
 
+<p align="center">
+ <img src="./Dissolve.gif" alt="Studio logo dissolving in and out with a pink border"/>
+</p>
 ---
 
 ## Additional Resources
