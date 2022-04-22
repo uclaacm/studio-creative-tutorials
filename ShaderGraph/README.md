@@ -220,7 +220,7 @@ As you may have guessed from this section's title, one of the important tools th
 
 <img src="./Simple%20Noise.png" align="right" width="300" alt="Simple noise node, with scale set to 30"/>
 
-The image to the right shows the `Simple Noise` node. Notice how the interpolation makes the noise looks a little fuzzy, unlike TV static. Similar to the `Sample Texture 2D` node, this and other noise nodes have a UV input to allow you to distort the sampling of the noise texture, but the noise node also has a `Scale(1)` input, which you can adjust to "zoom" in and out. As in the image to the right, you can set the scale to 30 or a similar number to get a good balance between detail and graininess.
+The image to the right shows the `Simple Noise` node. Notice how the interpolation makes the noise looks a little fuzzy, unlike TV static. Similar to the `Sample Texture 2D` node, this and other noise nodes have a UV input to allow you to distort the sampling of the noise texture, but the noise node also has a `Scale(1)` input, which you can adjust to "zoom" in and out. As in the image to the right, you can set the scale to 30 (or a similar number) to get a good balance between detail and graininess, although please also experiment with changing around the scale to see the difference it makes on the appearance of the dissolve effect!
 
 ---
 
