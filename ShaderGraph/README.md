@@ -216,7 +216,7 @@ For the final shader of this tutorial, we will be making a dissolving shader, sh
  <img src="./Dissolve.gif" alt="Studio logo dissolving in and out with a pink border"/>
 </p>
 
-As you may have guessed from this section's title, one of the important tools that we need to create this effect is **noise**. In this context, noise refers to a type of procedural texture, where the color or value of the texture is based on pseudo-random mathematical functions using the (u,v) coordinates as input parameters. However, noise is not completely random, as for many applications, such as this one, we don't want adjacent (u, v) positions to have completely different values. Instead, the values are interpolated, so that nearby values are more similar and there is a smoother transition. If you want to learn more about noise, you can read more about it [here](https://catlikecoding.com/unity/tutorials/noise/).
+As you may have guessed from this section's title, one of the important tools that we need to create this effect is **noise**. In this context, noise refers to a type of procedural texture, where the color or value of the texture is based on pseudo-random mathematical functions using the (u,v) coordinates as input parameters. However, noise is not completely random, as for many applications, such as this one, we don't want adjacent (u, v) positions to have completely different values. Instead, the values are interpolated, so that nearby values are more similar and there is a smoother transition. If you want to learn more about noise, you can read more about it [here](https://www.ronja-tutorials.com/noise.html).
 
 <img src="./Simple%20Noise.png" align="right" width="300" alt="Simple noise node, with scale set to 30"/>
 
@@ -230,6 +230,7 @@ The image to the right shows the `Simple Noise` node. Notice how the interpolati
 * [Unity Documentation: Shader Graph](https://docs.unity3d.com/Packages/com.unity.shadergraph@10.9/manual/index.html)
 * [Unity Documentation: MaterialPropertyBlocks](https://docs.unity3d.com/ScriptReference/MaterialPropertyBlock.html)
 * [Render Pipelines](https://github.com/uclaacm/studio-creative-tutorials/blob/fall-21/Post%20Processing/Dictionary/Render%20Pipelines.md)
+* [Noise](https://www.ronja-tutorials.com/noise.html)
 
 ## Non-Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
