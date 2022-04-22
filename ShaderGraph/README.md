@@ -215,6 +215,9 @@ For the final shader of this tutorial, we will be making a dissolving shader, sh
 <p align="center">
  <img src="./Dissolve.gif" alt="Studio logo dissolving in and out with a pink border"/>
 </p>
+
+As you may have guessed from this section's title, one of the important tools that we need to create this effect is **noise**. In this context, noise refers to a type of procedural texture, where the color or value of the texture is based on pseudo-random mathematical functions using the (u,v) coordinates as input parameters. However, noise is not completely random, as for many applications, such as this one, we don't want adjacent (u, v) positions to have completely different values. Instead, the values are interpolated, so that nearby values are more similar and there is a smoother transition. Here's what the `Simple Noise` node looks like:
+
 ---
 
 ## Additional Resources
