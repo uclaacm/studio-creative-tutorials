@@ -242,8 +242,11 @@ We now have a "cloudy" version of our texture, but we also need to "animate" it 
 This creates a shader which animates a texture appearing/disappearing in a cloudy manner, sort of like fog appearing or dissapating. Although this is certainly an interesting effect, the effect we want to make has a hard edge between a fully transparent area and the visible area. What kind of mathematical function do we need to create this hard edge?
 
 <details>
- <summaryAnswer</summary>
- To create distinct areas of transparency and visibility, instead directly using the noise, we need to modify such that it has values of only 0 or 1, for transparent and visible areas. One easy way to do this is the Step node. The Step node compares the value of In to Edge at each point, and outputs 0 at that point if In is less than Edge, and outputs 1 at that point if In is greater than Edge. If we attach a Time or Slider node as the edge, we can see that this generates the pattern we need for the dissolve effect. Note that since we only need the Edge to vary between 0 and 1, you will want to remap the sine of time, since sine varies between -1 and 1.
+ <summary>Answer</summary>
+ <img src="./Images/Step.gif" align="right" width=500 alt="Step node used to create dissolve pattern"/>
+ 
+ To create distinct areas of transparency and visibility, instead directly using the noise, we need to modify such that it has values of only 0 or 1, for transparent and visible areas. One easy way to do this is the Step node, which compares the value of In to Edge at each point. Step outputs 0 at that point if In is less than Edge, and outputs 1 at that point if In is greater than Edge.<br>
+ <br>If we attach a Time or Slider node as the edge, we can see that this generates the pattern we need for the dissolve effect. Note that since we only need the Edge to vary between 0 and 1, you will want to remap the sine of time, since sine varies between -1 and 1. We can then use the Out of the Step node as the value for Blend in the blend node. We're almost done!
 </details>
 
 ---
