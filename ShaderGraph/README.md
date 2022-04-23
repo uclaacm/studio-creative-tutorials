@@ -232,6 +232,20 @@ But how can we turn this random pattern into the dissolve effect?
  <br>In our case, since we want to reduce the alpha value, we can use alpha channel of our texture as the Base, the noise as the blend, and use the Darken blend mode. We can keep the opacity as 1 for the entire blend, since darken will keep the lower of the base and blend, meaning that fully transparent areas where alpha is 0 will be kept at 0.
 </details>
 
+We now have a "cloudy" version of our texture, but we also need to "animate" it to vary between fully transparent and fully visible. How can we do that with what you've learned earlier?
+
+<details>
+ <summary>Answer</summary>
+ To animate the texture between fully transparent and fully visible, we can add the noise to a value that varies between -1 and 1 over time, before using the sum as the blend value. When the value is -1, the sum will vary between -1 and 0, so the blend will be fully transparent, and when the value is 1, the sum will vary between 1 and 2, so the blend will not darken our original texture at all. Conveniently, the Time node also provides the sine of time, which varies between -1 and 1, so we can use that (or cosine). You can also instead create a Slider node to manually adjust the value being added to the noise, which is helpful for visually debugging your shader.<br>
+</details>
+
+This creates a shader which animates a texture appearing/disappearing in a cloudy manner, sort of like fog appearing or dissapating. Although this is certainly an interesting effect, the effect we want to make has a hard edge between a fully transparent area and the visible area. What kind of mathematical function do we need to create this hard edge?
+
+<details>
+ <summaryAnswer</summary>
+ To create distinct areas of transparency and visibility, instead directly using the noise, we need to modify such that it has values of only 0 or 1, for transparent and visible areas. One easy way to do this is the Step node. The Step node compares the value of In to Edge at each point, and outputs 0 at that point if In is less than Edge, and outputs 1 at that point if In is greater than Edge. If we attach a Time or Slider node as the edge, we can see that this generates the pattern we need for the dissolve effect. Note that since we only need the Edge to vary between 0 and 1, you will want to remap the sine of time, since sine varies between -1 and 1.
+</details>
+
 ---
 
 ## Additional Resources
