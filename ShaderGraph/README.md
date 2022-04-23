@@ -59,12 +59,12 @@ For the rest of this tutorial, we will use shader to refer to this type of graph
 A shader is composed of two parts: a **vertex shader** and a **fragment shader**. The vertex shader runs first, and does computations for each **vertex** in the mesh a object being rendered is composed of. Vertex shaders can run computations including moving the position of vertices to distort the mesh (and thus its appearance), and running calculations to produce data that will be used by the fragment shader, such as determining the distance to a specific point at each vertex. After the vertex shader runs, the GPU does some processing to interpolate the output of the vertex shader between the vertices, and rasterizes the object being rendered to produce **fragments**. (You can think of fragments as the pixels on the screen, although they're not actually equivalent.) Finally, the fragment shader does computations for each fragment to determine what color it should be.
 
 #### Materials
-<img src="./Sprite%20Tinted.png" width=325 align="right" alt="material using default shader but tinted blue"/>
-<img src="./Sprite%20Untinted.png" width=325 align="right" alt="material using default shader but untinted"/>
+<img src="./Images/Sprite%20Tinted.png" width=325 align="right" alt="material using default shader but tinted blue"/>
+<img src="./Images/Sprite%20Untinted.png" width=325 align="right" alt="material using default shader but untinted"/>
 
 Unity also has assets called **materials**, which are different but related to shaders. In essence, a material is a collection of textures, numbers, and other values used by the material's shader as inputs. Thus, you can create multiple materials that use the same shader, but have different values, to create different graphics while reusing the shader.
 
-<img src="./Sprite%20Materials.png" width=325 align="right" alt="studio logo, one untinted and the other tinted blue"/>
+<img src="./Images/Sprite%20Materials.png" width=325 align="right" alt="studio logo, one untinted and the other tinted blue"/>
 
 For example, the images to the right show two materials which both use the `Sprites/Default` shader, but one of them is set to be tinted blue, while the other is untinted. When applied to a sprite with the ACM Game Studio logo, the tinted material causes the logo to be tinted blue, even though both materials use the same shader.
 
@@ -93,11 +93,11 @@ Once you have a shader, regardless of how it was created, you will need a materi
 
 ## Shader Graph
 ### Setup
-<img src="./Universal%20RP%20Package.png" align="right" width=500 alt="Universal RP package in Unity registry"/>
+<img src="./Images/Universal%20RP%20Package.png" align="right" width=500 alt="Universal RP package in Unity registry"/>
 
 For this tutorial, we will be working in a new, empty 2D project. Since Shader Graph is not compatible with Unity's built-in render pipeline, we will need to install the Universal Render Pipeline, or URP. To install this package, open the Package Manager by going to `Window → Package Manager`, then find and install the `Universal RP` package in the Unity registry.
 
-<img src="./Project%20Settings.png" align="right" width=500 alt="Graphics section of the project settings, with the URP pipeline asset selected"/>
+<img src="./Images/Project%20Settings.png" align="right" width=500 alt="Graphics section of the project settings, with the URP pipeline asset selected"/>
 
 The Universal RP package actually includes the Shader Graph package as a dependency, so installing it will also automatically install Shader Graph as well. However, before we can start using Shader Graph, we need to configure the project's settings to use URP instead of the built-in pipeline. First, in your project right click and select: `Create → Rendering → Universal Render Pipeline → Pipeline Asset (Forward Renderer)`. This should create a `UniversalRenderPipelineAsset` and a `UniversalRenderPipelineAsset_Renderer`.
 
@@ -108,7 +108,7 @@ In the project section, right click and select `Create → Shader → Universal 
 
 Finally, select your square and drag your new material into the material parameter of the `Sprite Renderer` component. In the scene and game views, your sprite should turn into a grey square. Huzzah! You've created the simplest shader - one that always draws a grey square.
 
-<img src="./Shader%20Graph%20Window.png" align="right" width=700 alt="Shader Graph window"/>
+<img src="./Images/Shader%20Graph%20Window.png" align="right" width=700 alt="Shader Graph window"/>
 
 A grey square is nice, but we probably want to at least show the image you chose earlier instead. To do that, we'll need to open up Shader Graph by double-clicking on the shader graph asset you made earlier. Something like the image to the right should pop up - this is the shader graph window.
 
@@ -135,7 +135,7 @@ To display the sprite instead of a square, the shader will need a texture to dis
 
 While we could simply use a Texture 2D asset node to input the image that you chose earlier, this node will always provide the same texture. If we want our shader to work even if we change what image to display in the `Sprite Renderer`, our shader needs a property, through which the renderer will provide a texture to our shader.
 
-<img src="./Texture2D.png" align="right" width=400 alt="Texture2D highlighted in the property creation menu"/>
+<img src="./Images/Texture2D.png" align="right" width=400 alt="Texture2D highlighted in the property creation menu"/>
 
 On the `Blackboard`, click the plus button and add a new `Texture2D` property. Click on the property to inspect it in the `Node Settings` section of the `Graph Inspector`. Change the `name` **and** the `reference` to `_MainTex` exactly. The reference **must** be `_MainTex` in order for the renderer to correctly supply the sprite to the shader. (If you write code to control shaders, you'll also need to use the reference to set the values of properties.) In addition, you should choose your image as the default value for `_MainTex`, so it will appear when we start connecting nodes.
 
@@ -145,7 +145,7 @@ The `Sample Texture 2D` node also has two other inputs, of which `UV(2)` is very
 
 <details>
  <summary>Finished shader</summary>
- <img src="./Finished%20Shader.png"/>
+ <img src="./Images/Finished%20Shader.png"/>
  Connect the RGBA(4) output to the Base Color(3) input. Note that even though RGBA has 4 channels, shader graph intelligently drops the 4th channel automatically. However, that means we also still need to supply that 4th alpha channel somewhere, namely the Alpha(1) input. If you don't do this, your image won't have transparent parts!
 </details>
 
@@ -158,7 +158,7 @@ UV coordinates are a way of mapping a 2D texture onto a 3D surface! As shown in 
  <img src="https://www.pluralsight.com/content/dam/pluralsight/blog/dt/wp-uploads/2014/01/UVs_Example.jpg" width=500 alt="Unwrapping the 3D dinosaur onto a 2D plane"/>
 </p>
 
-<img src="./UV%20Coordinates.png" width=500 alt="Splitting UV coordinates into separate channels" align="right"/>
+<img src="./Images/UV%20Coordinates.png" width=500 alt="Splitting UV coordinates into separate channels" align="right"/>
 
 Even though we're working with sprite shaders today, it turns out there are a lot of neat things you can do with UV coordinates, even when you're on a `Quad` (a flat plane). But first, let's take a look at how to read UV coordinates in Shader Graph. The image to the right shows a UV node connected to a `Split` node to split the two channels of the UV. Each channel is then connected to a `Preview` node to show what each channel looks like.
 
@@ -173,24 +173,24 @@ Pop quiz time! Using UV coordinates, figure out how to make each effect.
 
 <details>
  <summary>Flip an image vertically.</summary>
- <img src="./Flip%20Vertical%20Solution.png" alt="Shader Graph for flipping an image vertically."/>
+ <img src="./Images/Flip%20Vertical%20Solution.png" alt="Shader Graph for flipping an image vertically."/>
  If we subtract the green channel from 1, that makes the top of the square black, and the bottom white, flipping it vertically. (There is a subtract node, but why use that when we have a handy one-minus node available?) Then we recombine it with the red channel and feed that into the UV coordinates, resulting in an image that has been flipped vertically.
 </details>
 <details>
  <summary>Flip an image across its diagonal.</summary>
- <img src="./Flip%20Diagonal%20Solution.png" alt="Shader Graph for flipping an image across its diagonal."/>
+ <img src="./Images/Flip%20Diagonal%20Solution.png" alt="Shader Graph for flipping an image across its diagonal."/>
  If we simply swap the red and the green channels, our image is flipped across the diagonal! (There's actually a node for this called the Swizzle node, which works for changing the order of up to 4 channels. This solution just splits and recombines for clarity though.)
 </details>
 <details>
  <summary>Rotate an image 90 degrees counterclockwise.</summary>
- <img src="./Rotate%20Counterclockwise%20Solution.png" alt="Shader Graph for rotating an image 90 degrees counterclockwise."/>
+ <img src="./Images/Rotate%20Counterclockwise%20Solution.png" alt="Shader Graph for rotating an image 90 degrees counterclockwise."/>
  The solution to this puzzle is simply combining the previous two puzzles. We use one minus on the red channel to flip the image horizontally before swizzling to also flip the image across its diagonal. Combined these two effects make it seem like the image has been rotated. Also note the use of a redirect node to route the connection around another node, making the graph more readable! You can create redirect nodes by right-clicking on the line connecting two nodes.
 </details>
 <details>
  <summary>Fully duplicate the image in each corner.<br>
-  <img src="./Four%20Puzzle.png" alt="Image that has been duplicated in each corner." width=100/>
+  <img src="./Images/Four%20Puzzle.png" alt="Image that has been duplicated in each corner." width=100/>
  </summary>
- <img src="./Four%20Puzzle%20Solution.png" alt="Shader Graph for duplicating an image in each corner."/>
+ <img src="./Images/Four%20Puzzle%20Solution.png" alt="Shader Graph for duplicating an image in each corner."/>
  Here, we multiply the entire UV by 2, so the UV now goes from 0 to 2 both horizontally and vertically. Then, we take the fractional part of that with the fraction node, resulting in going from 0 to 1 and then 0 to 1 again. This leaves us with 4 copies of the UV, one in each corner. There's actually a Tiling and Offset node, which we will cover next, that does this as well.
 </details>
 
@@ -198,7 +198,7 @@ Pop quiz time! Using UV coordinates, figure out how to make each effect.
 The Tiling and Offset node allows us to tile UV coordinates to create duplicates of an image, with an offset. We can combine this with the Time node, which provides input information about how much time has passed, to create an infinitely scrolling texture. Using these nodes and what you've learned so far, try creating a shader which will tile an image four times and scroll infinitely, repeating the images forever!
 <details>
  <summary>Infinitely scrolling textures!</summary>
- <img src="./Scrolling.png" alt="Shader graph for infinitely scrolling texture"/>
+ <img src="./Images/Scrolling.png" alt="Shader graph for infinitely scrolling texture"/>
  We can connect the time node to the Offset(2) to scroll diagonally. This works by adding the offset to the UVs, so that the (1,1) corner appears to move towards the lower left as time increases! However, we need to take the fractional component of the Tiling and Offset node since both tiling and offset so that values greater than 1 are "wrapped around" to 0, thus repeating the texture infinitely.
 </details>
 
@@ -213,12 +213,12 @@ Right click and create a `Screen Position` node. Look familiar? Try swapping it 
 For the final shader of this tutorial, we will be making a dissolving shader, shown in the gif below. **Before moving on**, closely observe the effect and try to figure out how it could be made, based on what you know. What do you already know how to do? What kind of nodes or math functions that we haven't covered so far might be helpful for creating this effect? 
 
 <p align="center">
- <img src="./Dissolve.gif" alt="Studio logo dissolving in and out with a pink border"/>
+ <img src="./Images/Dissolve.gif" alt="Studio logo dissolving in and out with a pink border"/>
 </p>
 
 As you may have guessed from this section's title, one of the important tools that we need to create this effect is **noise**. In this context, noise refers to a type of procedural texture, where the color or value of the texture is based on pseudo-random mathematical functions using the (u,v) coordinates as input parameters. However, noise is not completely random, as for many applications, such as this one, we don't want adjacent (u, v) positions to have completely different values. Instead, the values are interpolated, so that nearby values are more similar and there is a smoother transition. If you want to learn more about noise, you can read more about it [here](https://www.ronja-tutorials.com/noise.html).
 
-<img src="./Simple%20Noise.png" align="right" width="300" alt="Simple noise node, with scale set to 30"/>
+<img src="./Images/Simple%20Noise.png" align="right" width="300" alt="Simple noise node, with scale set to 30"/>
 
 The image to the right shows the `Simple Noise` node. Notice how the interpolation makes the noise looks a little fuzzy, unlike TV static. Similar to the `Sample Texture 2D` node, this and other noise nodes have a UV input to allow you to distort the sampling of the noise texture, but the noise node also has a `Scale(1)` input, which you can adjust to "zoom" in and out. As in the image to the right, you can set the scale to 30 (or a similar number) to get a good balance between detail and graininess, although please also experiment with changing around the scale to see the difference it makes on the appearance of the dissolve effect!
 
