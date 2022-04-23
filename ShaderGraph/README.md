@@ -216,9 +216,9 @@ For the final shader of this tutorial, we will be making a dissolving shader, sh
  <img src="./Images/Dissolve.gif" alt="Studio logo dissolving in and out with a pink border"/>
 </p>
 
-As you may have guessed from this section's title, one of the important tools that we need to create this effect is **noise**. In this context, noise refers to a type of procedural texture, where the color or value of the texture is based on pseudo-random mathematical functions using the (u,v) coordinates as input parameters. However, noise is not completely random, as for many applications, such as this one, we don't want adjacent (u, v) positions to have completely different values. Instead, the values are interpolated, so that nearby values are more similar and there is a smoother transition. If you want to learn more about noise, you can read more about it [here](https://www.ronja-tutorials.com/noise.html).
+<img src="./Images/Simple%20Noise.png" align="right" width=300 alt="Simple noise node, with scale set to 30"/>
 
-<img src="./Images/Simple%20Noise.png" align="right" width="300" alt="Simple noise node, with scale set to 30"/>
+As you may have guessed from this section's title, one of the important tools that we need to create this effect is **noise**. In this context, noise refers to a type of procedural texture, where the color or value of the texture is based on pseudo-random mathematical functions using the (u,v) coordinates as input parameters. However, noise is not completely random, as for many applications, such as this one, we don't want adjacent (u, v) positions to have completely different values. Instead, the values are interpolated, so that nearby values are more similar and there is a smoother transition. If you want to learn more about noise, you can read more about it [here](https://www.ronja-tutorials.com/noise.html).
 
 The image to the right shows the `Simple Noise` node. Notice how the interpolation makes the noise looks a little fuzzy, unlike TV static. Similar to the `Sample Texture 2D` node, this and other noise nodes have a UV input to allow you to distort the sampling of the noise texture, but the noise node also has a `Scale(1)` input, which you can adjust to "zoom" in and out. As in the image to the right, you can set the scale to 30 (or a similar number) to get a good balance between detail and graininess, although please also experiment with changing around the scale to see the difference it makes on the appearance of the dissolve effect!
 
@@ -226,7 +226,10 @@ But how can we turn this random pattern into the dissolve effect?
 
 <details>
  <summary>Answer</summary>
- We can use the noise to modify the alpha channel of the original image! However, if we directly connect the noise node to the alpha channel to the Alpha(1) node of the fragment, the sprite will not follow its original shape since the alpha value no longer follows the original shape of the texture, as shown in the image to the right.
+ <img src="./Images/Alpha%20Shape.png" align="right" width=500 alt="Noise connected to alpha channel, resulting in cloudy square image"/>
+ We can use the noise to modify the alpha channel of the original image! However, if we directly connect the noise node to the alpha channel to the Alpha(1) node of the fragment, the sprite will not follow its original shape since the alpha value no longer follows the original shape of the texture, as shown in the image to the right. Instead, the entire UV (in this case a square) will have some visibility.<br>
+ <br>Clearly, we will need to combine the alpha channel of the original texture with the noise. While we could do this directly with some math nodes, we can also use a Blend node. The blend node provides a large selection of different blend modes to combine Base and Blend values. The blend node also takes in an Opacity(1) value, which determines the blend strength - in areas where the opacity is 0, no blending will occur and the Base value will be output, and in areas where the opacity is 1, the base and blend values will be fully blended.<br>
+ <br>In our case, since we want to reduce the alpha value, we can use alpha channel of our texture as the Base, the noise as the blend, and use the Darken blend mode. We can keep the opacity as 1 for the entire blend, since darken will keep the lower of the base and blend, meaning that fully transparent areas where alpha is 0 will be kept at 0.
 </details>
 
 ---
