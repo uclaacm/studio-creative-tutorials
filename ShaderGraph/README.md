@@ -226,7 +226,7 @@ But how can we turn this random pattern into the dissolve effect?
 
 <details>
  <summary>Answer</summary>
- We can use the noise to modify the alpha channel of the original image!
+ We can use the noise to modify the alpha channel of the original image! However, if we directly connect the noise node to the alpha channel to the Alpha(1) node of the fragment, the sprite will not follow its original shape since the alpha value no longer follows the original shape of the texture, as shown in the image to the right.
 </details>
 
 ---
