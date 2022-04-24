@@ -246,7 +246,16 @@ This creates a shader which animates a texture appearing/disappearing in a cloud
  <img src="./Images/Step.gif" align="right" width=500 alt="Step node used to create dissolve pattern"/>
  
  To create distinct areas of transparency and visibility, instead directly using the noise, we need to modify such that it has values of only 0 or 1, for transparent and visible areas. One easy way to do this is the Step node, which compares the value of In to Edge at each point. Step outputs 0 at that point if In is less than Edge, and outputs 1 at that point if In is greater than Edge.<br>
- <br>If we attach a Time or Slider node as the edge, we can see that this generates the pattern we need for the dissolve effect. Note that since we only need the Edge to vary between 0 and 1, you will want to remap the sine of time, since sine varies between -1 and 1. We can then use the Out of the Step node as the value for Blend in the blend node. We're almost done!
+ <br>If we attach a Time or Slider node as the edge, we can see that this generates the pattern we need for the dissolve effect. Note that since we only need the Edge to vary between 0 and 1, you will want to remap the sine of time, since sine varies between -1 and 1. We can then use the Out of the Step node as the value for Blend in the blend node. We're almost done - we just need to create the differently colored-edge!<br>
+ <br>We can create this edge by creating a second Step node and offsetting it ever so slightly by adding a small number to Edge(1). Create a new Float property in the Blackboard called Edge Width, and remember to set a default value for it (0.05 is what is used in the example gif). Add it to the remapped sine of time, before using the sum as the Edge for a new Step node. We can use the same In value (the noise) for this second Step node, which will output a pattern with slightly more of the image set to be transparent (you can preview this edge if you subtract this Step node from the original Step node).<br>
+ <br>Since we want the edge part to be colored, instead of black, we need to reverse the output of the Step node (with the Subtract or One-Minus nodes), to produce a pattern where the invisible parts, plus a small edge covering the visible portion, is white. To color this edge, we can multiply the entire reversed pattern by a color (which you should also make a property in the Blackboard).<br>
+ <br>Finally, we need to blend this pattern with the RGBA(4) of the original texture and output the blend as our final Base Color(3). In this case, we want to replace the original color with our new color on the edge area, so we want to use the Overwrite blend mode. However, this also overwrites the visible parts of our original texture with black, so we need to use the reversed Step node from before as the Opacity(1), so we only overwrite the edge (and the invisible portions, which of course can be overwritten freely since we won't see it anyway).<br>
+</details>
+
+Congratulations, you have completed a fancy-looking shader which makes sprites dissolve! The solution is also hidden below if you want to reference it.
+<details>
+ <summary>Complete Dissolve Shader Graph</summary>
+ <img src="./Images/Dissolve%20Solution.png alt="Complete Shader Graph for the dissolve effect"/>
 </details>
 
 ---
