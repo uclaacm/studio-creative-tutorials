@@ -255,7 +255,7 @@ This creates a shader which animates a texture appearing/disappearing in a cloud
 Congratulations, you have completed a fancy-looking shader which makes sprites dissolve! The solution is also hidden below if you want to reference it.
 <details>
  <summary>Complete Dissolve Shader Graph</summary>
- <img src="./Images/Dissolve%20Solution.png alt="Complete Shader Graph for the dissolve effect"/>
+ <img src="./Images/Dissolve%20Solution.png" alt="Complete Shader Graph for the dissolve effect"/>
 </details>
 
 ---
