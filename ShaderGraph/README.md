@@ -1,12 +1,7 @@
 # Studio Creative Tutorials - Shader Graph
  
-**Date**: TBD<br>
-**Location**: TBD<br>
-**Instructor(s)**: TBD
- 
-### Resources
-* Slides Coming Soon
-* Video Coming Soon
+**Date**: Thursday, May 5th 2022, 7-9 PM PDT<br>
+**Location**: Boelter 5422<br>
  
 ### Topics Covered
 * [Shaders](#shaders)
@@ -52,7 +47,7 @@ At the most basic level, shaders allow your game to render onto the screen, so t
 | [Toon Shader Tutorial](https://roystan.net/articles/toon-shader.html) | [*Return of the Obra Dinn* Devlog](https://forums.tigsource.com/index.php?topic=40832.msg1363742#msg1363742) | [Waving Grass Tutorial](https://lindenreidblog.com/2018/01/07/waving-grass-shader-in-unity/) |
 
 ### What is a shader?
-Now that you've seen a few examples of interesting shaders, you may be wondering, "What is a shader?" The term **shader** is used to refer to several related concepts, but in the broadest sense a shader is a program that runs on the GPU instead of the CPU. This includes compute shaders and ray tracing shaders, but for the purposes of this tutorial, we are interested in graphics pipeline shaders. These shaders calculate what color pixels should be, or in other words, determine what you see on the screen.
+Now that you've seen a few examples of interesting shaders, you may be wondering, "What is a shader?" The term **shader** is used to refer to several related concepts, but in the broadest sense a shader is a program that runs on the GPU instead of the CPU. For the purposes of this tutorial, we are interested in graphics pipeline shaders, which take some input (e.g. an image, colors, position of an object) and then do math to figure out what color the pixels on your screen should be.
 
 For the rest of this tutorial, we will use shader to refer to this type of graphics pipeline shader specifically, unless otherwise noted, but you can read more about these other kinds of shaders at the links provided in [Additional Resources](#additional-resources) below. These graphics pipeline shaders run during the rendering step of Unity's graphics pipelines, which you can learn more about [here](https://github.com/uclaacm/studio-creative-tutorials/blob/fall-21/Post%20Processing/Dictionary/Render%20Pipelines.md).
 
@@ -77,7 +72,7 @@ For example, the images to the right show two materials which both use the `Spri
 You might also be wondering why we use shaders instead of simply baking the art style into the art. Actually, that is frequently a valid approach - but there are also many times when using a shader is better or even the only way to do something.
 * Dynamic effects: For effects like lighting, the look of the object has to be calculated at runtime - there's simply no way to include how an object might look from every possible angle with every configuration of lights. Other effects that rely on data only available at runtime, such as how a building will look after the player splatters paint on it randomly, are also only feasible with shaders.
 * Saving development time: Although you could in theory draw a thousand different color variations of an item, it's much less work to simply write a shader to recolor the item, especially when you can probably also reuse that shader for a thousand other items as well.
-* Optimization: The GPU is really good at running calculations in parallel, so it's much more efficient to allow the GPU to animate wind blowing through thousands of blades of grass than using the CPU. (In fact, the compute shaders mentioned earlier take this a step further by running calculations often completely unrelated to graphics on the GPU to speed up the game).
+* Optimization: The GPU is really good at running calculations in parallel, so it's much more efficient to allow the GPU to animate wind blowing through thousands of blades of grass than using the CPU. (In fact, the compute shaders take this a step further by running calculations often completely unrelated to graphics on the GPU to speed up the game).
 
 Although shaders are great, there are also times when you probably shouldn't write a custom shader:
 * Unity's default shaders and components already do what you need: You don't need to wrtie a shader to fade in and out a sprite, because you can just animate the alpha channel of the color in the `Sprite Renderer`!
