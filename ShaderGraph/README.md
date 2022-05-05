@@ -40,7 +40,7 @@ Detailed setup instructions are covered [below](#setup).
 
 ## Shaders
 ### What can shaders do?
-At the most basic level, shaders allow your game to render onto the screen, so the player can see the game - Unity provides a plethora of built-in shaders that do just that. However, shaders can also be used to do much, much more! Here are a few images illustrating what shaders can do, with links to guides/tutorials on recreating them:
+At the most basic level, shaders allow your game to be shown on the screen, so the player can see the game - Unity provides a plethora of built-in shaders that do just that. However, shaders can also be used to do much, much more! Here are a few images illustrating what shaders can do, with links to guides/tutorials on recreating them:
 
 | <img src="https://i1.wp.com/cghow.com/wp-content/uploads/2019/02/ToonShaderAnimation.gif" width=300 alt="toon shader with directional light"/> | <img src="http://3909.co/dev/od/img/Dither2-CameraSphere2.gif" width=300 alt="monocolor dither shader"/> | <img src="https://images.squarespace-cdn.com/content/v1/5a724d26a8b2b04c5d34119e/1534964689364-56OGVPAS5EIT8KHPJ7I6/grass2.gif" width="300" alt="low-poly grass waving in the wind"/> |
 | :-: | :-: | :-: |
