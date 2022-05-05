@@ -10,7 +10,7 @@ Dithering, as a general definition, is a process of adding "noise" to an image t
 
 <details>
   <summary>Examples of Dithering</summary>
-  <img src = mages/dither_bw.png></img>
+  <img src = Images/dither_bw.png></img>
 </details>
 
 ### GPU
