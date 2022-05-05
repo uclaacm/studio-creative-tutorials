@@ -2,6 +2,7 @@
  
 **Date**: Thursday, May 5th 2022, 7-9 PM PDT<br>
 **Location**: Boelter 5422<br>
+**Instructor(s)**: Richard Cheng, Mauve Spillard, Faustine Wang<br>
  
 ### Topics Covered
 * [Shaders](#shaders)
