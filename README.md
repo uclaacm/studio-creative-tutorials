@@ -11,7 +11,7 @@ We also offer the [Beginner Track](https://github.com/uclaacm/studio-beginner-tu
 | Week 5: Art Practices | <ul> <li>Guest Speaker: Yasmeen</li> <li>Art Pipeline (AAA)</li> <li>Conceptualization</li> <li>Production</li> <li>Tips to Speed Up Art Production</li> | February 2nd | [Slides](https://docs.google.com/presentation/d/14Z7RtOKTGiuf3NUCX2Abf1X-M_V5AXboJyPzczqvaZk/) | [Video coming later]() 
 | [Week 7: UI/UX](./UI%20%26%20UX%20Design) | <ul><li>What is UI/UX?</li><li>UI/UX In Theory</li><li>Accessibility in UI/UX</li><li>Make a Main Menu</li><li>Canvas Render Modes in Unity</li></ul> | February 16th | [Slides](https://docs.google.com/presentation/d/1NLSH-O6HlAjAkD2QMGLmoSrs5iogmbQl7fjtGaVB_-k/edit?usp=sharing) | [Video](https://youtu.be/w3pyDio0xM8) |
 | Spring Week 4: Sound Design & Music | <ul><li>How do you communicate your creative vision to a team?</li><li>How do you collaborate with a musician?</li><li>What are some key components of a game that are important for sound design?</li></ul> | TBD | [Coming Soon]() | N/A |
-| [Spring Week 6: Shader Graph](./ShaderGraph) | <ul><li>What are shaders, textures, and materials?</li><li>How do you use a shader graph?</li><li>What are UV Coordinates?</li></ul> | May 5th | N/A | N/A |
+| [Spring Week 6: Shader Graph](./ShaderGraph) | <ul><li>What are shaders, textures, and materials?</li><li>How do you use a shader graph?</li><li>What are UV coordinates?</li></ul> | May 5th | N/A | N/A |
 
 ## Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
