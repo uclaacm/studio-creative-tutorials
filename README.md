@@ -8,7 +8,7 @@ We also offer the [Intro Track](https://github.com/uclaacm/studio-beginner-tutor
 | Tutorials                        | Topics Covered | Date | Slides | Video |
 |----------------------------------|----------------|---------------|--------|-------|
 | Week 3: Concept Art Workshop     | <ul> <li>How do you approach concept art?</li> <li>What is concept art in games?</li> <li>Concept art for Character, Environment, Props/Details, Story, Emotion, Tone</li> </ul> | October 10th | [Slides](https://docs.google.com/presentation/d/1zZsBr4bxgLfhM_yE4SZZjNkFDWqEqT3p1hc9lFymy-E/edit?usp=sharing) | [TBD]()|
-| Week 4: Sprite Sheets + Tilemaps | <ul> <li> </li> <li></li> <li></li> </ul> | October 19th |[Slides]() | [TBD]()|
+| Week 4: Sprite Sheets + Tilemaps | <ul> <li> </li> <li></li> <li></li> </ul> | October 19th |[Slides](https://docs.google.com/presentation/d/1rDXXPGIXmIGz8ECMLz2BBQTX1FmOib3UO9TQ7mKUW3c/edit?usp=sharing) | [TBD]()|
 | Week 5: 2D Animation             |<ul> <li> </li> <li></li> <li></li> </ul>| October 26th |[Slides]() | [TBD]()|
 | Week 6: Narrative Design         |<ul> <li> </li> <li></li> <li></li> </ul>| November 2nd |[Slides]() | [TBD]()|
 | Week 7: UI/UX in Games           |<ul> <li> </li> <li></li> <li></li> </ul>| November 9th |[Slides]() | [TBD]()|
