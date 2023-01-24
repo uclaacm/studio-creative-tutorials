@@ -7,12 +7,10 @@ We also offer the [Intro Track](https://github.com/uclaacm/studio-beginner-tutor
 ## Curriculum Overview
 | Tutorials                        | Topics Covered | Date | Slides | Video |
 |----------------------------------|----------------|---------------|--------|-------|
-| Week 3: Game Design & Game Feel    | <ul> <li>What is game feel?</li> <li>Why is it important?</li> <li>How do you create game feel in your games?</li> </ul> | October 10th | [Slides](https://docs.google.com/presentation/d/1zZsBr4bxgLfhM_yE4SZZjNkFDWqEqT3p1hc9lFymy-E/edit?usp=sharing) | [TBD]()|
-| Week 4: Sprite Sheets + Tilemaps | <ul> <li>What are sprites and sprite sheets?</li> <li>What is a tilemap?</li> <li>How do you put sprite sheets and tilemaps together to make a 2D level?</li> </ul> | October 19th |[Slides](https://docs.google.com/presentation/d/1rDXXPGIXmIGz8ECMLz2BBQTX1FmOib3UO9TQ7mKUW3c/edit?usp=sharing) | [TBD]()|
-| Week 5: 2D Animation             |<ul> <li>What are frame-by-frame animations?</li> <li>What are rigged animations?</li> <li>How do you set up animations in Unity?</li> </ul>| October 26th |[Slides](https://docs.google.com/presentation/d/1ldpDDFXzJQeWgrJI7qQZotg8JcUzeYPmjpTeXUaOjaM/edit#slide=id.p) | [TBD]()|
-| Week 6: Narrative Design         |<ul> <li>What is narrative design? </li> <li>How do games do narrative design? </li> <li>How can I approach narrative design?</li> </ul>| November 2nd |[Slides](https://docs.google.com/presentation/d/1en932Q5s9DaaY7VjuPhW7ijnYHURncfRYkVKCpHoeUU/edit#slide=id.p) | [TBD]()|
-| Week 7: UI/UX in Games           | N/A | [RESCHEDULED TO WINTER] | N/A | N/A |
-| Week 8: Music Workshop             |<ul> <li>What is the significance of music in games?</li> <li>What is dynamism and what are leitmotifs? </li> <li>How can I start composing?</li></ul>| November 16th |[Slides](https://docs.google.com/presentation/d/1Lz8YJ0qJ_SAIzcJUyQI8_ojjduGh6IyWspzybueRDV4/edit#slide=id.p) | [TBD]()|
+| Week 3: Game Design & Game Feel    | <ul> <li>What is game feel?</li> <li>Why is it important?</li> <li>How do you create game feel in your games?</li> </ul> | Jan 24th | [Slides](https://docs.google.com/presentation/d/1zZsBr4bxgLfhM_yE4SZZjNkFDWqEqT3p1hc9lFymy-E/edit?usp=sharing) | [TBD]()|
+| Week 4: Best Art Practices & Art Pipeline | <ul> <li>What is the game art pipeline?</li> <li>What are some key steps to making game art?</li> <li>How do I approach game art? </li> </ul> | Jan 31st |[Slides]() | [TBD]()|
+| Week 6: UI/UX in Games         |<ul> <li></li> <li></li> <li></li> </ul>| Feb 15th |[Slides]() | [TBD]()|
+| Week 8: Sound in Games             |<ul> <li></li> <li></li> <li></li></ul>| Feb 28th |[Slides]() | [TBD]()|
 
 ## Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
