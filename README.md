@@ -8,7 +8,7 @@ We also offer the [Intro Track](https://github.com/uclaacm/studio-beginner-tutor
 | Tutorials                        | Topics Covered | Date | Slides | Video |
 |----------------------------------|----------------|---------------|--------|-------|
 | Week 3: Game Design & Game Feel    | <ul> <li>What is game feel?</li> <li>Why is it important?</li> <li>How do you create game feel in your games?</li> </ul> | Jan 24th | [Slides](https://docs.google.com/presentation/d/1mKcwdN3OWqizI3VTE0SqdVK3GnHEVCoGNq_4GYjvtYQ/edit?usp=sharing) | [Link](https://youtu.be/T0zCIR3XaUo)|
-| Week 4: Best Art Practices & Art Pipeline | <ul> <li>What is the game art pipeline?</li> <li>What are some key steps to making game art?</li> <li>How do I approach game art? </li> </ul> | Jan 31st |[Slides]() | [TBD]()|
+| Week 4: Best Art Practices & Art Pipeline | <ul> <li>What is the game art pipeline?</li> <li>What are some key steps to making game art?</li> <li>How do I approach game art? </li> </ul> | Jan 31st |[Slides](https://docs.google.com/presentation/d/1gjq_7xVjefxuHMMrK2PVXgcldNtaNRPV82hkF1aFD34/edit#slide=id.p) | Unrecorded |
 | Week 6: UI/UX in Games         |<ul> <li></li> <li></li> <li></li> </ul>| Feb 15th |[Slides]() | [TBD]()|
 | Week 8: Sound in Games             |<ul> <li></li> <li></li> <li></li></ul>| Feb 28th |[Slides]() | [TBD]()|
 
